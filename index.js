@@ -14,5 +14,5 @@ app.use(express.json())
 app.use(morgan('dev')) 
 app.use('/api/patient', patient) 
 
-const port = 3000;
+const port = 80;
 app.listen(port, () => { console.log(`Listen on port ${port}`) })
