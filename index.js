@@ -18,4 +18,4 @@ app.use(cors())
 app.use('/api/patient', patient)
 
 const port = 80;
-app.listen(port, () => { console.log(`Listen on port ${port}`) })
+app.listen(port, () => { console.log(`Listen on port ${port}`) }) 
