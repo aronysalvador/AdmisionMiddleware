@@ -1,0 +1,32 @@
+trigger:
+  - none
+  
+variables:
+  VmImageName: 'ubuntu-latest'
+  ContainerRegistryName: 'crdesacontainer'
+  DockerNamespace: '$(ContainerRegistryName).azurecr.io'
+  DockerRepository: 'desa/Admision_Digital/ACHS-MS-Middleware-SAP'
+  ImageTag: 'v:$(Build.BuildId)'
+  
+
+stages:
+  - stage: Deploy_DESA
+    displayName: Deploy DESA
+    jobs: 
+      - job: buildJob
+        displayName: Build and Publish
+        pool:
+          vmImage: $(VmImageName)
+        variables:
+          - group: Variables-CICD_IaC
+          - name: RUTADIRECTORIOENVS
+            value: envs
+        steps:
+        - task: Docker@2
+          displayName: Build and Push Docker Image
+          inputs:
+            repository: $(DockerRepository)
+            command: buildAndPush
+            Dockerfile: ./Dockerfile
+            containerRegistry: $(ContainerRegistryName)
+            tags: $(ImageTag)
