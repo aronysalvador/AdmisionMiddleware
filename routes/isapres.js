@@ -12,7 +12,16 @@ const route = new Router();
 route.get("/", async (req, res) => {
   try {
     const result = await http(isapresRequest());
-    const response = apiResponse(result, res.status, "Operacion exitosa");
+    const formated = [];
+    if (result.length > 0) {
+      formated = result.map((x) => {
+        return {
+          id: x.key,
+          nombre: x.value,
+        };
+      });
+    }
+    const response = apiResponse(formated, res.status, "Operacion exitosa");
     return res.send(response);
   } catch (error) {
     const response = apiResponse([], res.status, "Error");
