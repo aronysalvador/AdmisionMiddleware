@@ -1,190 +1,190 @@
 [
   {
-    "key": 1111,
-    "value": "Miembros del poder legislativo"
+    "id": 1111,
+    "cargo": "Miembros del poder legislativo"
   },
   {
-    "key": 1112,
-    "value": "Personal directivo de la administración pública"
+    "id": 1112,
+    "cargo": "Personal directivo de la administración pública"
   },
   {
-    "key": 1113,
-    "value": "Jefes de pequeñas poblaciones"
+    "id": 1113,
+    "cargo": "Jefes de pequeñas poblaciones"
   },
   {
-    "key": 1114,
-    "value": "Dirigentes de organizaciones que presentan un interés especial"
+    "id": 1114,
+    "cargo": "Dirigentes de organizaciones que presentan un interés especial"
   },
   {
-    "key": 1120,
-    "value": "Directores generales y gerentes generales"
+    "id": 1120,
+    "cargo": "Directores generales y gerentes generales"
   },
   {
-    "key": 1211,
-    "value": "Directores financieros"
+    "id": 1211,
+    "cargo": "Directores financieros"
   },
   {
-    "key": 1212,
-    "value": "Directores de recursos humanos"
+    "id": 1212,
+    "cargo": "Directores de recursos humanos"
   },
   {
-    "key": 1213,
-    "value": "Directores de políticas y planificación"
+    "id": 1213,
+    "cargo": "Directores de políticas y planificación"
   },
   {
-    "key": 1219,
-    "value": "Directores de administración y servicios no clasificados bajo otros epígrafes"
+    "id": 1219,
+    "cargo": "Directores de administración y servicios no clasificados bajo otros epígrafes"
   },
   {
-    "key": 1221,
-    "value": "Directores de ventas y comercialización"
+    "id": 1221,
+    "cargo": "Directores de ventas y comercialización"
   },
   {
-    "key": 1222,
-    "value": "Directores de publicidad y relaciones públicas"
+    "id": 1222,
+    "cargo": "Directores de publicidad y relaciones públicas"
   },
   {
-    "key": 1223,
-    "value": "Directores de investigación y desarrollo"
+    "id": 1223,
+    "cargo": "Directores de investigación y desarrollo"
   },
   {
-    "key": 1311,
-    "value": "Directores de producción agropecuaria y silvicultura"
+    "id": 1311,
+    "cargo": "Directores de producción agropecuaria y silvicultura"
   },
   {
-    "key": 1312,
-    "value": "Directores de producción de piscicultura y pesca"
+    "id": 1312,
+    "cargo": "Directores de producción de piscicultura y pesca"
   },
   {
-    "key": 1321,
-    "value": "Directores de industrias manufactureras"
+    "id": 1321,
+    "cargo": "Directores de industrias manufactureras"
   },
   {
-    "key": 1322,
-    "value": "Directores de explotaciones de minería"
+    "id": 1322,
+    "cargo": "Directores de explotaciones de minería"
   },
   {
-    "key": 1323,
-    "value": "Directores de empresas de construcción"
+    "id": 1323,
+    "cargo": "Directores de empresas de construcción"
   },
   {
-    "key": 1324,
-    "value": "Directores de empresas de abastecimiento, distribución y afines"
+    "id": 1324,
+    "cargo": "Directores de empresas de abastecimiento, distribución y afines"
   },
   {
-    "key": 1330,
-    "value": "Directores de servicios de tecnología de la información y las comunicaciones"
+    "id": 1330,
+    "cargo": "Directores de servicios de tecnología de la información y las comunicaciones"
   },
   {
-    "key": 1341,
-    "value": "Directores de servicios de cuidados infantiles"
+    "id": 1341,
+    "cargo": "Directores de servicios de cuidados infantiles"
   },
   {
-    "key": 1342,
-    "value": "Directores de servicios de salud"
+    "id": 1342,
+    "cargo": "Directores de servicios de salud"
   },
   {
-    "key": 1343,
-    "value": "Directores de servicios de cuidado de las personas de edad"
+    "id": 1343,
+    "cargo": "Directores de servicios de cuidado de las personas de edad"
   },
   {
-    "key": 1344,
-    "value": "Directores  de servicios de bienestar social"
+    "id": 1344,
+    "cargo": "Directores  de servicios de bienestar social"
   },
   {
-    "key": 1345,
-    "value": "Directores de servicios de educación"
+    "id": 1345,
+    "cargo": "Directores de servicios de educación"
   },
   {
-    "key": 1346,
-    "value": "Gerentes de sucursales de bancos, de servicios financieros y de seguros"
+    "id": 1346,
+    "cargo": "Gerentes de sucursales de bancos, de servicios financieros y de seguros"
   },
   {
-    "key": 1349,
-    "value": "Directores y gerentes de servicios profesionales no clasificados bajo otros epígrafes"
+    "id": 1349,
+    "cargo": "Directores y gerentes de servicios profesionales no clasificados bajo otros epígrafes"
   },
   {
-    "key": 1411,
-    "value": "Gerentes de hoteles"
+    "id": 1411,
+    "cargo": "Gerentes de hoteles"
   },
   {
-    "key": 1412,
-    "value": "Gerentes de restaurantes"
+    "id": 1412,
+    "cargo": "Gerentes de restaurantes"
   },
   {
-    "key": 1420,
-    "value": "Gerentes de comercios al por mayor y al por menor"
+    "id": 1420,
+    "cargo": "Gerentes de comercios al por mayor y al por menor"
   },
   {
-    "key": 1431,
-    "value": "Gerentes de centros deportivos, de esparcimiento y culturales"
+    "id": 1431,
+    "cargo": "Gerentes de centros deportivos, de esparcimiento y culturales"
   },
   {
-    "key": 1439,
-    "value": "Gerentes de servicios no clasificados bajo otros epígrafes"
+    "id": 1439,
+    "cargo": "Gerentes de servicios no clasificados bajo otros epígrafes"
   },
   {
-    "key": 2111,
-    "value": "Físicos y astrónomos"
+    "id": 2111,
+    "cargo": "Físicos y astrónomos"
   },
   {
-    "key": 2112,
-    "value": "Meteorólogos"
+    "id": 2112,
+    "cargo": "Meteorólogos"
   },
   {
-    "key": 2113,
-    "value": "Químicos"
+    "id": 2113,
+    "cargo": "Químicos"
   },
   {
-    "key": 2114,
-    "value": "Geólogos y geofísicos"
+    "id": 2114,
+    "cargo": "Geólogos y geofísicos"
   },
   {
-    "key": 2120,
-    "value": "Matemáticos, actuarios y estadísticos"
+    "id": 2120,
+    "cargo": "Matemáticos, actuarios y estadísticos"
   },
   {
-    "key": 2131,
-    "value": "Biólogos, botánicos, zoólogos y afines"
+    "id": 2131,
+    "cargo": "Biólogos, botánicos, zoólogos y afines"
   },
   {
-    "key": 2132,
-    "value": "Agrónomos y afines"
+    "id": 2132,
+    "cargo": "Agrónomos y afines"
   },
   {
-    "key": 2133,
-    "value": "Profesionales de la protección medioambiental"
+    "id": 2133,
+    "cargo": "Profesionales de la protección medioambiental"
   },
   {
-    "key": 2141,
-    "value": "Ingenieros industriales y de producción"
+    "id": 2141,
+    "cargo": "Ingenieros industriales y de producción"
   },
   {
-    "key": 2142,
-    "value": "Ingenieros civiles"
+    "id": 2142,
+    "cargo": "Ingenieros civiles"
   },
   {
-    "key": 2143,
-    "value": "Ingenieros medioambientales"
+    "id": 2143,
+    "cargo": "Ingenieros medioambientales"
   },
   {
-    "key": 2144,
-    "value": "Ingenieros mecánicos"
+    "id": 2144,
+    "cargo": "Ingenieros mecánicos"
   },
   {
-    "key": 2145,
-    "value": "Ingenieros químicos"
+    "id": 2145,
+    "cargo": "Ingenieros químicos"
   },
   {
-    "key": 2146,
-    "value": "Ingenieros de minas, metalúrgicos y afines"
+    "id": 2146,
+    "cargo": "Ingenieros de minas, metalúrgicos y afines"
   },
   {
-    "key": 2149,
-    "value": "Ingenieros no clasificados bajo otros epígrafes"
+    "id": 2149,
+    "cargo": "Ingenieros no clasificados bajo otros epígrafes"
   },
   {
-    "key": 2151,
-    "value": "Ingenieros electricistas"
+    "id": 2151,
+    "cargo": "Ingenieros electricistas"
   }
 ]

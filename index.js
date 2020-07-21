@@ -8,6 +8,7 @@ const express = require("express");
 const morgan = require("morgan");
 const patient = require("./routes/patient");
 const isapres = require("./routes/isapres");
+const cargos = require("./routes/cargos");
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.use(morgan("dev"));
 app.use(cors());
 app.use("/api/patient", patient);
 app.use("/api/isapres", isapres);
+app.use("/api/cargos", cargos);
 
 const port = 80;
 app.listen(port, () => {

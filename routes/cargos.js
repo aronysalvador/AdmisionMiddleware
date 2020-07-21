@@ -10,6 +10,8 @@ route.get("/", async (req, res) => {
   try {
     res.send(data);
   } catch (error) {
-    const result = apiResponse([], 500, "Ha ocurrido un error");
+    res.send(apiResponse([], 500, "Ha ocurrido un error"));
   }
 });
+
+module.exports = route;
