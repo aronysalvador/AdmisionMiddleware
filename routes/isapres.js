@@ -12,8 +12,7 @@ const route = new Router();
 route.get("/", async (req, res) => {
   try {
     const result = await http(isapresRequest());
-    console.log(result);
-    const response = apiResponse(data, res.status, "Operacion exitosa");
+    const response = apiResponse(result, res.status, "Operacion exitosa");
     return res.send(response);
   } catch (error) {
     const response = apiResponse([], res.status, "Error");

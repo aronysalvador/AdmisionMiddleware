@@ -8,7 +8,6 @@ const get = (config) => {
         resolve(response.data);
       })
       .catch((error) => {
-        console.log(error);
         reject({});
       });
   });
