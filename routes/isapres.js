@@ -12,7 +12,7 @@ const route = new Router();
 route.get("/", async (req, res) => {
   try {
     const result = await http(isapresRequest());
-    const formated = [];
+    let formated = [];
     if (result.length > 0) {
       formated = result.map((x) => {
         return {
