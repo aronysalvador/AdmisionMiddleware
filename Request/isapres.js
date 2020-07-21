@@ -1,6 +1,6 @@
 const getIsapres = () => {
   return {
-    hostname: "sfc-qa-middleware.eastus.cloudapp.azure.com:8080",
+    hostname: "http://sfc-qa-middleware.eastus.cloudapp.azure.com:8080",
     path: `/api/dominios/ObtenerListadoIsapres`,
     headers: {
       "Content-Type": "application/json; charset=utf-8",
