@@ -1,0 +1,190 @@
+[
+  {
+    "key": 1111,
+    "value": "Miembros del poder legislativo"
+  },
+  {
+    "key": 1112,
+    "value": "Personal directivo de la administración pública"
+  },
+  {
+    "key": 1113,
+    "value": "Jefes de pequeñas poblaciones"
+  },
+  {
+    "key": 1114,
+    "value": "Dirigentes de organizaciones que presentan un interés especial"
+  },
+  {
+    "key": 1120,
+    "value": "Directores generales y gerentes generales"
+  },
+  {
+    "key": 1211,
+    "value": "Directores financieros"
+  },
+  {
+    "key": 1212,
+    "value": "Directores de recursos humanos"
+  },
+  {
+    "key": 1213,
+    "value": "Directores de políticas y planificación"
+  },
+  {
+    "key": 1219,
+    "value": "Directores de administración y servicios no clasificados bajo otros epígrafes"
+  },
+  {
+    "key": 1221,
+    "value": "Directores de ventas y comercialización"
+  },
+  {
+    "key": 1222,
+    "value": "Directores de publicidad y relaciones públicas"
+  },
+  {
+    "key": 1223,
+    "value": "Directores de investigación y desarrollo"
+  },
+  {
+    "key": 1311,
+    "value": "Directores de producción agropecuaria y silvicultura"
+  },
+  {
+    "key": 1312,
+    "value": "Directores de producción de piscicultura y pesca"
+  },
+  {
+    "key": 1321,
+    "value": "Directores de industrias manufactureras"
+  },
+  {
+    "key": 1322,
+    "value": "Directores de explotaciones de minería"
+  },
+  {
+    "key": 1323,
+    "value": "Directores de empresas de construcción"
+  },
+  {
+    "key": 1324,
+    "value": "Directores de empresas de abastecimiento, distribución y afines"
+  },
+  {
+    "key": 1330,
+    "value": "Directores de servicios de tecnología de la información y las comunicaciones"
+  },
+  {
+    "key": 1341,
+    "value": "Directores de servicios de cuidados infantiles"
+  },
+  {
+    "key": 1342,
+    "value": "Directores de servicios de salud"
+  },
+  {
+    "key": 1343,
+    "value": "Directores de servicios de cuidado de las personas de edad"
+  },
+  {
+    "key": 1344,
+    "value": "Directores  de servicios de bienestar social"
+  },
+  {
+    "key": 1345,
+    "value": "Directores de servicios de educación"
+  },
+  {
+    "key": 1346,
+    "value": "Gerentes de sucursales de bancos, de servicios financieros y de seguros"
+  },
+  {
+    "key": 1349,
+    "value": "Directores y gerentes de servicios profesionales no clasificados bajo otros epígrafes"
+  },
+  {
+    "key": 1411,
+    "value": "Gerentes de hoteles"
+  },
+  {
+    "key": 1412,
+    "value": "Gerentes de restaurantes"
+  },
+  {
+    "key": 1420,
+    "value": "Gerentes de comercios al por mayor y al por menor"
+  },
+  {
+    "key": 1431,
+    "value": "Gerentes de centros deportivos, de esparcimiento y culturales"
+  },
+  {
+    "key": 1439,
+    "value": "Gerentes de servicios no clasificados bajo otros epígrafes"
+  },
+  {
+    "key": 2111,
+    "value": "Físicos y astrónomos"
+  },
+  {
+    "key": 2112,
+    "value": "Meteorólogos"
+  },
+  {
+    "key": 2113,
+    "value": "Químicos"
+  },
+  {
+    "key": 2114,
+    "value": "Geólogos y geofísicos"
+  },
+  {
+    "key": 2120,
+    "value": "Matemáticos, actuarios y estadísticos"
+  },
+  {
+    "key": 2131,
+    "value": "Biólogos, botánicos, zoólogos y afines"
+  },
+  {
+    "key": 2132,
+    "value": "Agrónomos y afines"
+  },
+  {
+    "key": 2133,
+    "value": "Profesionales de la protección medioambiental"
+  },
+  {
+    "key": 2141,
+    "value": "Ingenieros industriales y de producción"
+  },
+  {
+    "key": 2142,
+    "value": "Ingenieros civiles"
+  },
+  {
+    "key": 2143,
+    "value": "Ingenieros medioambientales"
+  },
+  {
+    "key": 2144,
+    "value": "Ingenieros mecánicos"
+  },
+  {
+    "key": 2145,
+    "value": "Ingenieros químicos"
+  },
+  {
+    "key": 2146,
+    "value": "Ingenieros de minas, metalúrgicos y afines"
+  },
+  {
+    "key": 2149,
+    "value": "Ingenieros no clasificados bajo otros epígrafes"
+  },
+  {
+    "key": 2151,
+    "value": "Ingenieros electricistas"
+  }
+]
