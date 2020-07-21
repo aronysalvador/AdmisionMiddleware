@@ -1,34 +1,75 @@
-const Router = require('express-promise-router')
+ const Router = require('express-promise-router')
 const apiResponse = require('../Utils/ApiUtil/apiResponseReducer')
 const getLastDate = require('../Utils/DateTimeUtil/DateTime')
 const getConfigCotizacion = require('../Request/cotizacion')
-const execHttps = require('../Utils/ApiUtil/https')
+const getConfigPaciente = require('../Request/paciente')
+const getConfigEmpresa = require('../Request/empresa')
+const get = require('../Utils/ApiUtil/http')
 const getCotizacionModel = require('../Models/cotizacionModel')
+const getConfigRegion = require('../Request/region')
+
 
 const route = new Router();
 
 /**
- *  Indica si el trabajador esta afiliado a la ACHS
+ *  Recupera información del paciente, indicando si el trabajador esta afiliado a la ACHS
  *  Se considera afiliados a los trabajadores que poseen cotizaciones 2 meses anteriores al periodo actual
  */
 route.get('/isAfiliado', async (req, res) => {
     try {
 
-        let rut = req.query.rut
-        let periodo = getLastDate()
+        //Recuperamos el RUT
+        const rut = req.query.rut
+        //Obtenemos el periodo anterior (2 meses atras)
+        const {year, month} = getLastDate()
+        //Obtenemos las cotizaciones desde SAP
+        const contizacionResponse = await get(getConfigCotizacion(rut,`${year}${month}`))
+        const cotizacion = contizacionResponse.d.results
         
-        let json = "";
-        await execHttps(getConfigCotizacion(rut,`${periodo.year}${periodo.month}`)).then(data =>{
-            let sap = data.d.results[0]
-            if(data.d.results.length > 0) 
-                json = getCotizacionModel(sap.RUT_Pagador, sap.Nombre_Empresa,sap.rutTrabajador,true)
-            else
-                json = getCotizacionModel("","","",false)
-        })
+        let RUT_Pagador = "",Nombre_Empresa="",rutTrabajador="",_BIC_ZBP_SEDE="", isAfiliado = false
+        if(Array.isArray(cotizacion) && cotizacion.length > 0){
+            RUT_Pagador = cotizacion[0].RUT_Pagador
+            Nombre_Empresa = cotizacion[0].Nombre_Empresa
+            rutTrabajador = cotizacion[0].rutTrabajador
+            _BIC_ZBP_SEDE = cotizacion[0]._BIC_ZBP_SEDE
+        }
+        let json = ""
+        if(cotizacion.length > 0) {
+            isAfiliado = true
+            //Obtenemos los datos del paciente
+            const {direcciones,telefonos}  = await get(getConfigPaciente(rut))
+            const direccionParticular = (Array.isArray(direcciones) && direcciones.length > 0) ? `${direcciones[0].calle} ${direcciones[0].numero}` : null
+            const telefonoParticular = (Array.isArray(telefonos) && telefonos.length > 0) ? telefonos[(telefonos.length - 1)].numeroTelefonico  : ""
+            
+            //Obtenemos la sucursal de la empresa
+            //const {nombreOrganizacion2,direcciones} = await get(getConfigEmpresa(_BIC_ZBP_SEDE))
+            const empresa = await get(getConfigEmpresa(_BIC_ZBP_SEDE))
+            console.log("empresa",empresa.direcciones)
+
+            let direccionEmpresa = "", comunaEmpresa = "", sucursalEmpresa = ""
+            if(empresa !== null){
+                const direccionesEmpresa = empresa.direcciones
+                if(Array.isArray(direccionesEmpresa) && direccionesEmpresa.length > 0){
+                    const index = direccionesEmpresa.length -1
+                    direccionEmpresa = `${direccionesEmpresa[index].calle} ${direccionesEmpresa[index].numero}`
+                    comunaEmpresa = empresa.nombreOrganizacion2
+                    sucursalEmpresa = Nombre_Empresa
+                }
+            }
+            json = getCotizacionModel(RUT_Pagador,Nombre_Empresa,rutTrabajador,isAfiliado,sucursalEmpresa,direccionEmpresa,comunaEmpresa,direccionParticular,telefonoParticular)
+        }
+        else{
+            json = getCotizacionModel("","","",false,"","","","","")
+        }
         const response = apiResponse(json, res.statusCode, "Operacion exitosa")
         res.send(response)
     } catch (error) {
+        console.log("error",error)
         res.send(apiResponse([], 500, error))
     }
 })
+
+const getDireccion = () =>{
+    
+}
 module.exports = route;
