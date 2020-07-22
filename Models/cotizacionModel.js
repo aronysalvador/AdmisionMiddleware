@@ -7,12 +7,18 @@
  * @param {*} rutTrabajador 
  * @param {*} isAfiliado 
  */
-const getCotizacionModel = (rutPagador,nombreEmpresa,rutTrabajador,isAfiliado) => {
+const getCotizacionModel = (RutPagador,NombreEmpresa,RutTrabajador,IsAfiliado,SucursalEmpresa,DireccionEmpresa,comunaEmpresa,direccionParticular,telefonoParticular) => {
     return {
-            "NombreEmpresa" : rutPagador,
-            "RutEmpresa" : nombreEmpresa,
-            "RutTrabajador" : rutTrabajador,
-            "isAfiliado" : isAfiliado,
+            NombreEmpresa,
+            RutPagador,
+            RutTrabajador,
+            IsAfiliado,
+            SucursalEmpresa, 
+            DireccionEmpresa,
+            comunaEmpresa,
+            direccionParticular,
+            telefonoParticular
         }
   }
+
   module.exports = getCotizacionModel
