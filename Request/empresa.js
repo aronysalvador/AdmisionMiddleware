@@ -7,4 +7,15 @@ const getConfigEmpresa = (bp) => {
       }
   }
 }
-module.exports = getConfigEmpresa
+
+const getConfigVigencia = (rut) => {
+  return {
+    url: `https://api.achs.cl/Concurrencia/vigencia?IP_RUT_EMPRESA=${rut}`,
+    headers: { headers: {
+        'Ocp-Apim-Subscription-Key': 'c08395f6acd5403fbcb30560053e4dec'
+    }
+      }
+  }
+}
+
+module.exports = {getConfigEmpresa,getConfigVigencia}

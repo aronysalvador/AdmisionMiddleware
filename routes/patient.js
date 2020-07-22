@@ -3,10 +3,9 @@ const apiResponse = require('../Utils/ApiUtil/apiResponseReducer')
 const getLastDate = require('../Utils/DateTimeUtil/DateTime')
 const getConfigCotizacion = require('../Request/cotizacion')
 const getConfigPaciente = require('../Request/paciente')
-const getConfigEmpresa = require('../Request/empresa')
+const {getConfigEmpresa,getConfigVigencia} = require('../Request/empresa')
 const get = require('../Utils/ApiUtil/http')
 const getCotizacionModel = require('../Models/cotizacionModel')
-const getConfigRegion = require('../Request/region')
 
 
 const route = new Router();
@@ -35,7 +34,6 @@ route.get('/isAfiliado', async (req, res) => {
         }
         let json = ""
         if(cotizacion.length > 0) {
-            isAfiliado = true
             //Obtenemos los datos del paciente
             const {direcciones,telefonos}  = await get(getConfigPaciente(rut))
             const direccionParticular = (Array.isArray(direcciones) && direcciones.length > 0) ? `${direcciones[0].calle} ${direcciones[0].numero}` : null
@@ -48,6 +46,11 @@ route.get('/isAfiliado', async (req, res) => {
 
             let direccionEmpresa = "", comunaEmpresa = "", sucursalEmpresa = ""
             if(empresa !== null){
+
+                //Se  revisara API con Fred la api demora mas 5 minutos en responder
+                //const vigencia = await get(getConfigVigencia(empresa.rut))
+                isAfiliado = true
+
                 const direccionesEmpresa = empresa.direcciones
                 if(Array.isArray(direccionesEmpresa) && direccionesEmpresa.length > 0){
                     const index = direccionesEmpresa.length -1
