@@ -2,7 +2,7 @@ const Router = require("express-promise-router");
 const apiResponse = require("../Utils/ApiUtil/apiResponseReducer");
 const isapresRequest = require("../Request/isapres");
 const http = require("../Utils/ApiUtil/http");
-
+const isapres = require("../Utils/isapres.json");
 const route = new Router();
 
 /**
@@ -11,17 +11,7 @@ const route = new Router();
 
 route.get("/", async (req, res) => {
   try {
-    const result = await http(isapresRequest());
-    let formated = [];
-    if (result.length > 0) {
-      formated = result.map((x) => {
-        return {
-          id: x.key,
-          nombre: x.value,
-        };
-      });
-    }
-    const response = apiResponse(formated, res.status, "Operacion exitosa");
+    const response = apiResponse(isapres, 200, "Operacion exitosa");
     return res.send(response);
   } catch (error) {
     const response = apiResponse([], res.status, "Error");
