@@ -2,6 +2,7 @@ const Router = require("express-promise-router");
 const regionesRequest = require("../Request/regiones");
 const http = require("../Utils/ApiUtil/http");
 const regiones = require("../Utils/regiones.json");
+const apiResponse = require("../Utils/ApiUtil/apiResponseReducer");
 
 const route = new Router();
 
@@ -14,3 +15,5 @@ route.get("/", async (req, res) => {
     return res.send(response);
   }
 });
+
+module.exports = route;
