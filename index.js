@@ -10,6 +10,7 @@ const patient = require("./routes/patient");
 const isapres = require("./routes/isapres");
 const cargos = require("./routes/cargos");
 const regiones = require("./routes/regiones");
+const comunas = require("./routes/comunas");
 
 const app = express();
 
@@ -22,6 +23,7 @@ app.use("/api/patient", patient);
 app.use("/api/isapres", isapres);
 app.use("/api/cargos", cargos);
 app.use("/api/regiones", regiones);
+app.use("/api/comunas", comunas);
 const port = 80;
 app.listen(port, () => {
   console.log(`Listen on port ${port}`);
