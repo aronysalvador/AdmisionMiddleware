@@ -18,4 +18,16 @@ route.get("/", async (req, res) => {
   }
 });
 
+route.get("/comuna", async (req, res) => {
+  try {
+    const { id } = req.query;
+    const comunasRegion = comunas.filter((x) => x.key == id);
+    const response = apiResponse(comunasRegion, 200, "Operacion exitosa");
+    return res.send(response);
+  } catch (error) {
+    const response = apiResponse([], !res.status ? 500 : res.status, "Error");
+    return res.send(response);
+  }
+});
+
 module.exports = route;
