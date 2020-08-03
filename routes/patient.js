@@ -16,7 +16,6 @@ const route = new Router();
  */
 route.get('/isAfiliado', async (req, res) => {
     try {
-        
         //Recuperamos el RUT
         const rut = req.query.rut
         //Obtenemos el periodo anterior (2 meses atras)
@@ -41,21 +40,17 @@ route.get('/isAfiliado', async (req, res) => {
             //Obtenemos la sucursal de la empresa
             //const {nombreOrganizacion2,direcciones} = await get(getConfigEmpresa(_BIC_ZBP_SEDE))
             const empresa = await get(getConfigEmpresa(_BIC_ZBP_SEDE))
-            console.log("empresa",empresa.direcciones)
-
             let direccionEmpresa = "", comunaEmpresa = "", sucursalEmpresa = ""
             if(empresa !== null){
-
                 //Se  revisara API con Fred la api demora mas 5 minutos en responder
                 //const vigencia = await get(getConfigVigencia(empresa.rut))
                 isAfiliado = true
-
                 const direccionesEmpresa = empresa.direcciones
                 if(Array.isArray(direccionesEmpresa) && direccionesEmpresa.length > 0){
                     const index = direccionesEmpresa.length -1
                     direccionEmpresa = `${direccionesEmpresa[index].calle} ${direccionesEmpresa[index].numero}`
                     comunaEmpresa = empresa.nombreOrganizacion2
-                    sucursalEmpresa = Nombre_Empresa
+                    sucursalEmpresa = empresa.nombreOrganizacion2
                 }
             }
             json = getCotizacionModel(RUT_Pagador,Nombre_Empresa,rutTrabajador,isAfiliado,sucursalEmpresa,direccionEmpresa,comunaEmpresa,direccionParticular,telefonoParticular)
@@ -66,6 +61,7 @@ route.get('/isAfiliado', async (req, res) => {
         const response = apiResponse(json, res.statusCode, "Operacion exitosa")
         res.send(response)
     } catch (error) {
+        console.log("erorororor",error)
         console.log("error",error)
         res.send(apiResponse([], 500, error))
     }

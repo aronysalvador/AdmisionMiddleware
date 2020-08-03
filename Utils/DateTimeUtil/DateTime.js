@@ -4,7 +4,7 @@
  */
 const getLastDate = () =>{
     let lasDate = new Date()
-    lasDate.setMonth(lasDate.getMonth() - 2)
+    lasDate.setMonth(lasDate.getMonth() - 3)
     let month = formaterMonth(lasDate.getMonth())
     return {"month" : month,
             "year" : lasDate.getFullYear()}
