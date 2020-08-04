@@ -13,6 +13,7 @@ const regiones = require("./routes/regiones");
 const comunas = require("./routes/comunas");
 const tipoContrato = require("./routes/tipoContrato");
 const jornadaTrabajo = require("./routes/jornadaTrabajo");
+const tipoRemuneracion = require("./routes/tipoRemuneracion");
 const app = express();
 
 var cors = require("cors");
@@ -27,6 +28,7 @@ app.use("/api/regiones", regiones);
 app.use("/api/comunas", comunas);
 app.use("/api/tipoContrato", tipoContrato);
 app.use("/api/jornadaTrabajo", jornadaTrabajo);
+app.use("/api/tipoRemuneracion", tipoRemuneracion);
 const port = 80;
 app.listen(port, () => {
   console.log(`Listen on port ${port}`);
