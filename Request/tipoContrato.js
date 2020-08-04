@@ -1,4 +1,4 @@
-const getConfigJornadaLaboral = () => {
+const getConfigTipoContrato = () => {
   return {
     hostname: "https://ams-qa-midleware.azure-api.net",
     path: "/DatosGenerales/v1/TipoContrato",
@@ -10,4 +10,4 @@ const getConfigJornadaLaboral = () => {
     },
   };
 };
-module.exports = getConfigJornadaLaboral;
+module.exports = getConfigTipoContrato;

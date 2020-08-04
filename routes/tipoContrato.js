@@ -1,6 +1,6 @@
 const Router = require("express-promise-router");
 const apiResponse = require("../Utils/ApiUtil/apiResponseReducer");
-const jornadaTrabajoRequest = require("../Request/JornadaTrabajo");
+const jornadaTrabajoRequest = require("../Request/tipoContrato");
 const http = require("../Utils/ApiUtil/http");
 const apiResponseReducer = require("../Utils/ApiUtil/apiResponseReducer");
 
@@ -10,7 +10,7 @@ route.get("/", async (req, res) => {
   try {
     const result = await http(jornadaTrabajoRequest());
     const response = apiResponseReducer(
-      result,
+      formatDatos(result),
       res.statusCode,
       "Operacion Exitosa"
     );
@@ -20,4 +20,11 @@ route.get("/", async (req, res) => {
   }
 });
 
+const formatDatos = (datos) => {
+  return (datosFormated = datos.map(
+    ({ idTipoContrato, descripcionTipoContrato }) => {
+      return { id: idTipoContrato, nombre: descripcionTipoContrato };
+    }
+  ));
+};
 module.exports = route;
