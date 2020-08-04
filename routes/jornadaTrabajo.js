@@ -15,7 +15,9 @@ route.get("/", async (req, res) => {
       "Operacion Exitosa"
     );
     res.send(response);
-  } catch (error) {}
+  } catch (error) {
+    res.send(apiResponseReducer([], res.statusCode, error.message));
+  }
 });
 
 module.exports = route;
