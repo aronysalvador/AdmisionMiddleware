@@ -11,7 +11,7 @@ const isapres = require("./routes/isapres");
 const cargos = require("./routes/cargos");
 const regiones = require("./routes/regiones");
 const comunas = require("./routes/comunas");
-
+const jornadaTrabajo = require("./routes/jornadaTrabajo");
 const app = express();
 
 var cors = require("cors");
@@ -24,6 +24,7 @@ app.use("/api/isapres", isapres);
 app.use("/api/cargos", cargos);
 app.use("/api/regiones", regiones);
 app.use("/api/comunas", comunas);
+app.use("/api/jornadatrabajo", jornadaTrabajo);
 const port = 80;
 app.listen(port, () => {
   console.log(`Listen on port ${port}`);
