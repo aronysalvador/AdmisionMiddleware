@@ -27,6 +27,7 @@ app.use("/api/cargos", cargos);
 app.use("/api/ocupaciones", ocupaciones);
 app.use("/api/regiones", regiones);
 app.use("/api/comunas", comunas);
+app.use("/api/afp", afps);
 
 const port = 80;
 app.listen(port, () => {
