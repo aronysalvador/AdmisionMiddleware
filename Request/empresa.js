@@ -9,12 +9,14 @@ const getConfigEmpresa = (bp) => {
   }
 }
 
+
+
 const getConfigVigencia = (rut) => {
   return {
-    hostname: `https://api.achs.cl`,
-    path: `/Concurrencia/vigencia?IP_RUT_EMPRESA=${rut}`,
+    hostname: `https://ams-qa-midleware.azure-api.net`,
+    path: `/AdmisionDigital/VigenciaEmpresa?rutEmpresa=${rut}`,
     headers: { headers: {
-        'Ocp-Apim-Subscription-Key': 'c08395f6acd5403fbcb30560053e4dec'
+        'Ocp-Apim-Subscription-Key': '2b4beff42a5b433cad5bb1bc67b81fc3'
     }
       }
   }

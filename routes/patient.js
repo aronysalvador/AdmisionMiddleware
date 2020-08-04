@@ -43,8 +43,8 @@ route.get('/isAfiliado', async (req, res) => {
             let direccionEmpresa = "", comunaEmpresa = "", sucursalEmpresa = ""
             if(empresa !== null){
                 //Se  revisara API con Fred la api demora mas 5 minutos en responder
-                //const vigencia = await get(getConfigVigencia(empresa.rut))
-                isAfiliado = true
+                const vigencia = await get(getConfigVigencia(empresa.rut))
+                isAfiliado = (vigencia.d.results[0].ESTATUS_EMPRESA === 'VIGENTE')? true : false
                 const direccionesEmpresa = empresa.direcciones
                 if(Array.isArray(direccionesEmpresa) && direccionesEmpresa.length > 0){
                     const index = direccionesEmpresa.length -1
@@ -61,8 +61,6 @@ route.get('/isAfiliado', async (req, res) => {
         const response = apiResponse(json, res.statusCode, "Operacion exitosa")
         res.send(response)
     } catch (error) {
-        console.log("erorororor",error)
-        console.log("error",error)
         res.send(apiResponse([], 500, error))
     }
 })

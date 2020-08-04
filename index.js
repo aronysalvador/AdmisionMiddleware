@@ -9,6 +9,10 @@ const morgan = require("morgan");
 const patient = require("./routes/patient");
 const isapres = require("./routes/isapres");
 const cargos = require("./routes/cargos");
+const afps = require("./routes/afps");
+const ocupaciones = require("./routes/ocupaciones");
+const regiones = require("./routes/regiones");
+const comunas = require("./routes/comunas");
 
 const app = express();
 
@@ -20,6 +24,9 @@ app.use(cors());
 app.use("/api/patient", patient);
 app.use("/api/isapres", isapres);
 app.use("/api/cargos", cargos);
+app.use("/api/ocupaciones", ocupaciones);
+app.use("/api/regiones", regiones);
+app.use("/api/comunas", comunas);
 
 const port = 80;
 app.listen(port, () => {
