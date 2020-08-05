@@ -14,7 +14,6 @@ const ocupaciones = require("./routes/ocupaciones");
 const regiones = require("./routes/regiones");
 const comunas = require("./routes/comunas");
 
-
 const tipoContrato = require("./routes/tipoContrato");
 const jornadaTrabajo = require("./routes/jornadaTrabajo");
 const tipoRemuneracion = require("./routes/tipoRemuneracion");
@@ -29,13 +28,10 @@ app.use(cors());
 app.use("/api/patient", patient);
 app.use("/api/isapres", isapres);
 app.use("/api/cargos", cargos);
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< develop
 app.use("/api/ocupaciones", ocupaciones);
 app.use("/api/regiones", regiones);
 app.use("/api/comunas", comunas);
 app.use("/api/afp", afps);
-
-
 
 app.use("/api/tipoContrato", tipoContrato);
 app.use("/api/jornadaTrabajo", jornadaTrabajo);
