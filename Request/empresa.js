@@ -7,7 +7,7 @@ const getConfigEmpresa = (bp) => {
     }
       }
   }
-}
+} 
 
 const getConfigVigencia = (rut) => {
   return {
@@ -23,7 +23,7 @@ const getConfigVigencia = (rut) => {
 const getConfigSucursales = (rut) => {
   return {
     hostname: `https://ams-qa-midleware.azure-api.net`,
-    path: `/BP/v1/EmpresasVigencia?Rut=${rut}`,
+    path: `/AdmisionDigital/api/BP/ObtenerSucursalesEmpresaPorRut?RutEmp=${rut}`,
     headers: { headers: {
         'Ocp-Apim-Subscription-Key': '2b4beff42a5b433cad5bb1bc67b81fc3'
     }

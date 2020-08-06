@@ -9,11 +9,11 @@ const route = new Router();
 route.get('/', async (req, res) => {
     try {
         const sucursalResponse = await get(getConfigSucursales(req.query.rutEmpresa))
-        const sucursalResult = sucursalResponse.d.results.map(afp => {return{"id": afp._BIC_ZBPARTNER, 
-                                                                             "codigo": afp.RAZON_SOCIAL, 
-                                                                             "nombre":afp.DIRECCION,
-                                                                             "id_comuna" : "101",
-                                                                             "id_region" : "01"}})
+        const sucursalResult = sucursalResponse.map(afp => {return{ "codigo": afp.BPEmpresa, 
+                                                                    "nombre":afp.Razon_Social,
+                                                                    "id_comuna" : afp.Cod_Comuna.substring(9,12),
+                                                                    "id_region" : afp.Cod_Comuna.substring(7,9)}})
+
         const response = apiResponse(sucursalResult, res.statusCode, "Operacion exitosa")
         res.send(response)
     } catch (error) {
