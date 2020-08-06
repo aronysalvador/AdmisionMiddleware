@@ -18,6 +18,7 @@ const tipoContrato = require("./routes/tipoContrato");
 const jornadaTrabajo = require("./routes/jornadaTrabajo");
 const tipoRemuneracion = require("./routes/tipoRemuneracion");
 const categoriaOcupacional = require("./routes/categoriaOcupacional");
+const sucursales = require("./routes/sucurales");
 const app = express();
 
 var cors = require("cors");
@@ -32,6 +33,7 @@ app.use("/api/ocupaciones", ocupaciones);
 app.use("/api/regiones", regiones);
 app.use("/api/comunas", comunas);
 app.use("/api/afp", afps);
+app.use("/api/sucursales", sucursales);
 
 app.use("/api/tipoContrato", tipoContrato);
 app.use("/api/jornadaTrabajo", jornadaTrabajo);
