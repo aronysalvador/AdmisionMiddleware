@@ -9,8 +9,6 @@ const getConfigEmpresa = (bp) => {
   }
 }
 
-
-
 const getConfigVigencia = (rut) => {
   return {
     hostname: `https://ams-qa-midleware.azure-api.net`,
@@ -22,4 +20,14 @@ const getConfigVigencia = (rut) => {
   }
 }
 
-module.exports = {getConfigEmpresa,getConfigVigencia}
+const getConfigSucursales = (rut) => {
+  return {
+    hostname: `https://ams-qa-midleware.azure-api.net`,
+    path: `/BP/v1/EmpresasVigencia?Rut=${rut}`,
+    headers: { headers: {
+        'Ocp-Apim-Subscription-Key': '2b4beff42a5b433cad5bb1bc67b81fc3'
+    }
+      }
+  }
+}
+module.exports = {getConfigEmpresa,getConfigVigencia,getConfigSucursales}
