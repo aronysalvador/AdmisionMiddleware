@@ -12,8 +12,8 @@ route.get('/', async (req, res) => {
         const sucursalResult = sucursalResponse.d.results.map(afp => {return{"id": afp._BIC_ZBPARTNER, 
                                                                              "codigo": afp.RAZON_SOCIAL, 
                                                                              "nombre":afp.DIRECCION,
-                                                                             "id_comuna" : "106",
-                                                                             "id_region" : "10"}})
+                                                                             "id_comuna" : "101",
+                                                                             "id_region" : "01"}})
         const response = apiResponse(sucursalResult, res.statusCode, "Operacion exitosa")
         res.send(response)
     } catch (error) {
