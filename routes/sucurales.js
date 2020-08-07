@@ -11,7 +11,7 @@ route.get('/', async (req, res) => {
         const sucursalResponse = await get(getConfigSucursales(req.query.rutEmpresa))
         const sucursalResult = sucursalResponse.map(afp => {return{ "codigo": afp.BPEmpresa, 
                                                                     "nombre":afp.Razon_Social,
-                                                                    "codigo_comuna" : afp.Cod_Comuna.substring(9,12),
+                                                                    "id_comuna" : afp.Cod_Comuna.substring(9,12),
                                                                     "codigo_region" : afp.Cod_Comuna.substring(7,9)}})
 
         //const response = apiResponse(sucursalResult, res.statusCode, "Operacion exitosa")
