@@ -26,7 +26,7 @@ const getResultSap = (response) =>{
  */
 route.get('/isAfiliado', async (req, res) => {
     try {
-        const rut = req.query.rut
+        const rut = req.query.rut.toUpperCase()
         const {year, month} = getLastDate()
         const cotizacion = await get(getConfigCotizacion(rut,`${year}${month}`))
 
@@ -41,20 +41,21 @@ route.get('/isAfiliado', async (req, res) => {
                 Nombre_Empresa = resulstVigencia[0].RAZON_SOCIAL
             }
         }
-            const sucursales = await get(getConfigSucursales(RUT_Pagador))
-            const resulstSucursales = getResultSap(sucursales)
-            
-            if(isOk(resulstSucursales)){
-                sucursalEmpresa = resulstSucursales[0].RAZON_SOCIAL
-                direccionEmpresa = resulstSucursales[0].DIRECCION
-                comunaEmpresa = ""
-            }
             const {direcciones,telefonos}  = await get(getConfigPaciente(rut))
             direccionParticular = (Array.isArray(direcciones) && direcciones.length > 0) ? `${direcciones[0].calle} ${direcciones[0].numero}, ${direcciones[0].comuna}` : null
             telefonoParticular = (Array.isArray(telefonos) && telefonos.length > 0) ? telefonos[(telefonos.length - 1)].numeroTelefonico  : ""
-            json = getCotizacionModel(RUT_Pagador,Nombre_Empresa,rutTrabajador,isAfiliado,sucursalEmpresa,direccionEmpresa,comunaEmpresa,direccionParticular,telefonoParticular)
-                
-        const response = apiResponse(json, res.statusCode, "Operacion exitosa")
+            const resulstSucursales = await get(getConfigSucursales(RUT_Pagador))
+            if(isOk(resulstSucursales)){
+                for(let i = 0 ; i < resulstSucursales.length; i++){
+                    if(resulstSucursales[i].Cod_Comuna == direcciones[0].codigoComuna){
+                        sucursalEmpresa = resulstSucursales[i].Razon_Social
+                        direccionEmpresa = resulstSucursales[i].Direccion //Cod_Comuna
+                        comunaEmpresa = resulstSucursales[i].Comuna
+                    }
+                }
+            }
+            json = getCotizacionModel(RUT_Pagador,Nombre_Empresa,rutTrabajador,isAfiliado,sucursalEmpresa,direccionEmpresa,comunaEmpresa,direccionParticular,telefonoParticular)            
+            const response = apiResponse(json, res.statusCode, "Operacion exitosa")
         res.send(response)
     } catch (error) {
         console.log(error)
