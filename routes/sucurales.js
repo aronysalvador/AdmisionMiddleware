@@ -14,8 +14,9 @@ route.get('/', async (req, res) => {
                                                                     "codigo_comuna" : afp.Cod_Comuna.substring(9,12),
                                                                     "codigo_region" : afp.Cod_Comuna.substring(7,9)}})
 
-        const response = apiResponse(sucursalResult, res.statusCode, "Operacion exitosa")
-        res.send(response)
+        //const response = apiResponse(sucursalResult, res.statusCode, "Operacion exitosa")
+        //res.send(response)
+        res.send(sucursalResult)
     } catch (error) {
         console.log(error)
         res.send(apiResponse([], 500, error))
