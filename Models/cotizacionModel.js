@@ -9,6 +9,7 @@
  */
 const getCotizacionModel = (RutPagador,NombreEmpresa,RutTrabajador,IsAfiliado,SucursalEmpresa,DireccionEmpresa,comunaEmpresa,direccionParticular,telefonoParticular) => {
     return {
+            BpCreado : false,
             NombreEmpresa,
             RutPagador,
             RutTrabajador,
@@ -17,7 +18,43 @@ const getCotizacionModel = (RutPagador,NombreEmpresa,RutTrabajador,IsAfiliado,Su
             DireccionEmpresa,
             comunaEmpresa,
             direccionParticular,
-            telefonoParticular
+            telefonoParticular,
+            citas : [
+                {
+                  fecha: '10-08-2020 17:00',  //RESTRUCTURAR
+                  lugar: 'Puente Alto',
+                  unidad: 'Cirugía'
+                },
+                {
+                  fecha: '08-08-2020 13:00',
+                  lugar: 'Providencia',
+                  unidad: 'Dermatología'
+                }
+              ],
+              siniestros: [
+                {
+                  id: 1,
+                  descripcion: 'Trabajo',
+                  fecha: '10-08-2020 17:00',
+                  CUN: 'CUN',
+                  codigoUnicoNacionalExterno: 'CUNE',
+                  cesa: 'CeSa',
+                  interLComercial: 'InterLComercial',
+                  tipoLey: 'Tipo Ley',
+                  reposoActivo: true
+                },
+                {
+                  id: 2,
+                  descripcion: 'Trabajo',
+                  fecha: '09-08-2020 16:00',
+                  CUN: 'CUN',
+                  codigoUnicoNacionalExterno: 'CUNE',
+                  cesa: 'CeSa',
+                  interLComercial: 'InterLComercial',
+                  tipoLey: 'Tipo Ley',
+                  reposoActivo: true
+                },
+              ]
         }
   }
 
