@@ -33,27 +33,42 @@ const getCotizacionModel = (RutPagador,NombreEmpresa,RutTrabajador,IsAfiliado,Su
               ],
               siniestros: [
                 {
-                  id: 1,
+                  id: 24457874,
                   descripcion: 'Trabajo',
-                  fecha: '10-08-2020 17:00',
+                  fecha: '13 Jun 2020',
                   CUN: 'CUN',
                   codigoUnicoNacionalExterno: 'CUNE',
                   cesa: 'CeSa',
                   interLComercial: 'InterLComercial',
                   tipoLey: 'Tipo Ley',
-                  reposoActivo: true
+                  reposoActivo: true,
+                  hora: '18:23'
                 },
                 {
-                  id: 2,
+                  id: 24457874,
                   descripcion: 'Trabajo',
-                  fecha: '09-08-2020 16:00',
+                  fecha: '13 Jun 2020',
                   CUN: 'CUN',
                   codigoUnicoNacionalExterno: 'CUNE',
                   cesa: 'CeSa',
                   interLComercial: 'InterLComercial',
                   tipoLey: 'Tipo Ley',
-                  reposoActivo: true
+                  reposoActivo: true,
+                  hora: '18:23'
                 },
+                {
+                  id: 24457874,
+                  descripcion: 'Trabajo',
+                  fecha: '13 Jun 2020',
+                  CUN: 'CUN',
+                  codigoUnicoNacionalExterno: 'CUNE',
+                  cesa: 'CeSa',
+                  interLComercial: 'InterLComercial',
+                  tipoLey: 'Tipo Ley',
+                  reposoActivo: true,
+                  hora: '18:23'
+                },
+
               ]
         }
   }
