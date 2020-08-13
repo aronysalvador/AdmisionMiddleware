@@ -1,4 +1,4 @@
-const apiResponse = require("./ApiResponse");
+const apiObjectResponse = require("./ApiObjectResponse");
 
 /**
  * Implementa un reducer(sin redux) para mantener la inmutabilidad del objeto de respuesta
@@ -6,12 +6,12 @@ const apiResponse = require("./ApiResponse");
  * @param {* HTTP request status code} status
  * @param {* Texto que indica si la operación fue exitosa o fallo} mensaje
  */
-function apiResponseReducer(response, status, mensaje) {
+function apiResponseObjectReducer(response, status, mensaje) {
   return {
-    ...apiResponse,
-    content: [...apiResponse.content, response],
+    ...apiObjectResponse,
+    content: { ...apiObjectResponse.content, response },
     mensaje,
     status,
   };
 }
-module.exports = apiResponseReducer;
+module.exports = apiResponseObjectReducer;
