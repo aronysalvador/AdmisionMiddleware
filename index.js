@@ -19,6 +19,7 @@ const tipoRemuneracion = require("./routes/tipoRemuneracion");
 const categoriaOcupacional = require("./routes/categoriaOcupacional");
 const sucursales = require("./routes/sucurales");
 const profesiones = require("./routes/profesiones");
+const alertas = require("./routes/alertas");
 const app = express();
 
 var cors = require("cors");
@@ -39,6 +40,7 @@ app.use("/api/jornadaTrabajo", jornadaTrabajo);
 app.use("/api/tipoRemuneracion", tipoRemuneracion);
 app.use("/api/categoriaOcupacional", categoriaOcupacional);
 app.use("/api/profesiones", profesiones);
+app.use("/api/alertas", alertas);
 
 const port = 80;
 app.listen(port, () => {
