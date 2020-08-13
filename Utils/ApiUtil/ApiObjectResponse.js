@@ -1,10 +1,10 @@
 /**
  * Objeto que contiene la respuesta del endpoint de forma estandar
  */
-const apiResponse = {
-  content: [],
+const apiObjectResponse = {
+  content: {},
   status: 0,
   mensaje: "",
 };
 
-module.exports = apiResponse;
+module.exports = apiObjectResponse;
