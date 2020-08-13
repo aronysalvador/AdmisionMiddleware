@@ -1,8 +1,8 @@
 const Router = require("express-promise-router");
 const apiResponse = require("../Utils/ApiUtil/apiResponseReducer");
-const cargosRequest = require("../Request/cargos");
+const alertasRequest = require("../Request/alertas");
 const http = require("../Utils/ApiUtil/http");
-const data = require("../Utils/cargos.json");
+const data = require("../Utils/alertas.json");
 
 const route = new Router();
 

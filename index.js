@@ -8,17 +8,18 @@ const express = require("express");
 const morgan = require("morgan");
 const patient = require("./routes/patient");
 const isapres = require("./routes/isapres");
-const cargos = require("./routes/cargos");
+
 const afps = require("./routes/afps");
 const ocupaciones = require("./routes/ocupaciones");
 const regiones = require("./routes/regiones");
 const comunas = require("./routes/comunas");
-
 const tipoContrato = require("./routes/tipoContrato");
 const jornadaTrabajo = require("./routes/jornadaTrabajo");
 const tipoRemuneracion = require("./routes/tipoRemuneracion");
 const categoriaOcupacional = require("./routes/categoriaOcupacional");
 const sucursales = require("./routes/sucurales");
+const profesiones = require("./routes/profesiones");
+const alertas = require("./routes/alertas");
 const app = express();
 
 var cors = require("cors");
@@ -28,17 +29,18 @@ app.use(morgan("dev"));
 app.use(cors());
 app.use("/api/patient", patient);
 app.use("/api/isapres", isapres);
-app.use("/api/cargos", cargos);
+
 app.use("/api/ocupaciones", ocupaciones);
 app.use("/api/regiones", regiones);
 app.use("/api/comunas", comunas);
 app.use("/api/afp", afps);
 app.use("/api/sucursales", sucursales);
-
 app.use("/api/tipoContrato", tipoContrato);
 app.use("/api/jornadaTrabajo", jornadaTrabajo);
 app.use("/api/tipoRemuneracion", tipoRemuneracion);
 app.use("/api/categoriaOcupacional", categoriaOcupacional);
+app.use("/api/profesiones", profesiones);
+app.use("/api/alertas", alertas);
 
 const port = 80;
 app.listen(port, () => {

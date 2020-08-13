@@ -2,7 +2,7 @@
  * Objeto que contiene la respuesta del endpoint de forma estandar
  */
 const apiResponse = {
-    content: [],
+    content: {},
     status: 0,
     mensaje: ''
 }

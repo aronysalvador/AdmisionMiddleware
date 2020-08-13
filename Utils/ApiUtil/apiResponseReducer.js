@@ -7,6 +7,6 @@ const apiResponse = require('./ApiResponse');
  * @param {* Texto que indica si la operación fue exitosa o fallo} mensaje 
  */
 function apiResponseReducer(response, status, mensaje) {
-    return { ...apiResponse, content: [...apiResponse.content, response], mensaje, status }
+    return { ...apiResponse, content: {...apiResponse.content, response}, mensaje, status }
 }
 module.exports = apiResponseReducer

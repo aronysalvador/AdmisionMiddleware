@@ -8,7 +8,6 @@ const route = new Router();
 
 route.get('/', async (req, res) => {
     try {
-        //000000001101
         const comunasResponse = await get(getConfigComunas())
         const comunasResult = comunasResponse.d.results.map(comuna => {return{"id": comuna.Key_Comunas,
                                                                              "codigo_region": comuna.COD_COMUNA.substring(7,9),

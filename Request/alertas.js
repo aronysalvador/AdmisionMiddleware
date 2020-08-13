@@ -1,4 +1,4 @@
-const getCargos = () => {
+const getAlertas = () => {
   return {
     hostname: "",
     path: "",
@@ -9,4 +9,4 @@ const getCargos = () => {
     },
   };
 };
-module.exports = getCargos;
+module.exports = getAlertas;
