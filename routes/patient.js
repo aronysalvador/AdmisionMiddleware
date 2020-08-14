@@ -11,6 +11,7 @@ const {
 const get = require("../Utils/ApiUtil/http");
 const getCotizacionModel = require("../Models/cotizacionModel");
 const getConfigSinietsro = require("../Request/sinietsro");
+const getConfigCitasFuturas = require("../Request/citas");
 
 const route = new Router();
 
@@ -34,6 +35,7 @@ const getResultSap = (response) => {
  */
 route.get("/isAfiliado", async (req, res) => {
   try {
+
     const rut = req.query.rut.toUpperCase();
     const { year, month } = getLastDate();
     const cotizacion = await get(getConfigCotizacion(rut, `${year}${month}`));
@@ -46,37 +48,49 @@ route.get("/isAfiliado", async (req, res) => {
       rutTrabajador = rut,
       sucursalEmpresa = "",
       direccionEmpresa = "",
-      comunaEmpresa = "";
+      comunaEmpresa = "",
+      BpCreado = false
+
+      const { direcciones, telefonos,numeroBP } = await get(getConfigPaciente(rut));
+      BpCreado = (typeof(numeroBP) != "undefined")
 
     if (isOk(getResultSap(cotizacion))) {
+
       RUT_Pagador = getResultSap(cotizacion)[0].RUT_Pagador;
       const vigencia = await get(getConfigVigencia(RUT_Pagador));
       const resulstVigencia = getResultSap(vigencia);
+
       if (isOk(resulstVigencia)) {
-        isAfiliado =
-          resulstVigencia[0].ESTATUS_EMPRESA === "VIGENTE" ? true : false;
-        Nombre_Empresa = resulstVigencia[0].RAZON_SOCIAL;
-      }
-    }
-    const { direcciones, telefonos } = await get(getConfigPaciente(rut));
-    direccionParticular =
-      Array.isArray(direcciones) && direcciones.length > 0
-        ? `${direcciones[0].calle} ${direcciones[0].numero}, ${direcciones[0].comuna}`
-        : null;
-    telefonoParticular =
-      Array.isArray(telefonos) && telefonos.length > 0
-        ? telefonos[telefonos.length - 1].numeroTelefonico
-        : "";
-    const resulstSucursales = await get(getConfigSucursales(RUT_Pagador));
-    if (isOk(resulstSucursales)) {
-      for (let i = 0; i < resulstSucursales.length; i++) {
-        if (resulstSucursales[i].Cod_Comuna == direcciones[0].codigoComuna) {
-          sucursalEmpresa = resulstSucursales[i].Razon_Social;
-          direccionEmpresa = resulstSucursales[i].Direccion; //Cod_Comuna
-          comunaEmpresa = resulstSucursales[i].Comuna;
+        const {ESTATUS_EMPRESA} = resulstVigencia[0]
+        isAfiliado = ESTATUS_EMPRESA === "VIGENTE" ? true : false;
+        const resulstSucursales = await get(getConfigSucursales(RUT_Pagador));
+        if (isOk(resulstSucursales)) {
+          for (let i = 0; i < resulstSucursales.length; i++) {
+            const {Cod_Comuna,Razon_Social,Direccion,Comuna} = resulstSucursales[i]
+            const {codigoComuna} = direcciones[0]
+            if (Cod_Comuna == codigoComuna) {
+              sucursalEmpresa = Razon_Social;
+              direccionEmpresa = Direccion;
+              comunaEmpresa = Comuna;
+              Nombre_Empresa = Razon_Social;
+            }
+          }
         }
+
       }
     }
+
+    let siniestros =  await get(getConfigSinietsro(numeroBP))
+    let citas = await get(getConfigCitasFuturas(numeroBP))
+    const isDireccion = Array.isArray(direcciones) && direcciones.length > 0
+    
+    if(isOk(direcciones)){
+      const {calle,numero,comuna} = direcciones[0]
+      direccionParticular = (isDireccion)? `${calle} ${numero}, ${comuna}`: null;
+    }
+
+    const isTelefono = Array.isArray(telefonos) && telefonos.length > 0
+    telefonoParticular = isTelefono? telefonos[telefonos.length - 1].numeroTelefonico: "";
     json = getCotizacionModel(
       RUT_Pagador,
       Nombre_Empresa,
@@ -86,15 +100,16 @@ route.get("/isAfiliado", async (req, res) => {
       direccionEmpresa,
       comunaEmpresa,
       direccionParticular,
-      telefonoParticular
-    );
+      telefonoParticular,
+      citas,
+      siniestros,
+      BpCreado
+    )
     const response = apiResponse(json, res.statusCode, "Operacion exitosa");
     res.send(response);
   } catch (error) {
-    console.log(error);
-    res.send(apiResponse([], 500, error));
+    res.send(apiResponse(error, 500, error));
   }
 });
 
-const getDireccion = () => {};
 module.exports = route;
