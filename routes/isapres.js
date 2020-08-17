@@ -1,21 +1,19 @@
-const Router = require("express-promise-router");
-const apiResponse = require("../Utils/ApiUtil/apiResponseReducer");
-const isapresRequest = require("../Request/isapres");
-const http = require("../Utils/ApiUtil/http");
-const isapres = require("../Utils/isapres.json");
+const Router = require('express-promise-router')
+const apiResponse = require('../Utils/ApiUtil/apiResponseReducer')
+const getIsapres = require('../Request/isapres')
+const get = require('../Utils/ApiUtil/http')
+
+
 const route = new Router();
 
-/**
- * Devuelve la lista de isapres en chile
- */
-
-route.get("/", async (req, res) => {
-  try {
-    const response = apiResponse(isapres, 200, "Operacion exitosa");
-    return res.send(response);
-  } catch (error) {
-    const response = apiResponse([], res.status, "Error");
-    return res.send(response);
-  }
-});
+route.get('/', async (req, res) => {
+    try {
+        const isapresResponse = await get(getIsapres())
+        const isapresResult = isapresResponse.map(isapres => {return{"id": isapres.key, "nombre":isapres.value}})
+        const response = apiResponse(isapresResult, res.statusCode, "Operacion exitosa")
+        res.send(response)
+    } catch (error) {
+        res.send(apiResponse([], 500, error))
+    }
+})
 module.exports = route;
