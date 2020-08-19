@@ -96,11 +96,14 @@ route.get("/isAfiliado", async (req, res) => {
       }
     }
 
-    let siniestros = await get(getConfigSinietsro(numeroBP));
+    let siniestrosResponse = await get(getConfigSinietsro(numeroBP));
+
+    /* Solicitar formato*/
+    const siniestros = siniestrosResponse.map(s => {return{"id": s.Id, "descripcion": s.txt_tipo_siniestro, "fecha":s.Fecha,
+                                                  "CUN": "","codigoUnicoNacionalExterno":"","cesa":s.CeSanitario, "interLComercial" : "", 
+                                                  "tipoLey": s.txt_tipo_siniestro, "reposoActivo": false, "hora": s.hora}})
 
 
-
-    //let citas = await get(getConfigCitasFuturas(numeroBP));
     let citas = []
     
     const isDireccion = Array.isArray(direcciones) && direcciones.length > 0;
