@@ -100,8 +100,8 @@ route.get("/isAfiliado", async (req, res) => {
 
     /* Solicitar formato*/
     const siniestros = siniestrosResponse.map(s => {return{"id": s.Id, "descripcion": s.txt_tipo_siniestro, "fecha":s.Fecha,
-                                                  "CUN": "","codigoUnicoNacionalExterno":"","cesa":s.CeSanitario, "interLComercial" : "", 
-                                                  "tipoLey": s.txt_tipo_siniestro, "reposoActivo": false, "hora": s.hora,"paciente":s.NombreDenunciante}})                                         
+                                                  "CUN": "","codigoUnicoNacionalExterno": s.CodigoUnicoNacionalExerno,"cesa":s.CeSanitario, "interLComercial" : s.InterlComercial, 
+                                                  "tipoLey": s.DescTipoLey, "reposoActivo": s.ReposoActivo, "hora": s.hora,"paciente":s.NombreDenunciante}})                                         
 
     let citasResponse = await get(getConfigCitasFuturas(numeroBP));
     let cita = {}
