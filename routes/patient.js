@@ -101,10 +101,14 @@ route.get("/isAfiliado", async (req, res) => {
     /* Solicitar formato*/
     const siniestros = siniestrosResponse.map(s => {return{"id": s.Id, "descripcion": s.txt_tipo_siniestro, "fecha":s.Fecha,
                                                   "CUN": "","codigoUnicoNacionalExterno":"","cesa":s.CeSanitario, "interLComercial" : "", 
-                                                  "tipoLey": s.txt_tipo_siniestro, "reposoActivo": false, "hora": s.hora}})
+                                                  "tipoLey": s.txt_tipo_siniestro, "reposoActivo": false, "hora": s.hora,"paciente":s.NombreDenunciante}})                                         
 
-
-    let citas = []
+    let citasResponse = await get(getConfigCitasFuturas(numeroBP));
+    let cita = {}
+    if(Array.isArray(citasResponse) && citasResponse.length > 0){
+      let {FECHA_CITA,HORA_CITA,LUGAR_CONSULTA,TIPO_ATENCION} = citasResponse[citasResponse.length - 1]
+      cita = {"fecha": FECHA_CITA,"hora": HORA_CITA,"lugar": LUGAR_CONSULTA,"unidad": TIPO_ATENCION}
+    } 
     
     const isDireccion = Array.isArray(direcciones) && direcciones.length > 0;
 
@@ -129,7 +133,7 @@ route.get("/isAfiliado", async (req, res) => {
       comunaEmpresa,
       direccionParticular,
       telefonoParticular,
-      citas,
+      cita,
       siniestros,
       BpCreado,
       apellidoMaterno,
