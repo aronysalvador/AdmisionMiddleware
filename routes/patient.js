@@ -97,7 +97,12 @@ route.get("/isAfiliado", async (req, res) => {
     }
 
     let siniestros = await get(getConfigSinietsro(numeroBP));
-    let citas = await get(getConfigCitasFuturas(numeroBP));
+
+
+
+    //let citas = await get(getConfigCitasFuturas(numeroBP));
+    let citas = []
+    
     const isDireccion = Array.isArray(direcciones) && direcciones.length > 0;
 
     if (isOk(direcciones)) {
@@ -138,6 +143,7 @@ route.get("/isAfiliado", async (req, res) => {
     const response = apiResponse(json, res.statusCode, "Operacion exitosa");
     res.send(response);
   } catch (error) {
+    console.log(error)
     res.send(apiResponse(error, 500, error));
   }
 });
