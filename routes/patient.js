@@ -100,7 +100,7 @@ route.get("/isAfiliado", async (req, res) => {
 
     const siniestros = siniestrosResponse.map(s => {return{"id": s.Id_Siniestro, "descripcion": s.DescSiniestro, "fecha":s.FechaPresentacion,
                                                   "CUN": s.CodigoUnicoNacionalExerno,"codigoUnicoNacionalExterno": s.CodigoUnicoNacionalExerno,"cesa":s.CeSanitario, "interLComercial" : s.InterlComercial, 
-                                                  "tipoLey": s.DescTipoLey, "reposoActivo": s.ReposoActivo, "hora": s.hora,"paciente":s.NombreDenunciante}})                                         
+                                                  "tipoLey": s.DescTipoLey, "reposoActivo": s.ReposoActivo, "hora": s.HoraPresentacion,"paciente":s.NombreDenunciante}})                                         
 
     let citasResponse = await get(getConfigCitasFuturas(numeroBP));
     let cita = {}
