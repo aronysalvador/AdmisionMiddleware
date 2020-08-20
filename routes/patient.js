@@ -98,7 +98,6 @@ route.get("/isAfiliado", async (req, res) => {
 
     let siniestrosResponse = await get(getConfigSinietsro(numeroBP));
 
-    /* Solicitar formato*/
     const siniestros = siniestrosResponse.map(s => {return{"id": s.Id, "descripcion": s.txt_tipo_siniestro, "fecha":s.Fecha,
                                                   "CUN": "","codigoUnicoNacionalExterno": s.CodigoUnicoNacionalExerno,"cesa":s.CeSanitario, "interLComercial" : s.InterlComercial, 
                                                   "tipoLey": s.DescTipoLey, "reposoActivo": s.ReposoActivo, "hora": s.hora,"paciente":s.NombreDenunciante}})                                         
