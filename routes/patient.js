@@ -68,9 +68,15 @@ route.get("/isAfiliado", async (req, res) => {
     BpCreado = typeof numeroBP != "undefined";
 
     if (isOk(getResultSap(cotizacion))) {
+
+      console.log("*************** cotizacion ************************")
+      console.log(cotizacion.d.results)
+      console.log("*************** cotizacion ************************")
+
       RUT_Pagador = getResultSap(cotizacion)[0].RUT_Pagador;
       const vigencia = await get(getConfigVigencia(RUT_Pagador));
       const resulstVigencia = getResultSap(vigencia);
+      Nombre_Empresa = getResultSap(cotizacion)[0].Nombre_Empresa;
 
       if (isOk(resulstVigencia)) {
         const { ESTATUS_EMPRESA } = resulstVigencia[0];
@@ -89,7 +95,7 @@ route.get("/isAfiliado", async (req, res) => {
               sucursalEmpresa = Razon_Social;
               direccionEmpresa = Direccion;
               comunaEmpresa = Comuna;
-              Nombre_Empresa = Razon_Social;
+              //Nombre_Empresa = Razon_Social;
             }
           }
         }
