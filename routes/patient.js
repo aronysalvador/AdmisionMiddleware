@@ -1,17 +1,18 @@
-const Router = require("express-promise-router");
-const apiResponse = require("../Utils/ApiUtil/apiResponseObjectReducer");
-const getLastDate = require("../Utils/DateTimeUtil/DateTime");
-const getConfigCotizacion = require("../Request/cotizacion");
-const getConfigPaciente = require("../Request/paciente");
+const Router = require("express-promise-router")
+const apiResponse = require("../Utils/ApiUtil/apiResponseObjectReducer")
+const getLastDate = require("../Utils/DateTimeUtil/DateTime")
+const getConfigCotizacion = require("../Request/cotizacion")
+const getConfigPaciente = require("../Request/paciente")
 const {
   getConfigEmpresa,
   getConfigVigencia,
   getConfigSucursales,
-} = require("../Request/empresa");
-const get = require("../Utils/ApiUtil/http");
-const getCotizacionModel = require("../Models/cotizacionModel");
-const getConfigSinietsro = require("../Request/sinietsro");
-const getConfigCitasFuturas = require("../Request/citas");
+} = require("../Request/empresa")
+const get = require("../Utils/ApiUtil/http")
+const getCotizacionModel = require("../Models/cotizacionModel")
+const getConfigSinietsro = require("../Request/sinietsro")
+const getConfigCitasFuturas = require("../Request/citas")
+const {getDate,getHora} = require("../Utils/DateUtil")
 
 const route = new Router();
 
@@ -68,11 +69,6 @@ route.get("/isAfiliado", async (req, res) => {
     BpCreado = typeof numeroBP != "undefined";
 
     if (isOk(getResultSap(cotizacion))) {
-
-      console.log("*************** cotizacion ************************")
-      console.log(cotizacion.d.results)
-      console.log("*************** cotizacion ************************")
-
       RUT_Pagador = getResultSap(cotizacion)[0].RUT_Pagador;
       const vigencia = await get(getConfigVigencia(RUT_Pagador));
       const resulstVigencia = getResultSap(vigencia);
@@ -104,9 +100,9 @@ route.get("/isAfiliado", async (req, res) => {
 
     let siniestrosResponse = await get(getConfigSinietsro(numeroBP));
 
-    const siniestros = siniestrosResponse.map(s => {return{"id": s.Id_Siniestro, "descripcion": s.DescSiniestro, "fecha":s.FechaPresentacion,
+    const siniestros = siniestrosResponse.map(s => {return{"id": s.Id_Siniestro, "descripcion": s.DescSiniestro, "fecha": getDate(s.FechaPresentacion),
                                                   "CUN": s.CodigoUnicoNacionalExerno,"codigoUnicoNacionalExterno": s.CodigoUnicoNacionalExerno,"cesa":s.CeSanitario, "interLComercial" : s.InterlComercial, 
-                                                  "tipoLey": s.DescTipoLey, "reposoActivo": s.ReposoActivo, "hora": s.HoraPresentacion,"paciente":s.NombreDenunciante}})                                         
+                                                  "tipoLey": s.DescTipoLey, "reposoActivo": s.ReposoActivo, "hora": getHora(s.HoraPresentacion),"paciente":s.NombreDenunciante}})                                         
 
     let citasResponse = await get(getConfigCitasFuturas(numeroBP));
     let cita = {}
