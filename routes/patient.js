@@ -12,7 +12,7 @@ const get = require("../Utils/ApiUtil/http")
 const getCotizacionModel = require("../Models/cotizacionModel")
 const getConfigSinietsro = require("../Request/sinietsro")
 const getConfigCitasFuturas = require("../Request/citas")
-const {getDate,getHora} = require("../Utils/DateUtil")
+const {getDate,getHora,getDateObj} = require("../Utils/DateUtil")
 
 const route = new Router();
 
@@ -91,7 +91,6 @@ route.get("/isAfiliado", async (req, res) => {
               sucursalEmpresa = Razon_Social;
               direccionEmpresa = Direccion;
               comunaEmpresa = Comuna;
-              //Nombre_Empresa = Razon_Social;
             }
           }
         }
@@ -100,7 +99,7 @@ route.get("/isAfiliado", async (req, res) => {
 
     let siniestrosResponse = await get(getConfigSinietsro(numeroBP));
 
-    const siniestros = siniestrosResponse.map(s => {return{"id": s.Id_Siniestro, "descripcion": s.DescSiniestro, "fecha": getDate(s.FechaPresentacion),
+    const siniestros = siniestrosResponse.map(s => {return{"id": s.Id_Siniestro, "descripcion": s.DescSiniestro, "fecha": getDate(s.FechaPresentacion), "fecha_date" : getDateObj(s.FechaPresentacion),
                                                   "CUN": s.CodigoUnicoNacionalExerno,"codigoUnicoNacionalExterno": s.CodigoUnicoNacionalExerno,"cesa":s.CeSanitario, "interLComercial" : s.InterlComercial, 
                                                   "tipoLey": s.DescTipoLey, "reposoActivo": s.ReposoActivo, "hora": getHora(s.HoraPresentacion),"paciente":s.NombreDenunciante}})                                         
 

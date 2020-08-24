@@ -3,7 +3,7 @@ monthArray[0] = "En";
 monthArray[1] = "Febr";
 monthArray[2] = "Mzo";
 monthArray[3] = "Abr";
-monthArray[4] = "My";
+monthArray[4] = "Mayo";
 monthArray[5] = "Jun";
 monthArray[6] = "Jul";
 monthArray[7] = "Ag";
@@ -23,6 +23,18 @@ const getDate = (dateString) => {
   return dateString
 }
 
+const getDateObj = (dateString) => {
+  if(typeof dateString === 'string' && dateString.length === 8){
+    let year = dateString.substring(0,4)
+    let month = dateString.substring(4,6)
+    let day = dateString.substring(6,8)
+    date = new Date(year,(parseInt(month) - 1),day)
+    return date
+  }
+  return dateString
+}
+
+
 const getHora = (hourString) =>{
   if(typeof hourString === 'string' && hourString.length === 6){
     let hour = hourString.substring(0,2)
@@ -32,4 +44,4 @@ const getHora = (hourString) =>{
   return hourString
 }
 
-module.exports = {getDate,getHora};
+module.exports = {getDate,getHora,getDateObj};
