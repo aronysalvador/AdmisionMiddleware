@@ -21,8 +21,8 @@ route.get("/", async (req, res) => {
 
 const formatDatos = (datos) => {
   return (datosFormated = datos.map(
-    ({ idTipoIngreso, descripcionTipoIngreso }) => {
-      return { id: idTipoIngreso, nombre: descripcionTipoIngreso };
+    ({ key, value }) => {
+      return { id: key, nombre: value };
     }
   ));
 };
