@@ -6,4 +6,9 @@ const httpPost = async (config, body) => {
   return { data, state };
 };
 
-module.exports = { httpPost };
+const httpGetRequest = async (config) => {
+  const { hostname, path } = config;
+  const { data } = await Axios.get(`${hostname}${path}`, {});
+  return data;
+};
+module.exports = { httpPost, httpGetRequest };
