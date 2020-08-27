@@ -34,6 +34,7 @@ const mapearObjetoSiniestro = (id, episodioID, datos) => {
     testigos,
     responsable,
     fechaHoraResponsable,
+    lugarReferenciaSiniestro,
   } = datos;
 
   const direccionSiniestro = extraerDatosDireccion(terms);
@@ -65,7 +66,7 @@ const mapearObjetoSiniestro = (id, episodioID, datos) => {
       localidad: direccionSiniestro.comuna,
       region: extraerRegionDireccion(direccionSiniestro.comuna),
       lugar_accidente: "9", //No especificado, //"9",
-      sitio_especifico_accidente: "", //"calle", DUDA
+      sitio_especifico_accidente: String(lugarReferenciaSiniestro), //"calle", DUDA
       que_hacia_trabajador: descripcionAccidente, //"caminando a visitar cliente", DUDA
       mecanismo_accidente: "92",
       que_paso_accidente: concatenarRelatoToSAP(
