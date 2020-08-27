@@ -30,4 +30,19 @@ const getConfigSucursales = (rut) => {
       }
   }
 }
-module.exports = {getConfigEmpresa,getConfigVigencia,getConfigSucursales}
+
+const getConfigSucursalesVigentes = (rut) => {
+  return {
+    hostname: `https://api.achs.cl`,
+    path: `/siniestros/v1/SucursalesVigentesXEmpresa?RUT_Empresa=${rut}`,
+    headers: { headers: {
+        'Ocp-Apim-Subscription-Key': '2b4beff42a5b433cad5bb1bc67b81fc3'
+    }
+      }
+  }
+}
+
+
+
+
+module.exports = {getConfigEmpresa,getConfigVigencia,getConfigSucursales,getConfigSucursalesVigentes}

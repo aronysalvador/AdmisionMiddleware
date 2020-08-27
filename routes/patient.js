@@ -6,7 +6,7 @@ const getConfigPaciente = require("../Request/paciente")
 const {
   getConfigEmpresa,
   getConfigVigencia,
-  getConfigSucursales,
+  getConfigSucursalesVigentes,
 } = require("../Request/empresa")
 const get = require("../Utils/ApiUtil/http")
 const getCotizacionModel = require("../Models/cotizacionModel")
@@ -30,11 +30,41 @@ const getResultSap = (response) => {
   return [];
 };
 
-/**
- *  Recupera información del paciente, indicando si el trabajador esta afiliado a la ACHS
- *  Se considera afiliados a los trabajadores que poseen cotizaciones 2 meses anteriores al periodo actual
- */
-route.get("/isAfiliado", async (req, res) => {
+route.get('/validate', async (req, res) => {
+  try {
+    let {rutEmpresa, BpSucursal, rutPaciente} = req.query;
+    let Empresa = "NoAfiliada", Sucursal = "NoVigente", CotizacionesPaciente = "false"
+    rutEmpresa = (typeof rutEmpresa === 'string')? rutEmpresa.toUpperCase() : ""
+    //validar empresa
+    const vigenciaEmpresa = await get(getConfigVigencia(rutEmpresa))
+    const vigenciaEmpresaFormateada = getResultSap(vigenciaEmpresa)
+    const {ESTATUS_EMPRESA} = vigenciaEmpresaFormateada[0]
+    if(ESTATUS_EMPRESA === 'VIGENTE')
+      Empresa = "Afiliada" 
+    //Obtener sucursales vigentes
+    const sucursalesVigentes = await get(getConfigSucursalesVigentes(rutEmpresa))
+    const sucursalVigente = sucursalesVigentes.find(({idSucursal}) => idSucursal == BpSucursal);
+    if(typeof sucursalVigente === 'object')
+      Sucursal = "Vigente"
+    //Validar las cotizaciones
+    const { year, month } = getLastDate();
+    const cotizacion = await get(getConfigCotizacion(rutPaciente, `${year}${month}`));
+    if (isOk(getResultSap(cotizacion))) {
+      const RUT_Pagador = getResultSap(cotizacion)[0].RUT_Pagador;
+      if(RUT_Pagador === rutEmpresa)
+        CotizacionesPaciente = true
+    }
+    const json = {Empresa, Sucursal, CotizacionesPaciente}
+    const response = apiResponse(json, res.statusCode, "Operacion exitosa");
+    res.send(response);
+  } catch (error) {
+      console.log(error)
+      res.send(apiResponse([], 500, error))
+  }
+})
+
+
+route.get("/getPaciente", async (req, res) => {
   try {
     const rut = req.query.rut.toUpperCase();
     const { year, month } = getLastDate();
@@ -44,7 +74,6 @@ route.get("/isAfiliado", async (req, res) => {
       Nombre_Empresa = "",
       direccionParticular = "",
       telefonoParticular = "",
-      isAfiliado = false,
       rutTrabajador = rut,
       sucursalEmpresa = "",
       direccionEmpresa = "",
@@ -52,49 +81,13 @@ route.get("/isAfiliado", async (req, res) => {
       BpCreado = false;
 
     const {
-      direcciones,
-      telefonos,
-      numeroBP,
-      apellidoMaterno,
-      apellidoPaterno,
-      nombre,
-      fechaNacimiento,
-      masculino,
-      femenino,
-      nacionalidad,
-      lugarNacimiento,
-      estadoCivil,
-      direcciones: { direccionParticular2 },
+      direcciones,telefonos,numeroBP,apellidoMaterno,apellidoPaterno,nombre,fechaNacimiento,masculino,femenino,nacionalidad,lugarNacimiento,estadoCivil,direcciones: { direccionParticular2 },
     } = await get(getConfigPaciente(rut));
+
     BpCreado = typeof numeroBP != "undefined";
 
     if (isOk(getResultSap(cotizacion))) {
       RUT_Pagador = getResultSap(cotizacion)[0].RUT_Pagador;
-      const vigencia = await get(getConfigVigencia(RUT_Pagador));
-      const resulstVigencia = getResultSap(vigencia);
-      Nombre_Empresa = getResultSap(cotizacion)[0].Nombre_Empresa;
-
-      if (isOk(resulstVigencia)) {
-        const { ESTATUS_EMPRESA } = resulstVigencia[0];
-        isAfiliado = ESTATUS_EMPRESA === "VIGENTE" ? true : false;
-        const resulstSucursales = await get(getConfigSucursales(RUT_Pagador));
-        if (isOk(resulstSucursales)) {
-          for (let i = 0; i < resulstSucursales.length; i++) {
-            const {
-              Cod_Comuna,
-              Razon_Social,
-              Direccion,
-              Comuna,
-            } = resulstSucursales[i];
-            const { codigoComuna } = direcciones[0];
-            if (Cod_Comuna == codigoComuna) {
-              sucursalEmpresa = Razon_Social;
-              direccionEmpresa = Direccion;
-              comunaEmpresa = Comuna;
-            }
-          }
-        }
-      }
     }
 
     let siniestrosResponse = await get(getConfigSinietsro(numeroBP));
@@ -127,7 +120,6 @@ route.get("/isAfiliado", async (req, res) => {
       RUT_Pagador,
       Nombre_Empresa,
       rutTrabajador,
-      isAfiliado,
       sucursalEmpresa,
       direccionEmpresa,
       comunaEmpresa,

@@ -5,13 +5,11 @@
  * @param {*} rutPagador
  * @param {*} nombreEmpresa
  * @param {*} rutTrabajador
- * @param {*} isAfiliado
  */
 const getCotizacionModel = (
   RutPagador,
   NombreEmpresa,
   RutTrabajador,
-  IsAfiliado,
   SucursalEmpresa,
   DireccionEmpresa,
   comunaEmpresa,
@@ -36,7 +34,6 @@ const getCotizacionModel = (
     NombreEmpresa,
     RutPagador,
     RutTrabajador,
-    IsAfiliado,
     SucursalEmpresa,
     DireccionEmpresa,
     comunaEmpresa,
