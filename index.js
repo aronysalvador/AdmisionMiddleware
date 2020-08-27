@@ -21,6 +21,7 @@ const sucursales = require("./routes/sucurales");
 const profesiones = require("./routes/profesiones");
 const alertas = require("./routes/alertas");
 const integracionSap = require("./routes/integracionSAP");
+const aliasSap = require("./routes/aliasSap");
 const dotenv = require("dotenv");
 dotenv.config();
 const app = express();
@@ -45,6 +46,7 @@ app.use("/api/categoriaOcupacional", categoriaOcupacional);
 app.use("/api/profesiones", profesiones);
 app.use("/api/alertas", alertas);
 app.use("/api/integracionsap", integracionSap);
+app.use("/api/getAliasSapByEmail", aliasSap);
 
 const port = 80;
 app.listen(port, () => {
