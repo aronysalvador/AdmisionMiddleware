@@ -3,7 +3,6 @@ const apiResponse = require('../Utils/ApiUtil/apiResponseReducer')
 const getConfigAliasSap = require('../Request/aliasSap')
 const get = require('../Utils/ApiUtil/http')
 
-
 const route = new Router();
 
 route.get('/', async (req, res) => {
