@@ -1,13 +1,13 @@
 const insertarAdmision = () => {
   return {
-    hostname: `http://localhost:3001`,
+    hostname: `https://wa-desa-bd.azurewebsites.net`,
     path: `/api/admisiondigital `,
   };
 };
 
 const getAdmisionByID = (id) => {
   return {
-    hostname: `http://localhost:3001`,
+    hostname: `https://wa-desa-bd.azurewebsites.net`,
     path: `/api/admisiondigital/${id}`,
   };
 };
