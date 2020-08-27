@@ -20,6 +20,7 @@ const categoriaOcupacional = require("./routes/categoriaOcupacional");
 const sucursales = require("./routes/sucurales");
 const profesiones = require("./routes/profesiones");
 const alertas = require("./routes/alertas");
+const integracionSap = require("./routes/integracionSAP");
 const app = express();
 
 var cors = require("cors");
@@ -41,7 +42,7 @@ app.use("/api/tipoRemuneracion", tipoRemuneracion);
 app.use("/api/categoriaOcupacional", categoriaOcupacional);
 app.use("/api/profesiones", profesiones);
 app.use("/api/alertas", alertas);
-
+app.use("/api/integracionsap", integracionSap);
 const port = 80;
 app.listen(port, () => {
   console.log(`Listen on port ${port}`);

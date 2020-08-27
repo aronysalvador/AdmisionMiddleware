@@ -1,4 +1,4 @@
-const comunas = require("../Utils/comunas.json");
+const comunas = require("./comunas.json");
 
 function extraerNumeroDireccion(direccionParticular) {
   if (direccionParticular) {
@@ -62,8 +62,12 @@ function formatearFechaSiniestro(fechaHoraSiniestro) {
 
 function formatearHoraSiniestro(fechaHoraSiniestro) {
   const { horas, minutos } = fechaHoraSiniestro;
-  const horaSiniestro = `${horas}:${
-    minutos === 0 ? "00" : minutos < 10 ? "0" + String(minutos) : minutos
+  const horaSiniestro = `${horas < 10 ? `0${String(horas)}` : String(horas)}:${
+    minutos === 0
+      ? "00".trim()
+      : minutos < 10
+      ? ("0" + String(minutos)).trim()
+      : String(minutos).trim()
   }:00`;
   return horaSiniestro;
 }
