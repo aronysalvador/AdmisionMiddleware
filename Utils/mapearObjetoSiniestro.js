@@ -5,6 +5,7 @@ const {
   extraerRegionDireccion,
   formatearTelefono,
   formatearFecha,
+  concatenarRelatoToSAP,
 } = require("../Utils/extraccionData");
 
 const mapearObjetoSiniestro = (id, episodioID, datos) => {
@@ -32,6 +33,7 @@ const mapearObjetoSiniestro = (id, episodioID, datos) => {
     relatoAccidente,
     testigos,
     responsable,
+    fechaHoraResponsable,
   } = datos;
 
   const direccionSiniestro = extraerDatosDireccion(terms);
@@ -66,7 +68,12 @@ const mapearObjetoSiniestro = (id, episodioID, datos) => {
       sitio_especifico_accidente: "", //"calle", DUDA
       que_hacia_trabajador: descripcionAccidente, //"caminando a visitar cliente", DUDA
       mecanismo_accidente: "92",
-      que_paso_accidente: "", //DUDA
+      que_paso_accidente: concatenarRelatoToSAP(
+        relatoAccidente,
+        testigos,
+        responsable,
+        fechaHoraResponsable
+      ), //DUDA
       agente_accidente: "700",
       desarrollaba_trabajo_habitual: String(
         desarrollarTrabajoHabitual

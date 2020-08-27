@@ -8,6 +8,7 @@ function extraerNumeroDireccion(direccionParticular) {
   }
   return "";
 }
+
 function extraerDatosDireccion(direccion) {
   if (direccion) {
     const direccionSiniestro = direccion.map((x) => x.value);
@@ -75,6 +76,50 @@ function formatearHoraSiniestro(fechaHoraSiniestro) {
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
+
+/**
+ * Formatear fecha y hora responsable
+ * @param {*} fechaHoraResponsable
+ */
+function formatearFechaHoraResponsable(fechaHoraResponsable) {
+  const { days, month, year, horas, minutos } = fechaHoraResponsable;
+  const fechaResponsable = `${days < 10 ? `0${String(days)}` : String(days)}.${
+    month < 10 ? `0${String(month)}` : String(month)
+  }.${String(year)}`;
+  const horaResponsable = `${horas < 10 ? `0${String(horas)}` : horas}:${
+    minutos < 10 ? `0${String(minutos)}` : String(minutos)
+  }:00`;
+
+  return { fechaResponsable, horaResponsable };
+}
+
+function concatenarRelatoToSAP(
+  relato,
+  testigo,
+  responsable,
+  fechaHoraResponsable
+) {
+  //"Resumen relato" + la información de testigo  + la información de responsable
+  let datosTestigo = "";
+  let datosResponsable = "";
+
+  const { fechaResponsable, horaResponsable } = formatearFechaHoraResponsable(
+    fechaHoraResponsable
+  );
+
+  //Sí tiene testigos
+  if (Object.keys(testigo) > 0)
+    datosTestigo = `Tiene testigos de su accidente, el nombre y el cargo es ${testigo.nombre} ${testigo.cargo}`;
+  else datosTestigo = "No tiene testigos de su accidente";
+
+  //Sí tiene responsables
+  if (Object.keys(responsable))
+    datosResponsable = `Avisó a la empresa, el nombre y cargo (relación) de la persona es ${responsable.nombre}, ${responsable.cargo}, fecha y hora en que aviso a su empresa sobre el accidente: ${fechaResponsable} a las ${horaResponsable}`;
+  else datosResponsable = "No avisó a su empresa";
+
+  const relatoCompleto = `${relato}, ${datosTestigo}, ${datosResponsable}`;
+  return relatoCompleto;
+}
 module.exports = {
   extraerNumeroDireccion,
   extraerRegionDireccion,
@@ -84,4 +129,5 @@ module.exports = {
   formatearHoraSiniestro,
   extraerDatosDireccion,
   sleep,
+  concatenarRelatoToSAP,
 };
