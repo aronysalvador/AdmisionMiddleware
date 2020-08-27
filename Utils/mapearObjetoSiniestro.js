@@ -29,6 +29,9 @@ const mapearObjetoSiniestro = (id, episodioID, datos) => {
     afpForm,
     profesionForm,
     cargoForm,
+    relatoAccidente,
+    testigos,
+    responsable,
   } = datos;
 
   const direccionSiniestro = extraerDatosDireccion(terms);
