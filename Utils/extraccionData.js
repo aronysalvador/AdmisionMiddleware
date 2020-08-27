@@ -108,7 +108,7 @@ function concatenarRelatoToSAP(
   );
 
   //Sí tiene testigos
-  if (Object.keys(testigo) > 0)
+  if (Object.keys(testigo))
     datosTestigo = `Tiene testigos de su accidente, el nombre y el cargo es ${testigo.nombre} ${testigo.cargo}`;
   else datosTestigo = "No tiene testigos de su accidente";
 
