@@ -1,0 +1,2204 @@
+[
+  {
+    "id": "283423611034738451",
+    "codigo_region": "01",
+    "codigo_comuna": "101",
+    "nombre": "IQUIQUE"
+  },
+  {
+    "id": "283423611034738452",
+    "codigo_region": "01",
+    "codigo_comuna": "107",
+    "nombre": "ALTO HOSPICIO"
+  },
+  {
+    "id": "283423611034738453",
+    "codigo_region": "01",
+    "codigo_comuna": "401",
+    "nombre": "POZO ALMONTE"
+  },
+  {
+    "id": "283423611034738454",
+    "codigo_region": "01",
+    "codigo_comuna": "402",
+    "nombre": "CAMIÑA"
+  },
+  {
+    "id": "283423611034738455",
+    "codigo_region": "01",
+    "codigo_comuna": "403",
+    "nombre": "COLCHANE"
+  },
+  {
+    "id": "283423611034738456",
+    "codigo_region": "01",
+    "codigo_comuna": "404",
+    "nombre": "HUARA"
+  },
+  {
+    "id": "283423611034738457",
+    "codigo_region": "01",
+    "codigo_comuna": "405",
+    "nombre": "PICA"
+  },
+  {
+    "id": "283423611034738458",
+    "codigo_region": "02",
+    "codigo_comuna": "101",
+    "nombre": "ANTOFAGASTA"
+  },
+  {
+    "id": "283423611034738459",
+    "codigo_region": "02",
+    "codigo_comuna": "102",
+    "nombre": "MEJILLONES"
+  },
+  {
+    "id": "2834236110347384510",
+    "codigo_region": "02",
+    "codigo_comuna": "103",
+    "nombre": "SIERRA GORDA"
+  },
+  {
+    "id": "2834236110347384511",
+    "codigo_region": "02",
+    "codigo_comuna": "104",
+    "nombre": "TALTAL"
+  },
+  {
+    "id": "2834236110347384512",
+    "codigo_region": "02",
+    "codigo_comuna": "201",
+    "nombre": "CALAMA"
+  },
+  {
+    "id": "2834236110347384513",
+    "codigo_region": "02",
+    "codigo_comuna": "202",
+    "nombre": "OLLAGÜE"
+  },
+  {
+    "id": "2834236110347384514",
+    "codigo_region": "02",
+    "codigo_comuna": "203",
+    "nombre": "SAN PEDRO DE ATACAMA"
+  },
+  {
+    "id": "2834236110347384515",
+    "codigo_region": "02",
+    "codigo_comuna": "301",
+    "nombre": "TOCOPILLA"
+  },
+  {
+    "id": "2834236110347384516",
+    "codigo_region": "02",
+    "codigo_comuna": "302",
+    "nombre": "MARIA ELENA"
+  },
+  {
+    "id": "2834236110347384517",
+    "codigo_region": "03",
+    "codigo_comuna": "101",
+    "nombre": "COPIAPO"
+  },
+  {
+    "id": "2834236110347384518",
+    "codigo_region": "03",
+    "codigo_comuna": "102",
+    "nombre": "CALDERA"
+  },
+  {
+    "id": "2834236110347384519",
+    "codigo_region": "03",
+    "codigo_comuna": "103",
+    "nombre": "TIERRA AMARILLA"
+  },
+  {
+    "id": "2834236110347384520",
+    "codigo_region": "03",
+    "codigo_comuna": "201",
+    "nombre": "CHAÑARAL"
+  },
+  {
+    "id": "2834236110347384521",
+    "codigo_region": "03",
+    "codigo_comuna": "202",
+    "nombre": "DIEGO DE ALMAGRO"
+  },
+  {
+    "id": "2834236110347384522",
+    "codigo_region": "03",
+    "codigo_comuna": "301",
+    "nombre": "VALLENAR"
+  },
+  {
+    "id": "2834236110347384523",
+    "codigo_region": "03",
+    "codigo_comuna": "302",
+    "nombre": "ALTO DEL CARMEN"
+  },
+  {
+    "id": "2834236110347384524",
+    "codigo_region": "03",
+    "codigo_comuna": "303",
+    "nombre": "FREIRINA"
+  },
+  {
+    "id": "2834236110347384525",
+    "codigo_region": "03",
+    "codigo_comuna": "304",
+    "nombre": "HUASCO"
+  },
+  {
+    "id": "2834236110347384526",
+    "codigo_region": "04",
+    "codigo_comuna": "101",
+    "nombre": "LA SERENA"
+  },
+  {
+    "id": "2834236110347384527",
+    "codigo_region": "04",
+    "codigo_comuna": "102",
+    "nombre": "COQUIMBO"
+  },
+  {
+    "id": "2834236110347384528",
+    "codigo_region": "04",
+    "codigo_comuna": "103",
+    "nombre": "ANDACOLLO"
+  },
+  {
+    "id": "2834236110347384529",
+    "codigo_region": "04",
+    "codigo_comuna": "104",
+    "nombre": "LA HIGUERA"
+  },
+  {
+    "id": "2834236110347384530",
+    "codigo_region": "04",
+    "codigo_comuna": "105",
+    "nombre": "PAIGUANO"
+  },
+  {
+    "id": "2834236110347384531",
+    "codigo_region": "04",
+    "codigo_comuna": "106",
+    "nombre": "VICUÑA"
+  },
+  {
+    "id": "2834236110347384532",
+    "codigo_region": "04",
+    "codigo_comuna": "201",
+    "nombre": "ILLAPEL"
+  },
+  {
+    "id": "2834236110347384533",
+    "codigo_region": "04",
+    "codigo_comuna": "202",
+    "nombre": "CANELA"
+  },
+  {
+    "id": "2834236110347384534",
+    "codigo_region": "04",
+    "codigo_comuna": "203",
+    "nombre": "LOS VILOS"
+  },
+  {
+    "id": "2834236110347384535",
+    "codigo_region": "04",
+    "codigo_comuna": "204",
+    "nombre": "SALAMANCA"
+  },
+  {
+    "id": "2834236110347384536",
+    "codigo_region": "04",
+    "codigo_comuna": "301",
+    "nombre": "OVALLE"
+  },
+  {
+    "id": "2834236110347384537",
+    "codigo_region": "04",
+    "codigo_comuna": "302",
+    "nombre": "COMBARBALA"
+  },
+  {
+    "id": "2834236110347384538",
+    "codigo_region": "04",
+    "codigo_comuna": "303",
+    "nombre": "MONTE PATRIA"
+  },
+  {
+    "id": "2834236110347384539",
+    "codigo_region": "04",
+    "codigo_comuna": "304",
+    "nombre": "PUNITAQUI"
+  },
+  {
+    "id": "2834236110347384540",
+    "codigo_region": "04",
+    "codigo_comuna": "305",
+    "nombre": "RIO HURTADO"
+  },
+  {
+    "id": "2834236110347384541",
+    "codigo_region": "05",
+    "codigo_comuna": "101",
+    "nombre": "VALPARAISO"
+  },
+  {
+    "id": "2834236110347384542",
+    "codigo_region": "05",
+    "codigo_comuna": "102",
+    "nombre": "CASABLANCA"
+  },
+  {
+    "id": "2834236110347384543",
+    "codigo_region": "05",
+    "codigo_comuna": "103",
+    "nombre": "CONCON"
+  },
+  {
+    "id": "2834236110347384544",
+    "codigo_region": "05",
+    "codigo_comuna": "104",
+    "nombre": "JUAN FERNANDEZ"
+  },
+  {
+    "id": "2834236110347384545",
+    "codigo_region": "05",
+    "codigo_comuna": "105",
+    "nombre": "PUCHUNCAVI"
+  },
+  {
+    "id": "2834236110347384546",
+    "codigo_region": "05",
+    "codigo_comuna": "107",
+    "nombre": "QUINTERO"
+  },
+  {
+    "id": "2834236110347384547",
+    "codigo_region": "05",
+    "codigo_comuna": "109",
+    "nombre": "VIÑA DEL MAR"
+  },
+  {
+    "id": "2834236110347384548",
+    "codigo_region": "05",
+    "codigo_comuna": "201",
+    "nombre": "ISLA DE PASCUA"
+  },
+  {
+    "id": "2834236110347384549",
+    "codigo_region": "05",
+    "codigo_comuna": "301",
+    "nombre": "LOS ANDES"
+  },
+  {
+    "id": "2834236110347384550",
+    "codigo_region": "05",
+    "codigo_comuna": "302",
+    "nombre": "CALLE LARGA"
+  },
+  {
+    "id": "2834236110347384551",
+    "codigo_region": "05",
+    "codigo_comuna": "303",
+    "nombre": "RINCONADA"
+  },
+  {
+    "id": "2834236110347384552",
+    "codigo_region": "05",
+    "codigo_comuna": "304",
+    "nombre": "SAN ESTEBAN"
+  },
+  {
+    "id": "2834236110347384553",
+    "codigo_region": "05",
+    "codigo_comuna": "401",
+    "nombre": "LA LIGUA"
+  },
+  {
+    "id": "2834236110347384554",
+    "codigo_region": "05",
+    "codigo_comuna": "402",
+    "nombre": "CABILDO"
+  },
+  {
+    "id": "2834236110347384555",
+    "codigo_region": "05",
+    "codigo_comuna": "403",
+    "nombre": "PAPUDO"
+  },
+  {
+    "id": "2834236110347384556",
+    "codigo_region": "05",
+    "codigo_comuna": "404",
+    "nombre": "PETORCA"
+  },
+  {
+    "id": "2834236110347384557",
+    "codigo_region": "05",
+    "codigo_comuna": "405",
+    "nombre": "ZAPALLAR"
+  },
+  {
+    "id": "2834236110347384558",
+    "codigo_region": "05",
+    "codigo_comuna": "501",
+    "nombre": "QUILLOTA"
+  },
+  {
+    "id": "2834236110347384559",
+    "codigo_region": "05",
+    "codigo_comuna": "502",
+    "nombre": "CALERA"
+  },
+  {
+    "id": "2834236110347384560",
+    "codigo_region": "05",
+    "codigo_comuna": "503",
+    "nombre": "HIJUELAS"
+  },
+  {
+    "id": "2834236110347384561",
+    "codigo_region": "05",
+    "codigo_comuna": "504",
+    "nombre": "LA CRUZ"
+  },
+  {
+    "id": "2834236110347384562",
+    "codigo_region": "05",
+    "codigo_comuna": "506",
+    "nombre": "NOGALES"
+  },
+  {
+    "id": "2834236110347384563",
+    "codigo_region": "05",
+    "codigo_comuna": "601",
+    "nombre": "SAN ANTONIO"
+  },
+  {
+    "id": "2834236110347384564",
+    "codigo_region": "05",
+    "codigo_comuna": "602",
+    "nombre": "ALGARROBO"
+  },
+  {
+    "id": "2834236110347384565",
+    "codigo_region": "05",
+    "codigo_comuna": "603",
+    "nombre": "CARTAGENA"
+  },
+  {
+    "id": "2834236110347384566",
+    "codigo_region": "05",
+    "codigo_comuna": "604",
+    "nombre": "EL QUISCO"
+  },
+  {
+    "id": "2834236110347384567",
+    "codigo_region": "05",
+    "codigo_comuna": "605",
+    "nombre": "EL TABO"
+  },
+  {
+    "id": "2834236110347384568",
+    "codigo_region": "05",
+    "codigo_comuna": "606",
+    "nombre": "SANTO DOMINGO"
+  },
+  {
+    "id": "2834236110347384569",
+    "codigo_region": "05",
+    "codigo_comuna": "701",
+    "nombre": "SAN FELIPE"
+  },
+  {
+    "id": "2834236110347384570",
+    "codigo_region": "05",
+    "codigo_comuna": "702",
+    "nombre": "CATEMU"
+  },
+  {
+    "id": "2834236110347384571",
+    "codigo_region": "05",
+    "codigo_comuna": "703",
+    "nombre": "LLAILLAY"
+  },
+  {
+    "id": "2834236110347384572",
+    "codigo_region": "05",
+    "codigo_comuna": "704",
+    "nombre": "PANQUEHUE"
+  },
+  {
+    "id": "2834236110347384573",
+    "codigo_region": "05",
+    "codigo_comuna": "705",
+    "nombre": "PUTAENDO"
+  },
+  {
+    "id": "2834236110347384574",
+    "codigo_region": "05",
+    "codigo_comuna": "706",
+    "nombre": "SANTA MARIA"
+  },
+  {
+    "id": "2834236110347384575",
+    "codigo_region": "05",
+    "codigo_comuna": "801",
+    "nombre": "QUILPUE"
+  },
+  {
+    "id": "2834236110347384576",
+    "codigo_region": "05",
+    "codigo_comuna": "802",
+    "nombre": "LIMACHE"
+  },
+  {
+    "id": "2834236110347384577",
+    "codigo_region": "05",
+    "codigo_comuna": "803",
+    "nombre": "OLMUE"
+  },
+  {
+    "id": "2834236110347384578",
+    "codigo_region": "05",
+    "codigo_comuna": "804",
+    "nombre": "VILLA ALEMANA"
+  },
+  {
+    "id": "2834236110347384579",
+    "codigo_region": "06",
+    "codigo_comuna": "101",
+    "nombre": "RANCAGUA"
+  },
+  {
+    "id": "2834236110347384580",
+    "codigo_region": "06",
+    "codigo_comuna": "102",
+    "nombre": "CODEGUA"
+  },
+  {
+    "id": "2834236110347384581",
+    "codigo_region": "06",
+    "codigo_comuna": "103",
+    "nombre": "COINCO"
+  },
+  {
+    "id": "2834236110347384582",
+    "codigo_region": "06",
+    "codigo_comuna": "104",
+    "nombre": "COLTAUCO"
+  },
+  {
+    "id": "2834236110347384583",
+    "codigo_region": "06",
+    "codigo_comuna": "105",
+    "nombre": "DOÑIHUE"
+  },
+  {
+    "id": "2834236110347384584",
+    "codigo_region": "06",
+    "codigo_comuna": "106",
+    "nombre": "GRANEROS"
+  },
+  {
+    "id": "2834236110347384585",
+    "codigo_region": "06",
+    "codigo_comuna": "107",
+    "nombre": "LAS CABRAS"
+  },
+  {
+    "id": "2834236110347384586",
+    "codigo_region": "06",
+    "codigo_comuna": "108",
+    "nombre": "MACHALI"
+  },
+  {
+    "id": "2834236110347384587",
+    "codigo_region": "06",
+    "codigo_comuna": "109",
+    "nombre": "MALLOA"
+  },
+  {
+    "id": "2834236110347384588",
+    "codigo_region": "06",
+    "codigo_comuna": "110",
+    "nombre": "MOSTAZAL"
+  },
+  {
+    "id": "2834236110347384589",
+    "codigo_region": "06",
+    "codigo_comuna": "111",
+    "nombre": "OLIVAR"
+  },
+  {
+    "id": "2834236110347384590",
+    "codigo_region": "06",
+    "codigo_comuna": "112",
+    "nombre": "PEUMO"
+  },
+  {
+    "id": "2834236110347384591",
+    "codigo_region": "06",
+    "codigo_comuna": "113",
+    "nombre": "PICHIDEGUA"
+  },
+  {
+    "id": "2834236110347384592",
+    "codigo_region": "06",
+    "codigo_comuna": "114",
+    "nombre": "QUINTA DE TILCOCO"
+  },
+  {
+    "id": "2834236110347384593",
+    "codigo_region": "06",
+    "codigo_comuna": "115",
+    "nombre": "RENGO"
+  },
+  {
+    "id": "2834236110347384594",
+    "codigo_region": "06",
+    "codigo_comuna": "116",
+    "nombre": "REQUINOA"
+  },
+  {
+    "id": "2834236110347384595",
+    "codigo_region": "06",
+    "codigo_comuna": "117",
+    "nombre": "SAN VICENTE"
+  },
+  {
+    "id": "2834236110347384596",
+    "codigo_region": "06",
+    "codigo_comuna": "201",
+    "nombre": "PICHILEMU"
+  },
+  {
+    "id": "2834236110347384597",
+    "codigo_region": "06",
+    "codigo_comuna": "202",
+    "nombre": "LA ESTRELLA"
+  },
+  {
+    "id": "2834236110347384598",
+    "codigo_region": "06",
+    "codigo_comuna": "203",
+    "nombre": "LITUECHE"
+  },
+  {
+    "id": "2834236110347384599",
+    "codigo_region": "06",
+    "codigo_comuna": "204",
+    "nombre": "MARCHIHUE"
+  },
+  {
+    "id": "28342361103473845100",
+    "codigo_region": "06",
+    "codigo_comuna": "205",
+    "nombre": "NAVIDAD"
+  },
+  {
+    "id": "28342361103473845101",
+    "codigo_region": "06",
+    "codigo_comuna": "206",
+    "nombre": "PAREDONES"
+  },
+  {
+    "id": "28342361103473845102",
+    "codigo_region": "06",
+    "codigo_comuna": "301",
+    "nombre": "SAN FERNANDO"
+  },
+  {
+    "id": "28342361103473845103",
+    "codigo_region": "06",
+    "codigo_comuna": "302",
+    "nombre": "CHEPICA"
+  },
+  {
+    "id": "28342361103473845104",
+    "codigo_region": "06",
+    "codigo_comuna": "303",
+    "nombre": "CHIMBARONGO"
+  },
+  {
+    "id": "28342361103473845105",
+    "codigo_region": "06",
+    "codigo_comuna": "304",
+    "nombre": "LOLOL"
+  },
+  {
+    "id": "28342361103473845106",
+    "codigo_region": "06",
+    "codigo_comuna": "305",
+    "nombre": "NANCAGUA"
+  },
+  {
+    "id": "28342361103473845107",
+    "codigo_region": "06",
+    "codigo_comuna": "306",
+    "nombre": "PALMILLA"
+  },
+  {
+    "id": "28342361103473845108",
+    "codigo_region": "06",
+    "codigo_comuna": "307",
+    "nombre": "PERALILLO"
+  },
+  {
+    "id": "28342361103473845109",
+    "codigo_region": "06",
+    "codigo_comuna": "308",
+    "nombre": "PLACILLA"
+  },
+  {
+    "id": "28342361103473845110",
+    "codigo_region": "06",
+    "codigo_comuna": "309",
+    "nombre": "PUMANQUE"
+  },
+  {
+    "id": "28342361103473845111",
+    "codigo_region": "06",
+    "codigo_comuna": "310",
+    "nombre": "SANTA CRUZ"
+  },
+  {
+    "id": "28342361103473845112",
+    "codigo_region": "07",
+    "codigo_comuna": "101",
+    "nombre": "TALCA"
+  },
+  {
+    "id": "28342361103473845113",
+    "codigo_region": "07",
+    "codigo_comuna": "102",
+    "nombre": "CONSTITUCION"
+  },
+  {
+    "id": "28342361103473845114",
+    "codigo_region": "07",
+    "codigo_comuna": "103",
+    "nombre": "CUREPTO"
+  },
+  {
+    "id": "28342361103473845115",
+    "codigo_region": "07",
+    "codigo_comuna": "104",
+    "nombre": "EMPEDRADO"
+  },
+  {
+    "id": "28342361103473845116",
+    "codigo_region": "07",
+    "codigo_comuna": "105",
+    "nombre": "MAULE"
+  },
+  {
+    "id": "28342361103473845117",
+    "codigo_region": "07",
+    "codigo_comuna": "106",
+    "nombre": "PELARCO"
+  },
+  {
+    "id": "28342361103473845118",
+    "codigo_region": "07",
+    "codigo_comuna": "107",
+    "nombre": "PENCAHUE"
+  },
+  {
+    "id": "28342361103473845119",
+    "codigo_region": "07",
+    "codigo_comuna": "108",
+    "nombre": "RIO CLARO"
+  },
+  {
+    "id": "28342361103473845120",
+    "codigo_region": "07",
+    "codigo_comuna": "109",
+    "nombre": "SAN CLEMENTE"
+  },
+  {
+    "id": "28342361103473845121",
+    "codigo_region": "07",
+    "codigo_comuna": "110",
+    "nombre": "SAN RAFAEL"
+  },
+  {
+    "id": "28342361103473845122",
+    "codigo_region": "07",
+    "codigo_comuna": "201",
+    "nombre": "CAUQUENES"
+  },
+  {
+    "id": "28342361103473845123",
+    "codigo_region": "07",
+    "codigo_comuna": "202",
+    "nombre": "CHANCO"
+  },
+  {
+    "id": "28342361103473845124",
+    "codigo_region": "07",
+    "codigo_comuna": "203",
+    "nombre": "PELLUHUE"
+  },
+  {
+    "id": "28342361103473845125",
+    "codigo_region": "07",
+    "codigo_comuna": "301",
+    "nombre": "CURICO"
+  },
+  {
+    "id": "28342361103473845126",
+    "codigo_region": "07",
+    "codigo_comuna": "302",
+    "nombre": "HUALAÑE"
+  },
+  {
+    "id": "28342361103473845127",
+    "codigo_region": "07",
+    "codigo_comuna": "303",
+    "nombre": "LICANTEN"
+  },
+  {
+    "id": "28342361103473845128",
+    "codigo_region": "07",
+    "codigo_comuna": "304",
+    "nombre": "MOLINA"
+  },
+  {
+    "id": "28342361103473845129",
+    "codigo_region": "07",
+    "codigo_comuna": "305",
+    "nombre": "RAUCO"
+  },
+  {
+    "id": "28342361103473845130",
+    "codigo_region": "07",
+    "codigo_comuna": "306",
+    "nombre": "ROMERAL"
+  },
+  {
+    "id": "28342361103473845131",
+    "codigo_region": "07",
+    "codigo_comuna": "307",
+    "nombre": "SAGRADA FAMILIA"
+  },
+  {
+    "id": "28342361103473845132",
+    "codigo_region": "07",
+    "codigo_comuna": "308",
+    "nombre": "TENO"
+  },
+  {
+    "id": "28342361103473845133",
+    "codigo_region": "07",
+    "codigo_comuna": "309",
+    "nombre": "VICHUQUEN"
+  },
+  {
+    "id": "28342361103473845134",
+    "codigo_region": "07",
+    "codigo_comuna": "401",
+    "nombre": "LINARES"
+  },
+  {
+    "id": "28342361103473845135",
+    "codigo_region": "07",
+    "codigo_comuna": "402",
+    "nombre": "COLBUN"
+  },
+  {
+    "id": "28342361103473845136",
+    "codigo_region": "07",
+    "codigo_comuna": "403",
+    "nombre": "LONGAVI"
+  },
+  {
+    "id": "28342361103473845137",
+    "codigo_region": "07",
+    "codigo_comuna": "404",
+    "nombre": "PARRAL"
+  },
+  {
+    "id": "28342361103473845138",
+    "codigo_region": "07",
+    "codigo_comuna": "405",
+    "nombre": "RETIRO"
+  },
+  {
+    "id": "28342361103473845139",
+    "codigo_region": "07",
+    "codigo_comuna": "406",
+    "nombre": "SAN JAVIER"
+  },
+  {
+    "id": "28342361103473845140",
+    "codigo_region": "07",
+    "codigo_comuna": "407",
+    "nombre": "VILLA ALEGRE"
+  },
+  {
+    "id": "28342361103473845141",
+    "codigo_region": "07",
+    "codigo_comuna": "408",
+    "nombre": "YERBAS BUENAS"
+  },
+  {
+    "id": "28342361103473845142",
+    "codigo_region": "08",
+    "codigo_comuna": "101",
+    "nombre": "CONCEPCION"
+  },
+  {
+    "id": "28342361103473845143",
+    "codigo_region": "08",
+    "codigo_comuna": "102",
+    "nombre": "CORONEL"
+  },
+  {
+    "id": "28342361103473845144",
+    "codigo_region": "08",
+    "codigo_comuna": "103",
+    "nombre": "CHIGUAYANTE"
+  },
+  {
+    "id": "28342361103473845145",
+    "codigo_region": "08",
+    "codigo_comuna": "104",
+    "nombre": "FLORIDA"
+  },
+  {
+    "id": "28342361103473845146",
+    "codigo_region": "08",
+    "codigo_comuna": "105",
+    "nombre": "HUALQUI"
+  },
+  {
+    "id": "28342361103473845147",
+    "codigo_region": "08",
+    "codigo_comuna": "106",
+    "nombre": "LOTA"
+  },
+  {
+    "id": "28342361103473845148",
+    "codigo_region": "08",
+    "codigo_comuna": "107",
+    "nombre": "PENCO"
+  },
+  {
+    "id": "28342361103473845149",
+    "codigo_region": "08",
+    "codigo_comuna": "108",
+    "nombre": "SAN PEDRO DE LA PAZ"
+  },
+  {
+    "id": "28342361103473845150",
+    "codigo_region": "08",
+    "codigo_comuna": "109",
+    "nombre": "SANTA JUANA"
+  },
+  {
+    "id": "28342361103473845151",
+    "codigo_region": "08",
+    "codigo_comuna": "110",
+    "nombre": "TALCAHUANO"
+  },
+  {
+    "id": "28342361103473845152",
+    "codigo_region": "08",
+    "codigo_comuna": "111",
+    "nombre": "TOME"
+  },
+  {
+    "id": "28342361103473845153",
+    "codigo_region": "08",
+    "codigo_comuna": "112",
+    "nombre": "HUALPEN"
+  },
+  {
+    "id": "28342361103473845154",
+    "codigo_region": "08",
+    "codigo_comuna": "201",
+    "nombre": "LEBU"
+  },
+  {
+    "id": "28342361103473845155",
+    "codigo_region": "08",
+    "codigo_comuna": "202",
+    "nombre": "ARAUCO"
+  },
+  {
+    "id": "28342361103473845156",
+    "codigo_region": "08",
+    "codigo_comuna": "203",
+    "nombre": "CAÑETE"
+  },
+  {
+    "id": "28342361103473845157",
+    "codigo_region": "08",
+    "codigo_comuna": "204",
+    "nombre": "CONTULMO"
+  },
+  {
+    "id": "28342361103473845158",
+    "codigo_region": "08",
+    "codigo_comuna": "205",
+    "nombre": "CURANILAHUE"
+  },
+  {
+    "id": "28342361103473845159",
+    "codigo_region": "08",
+    "codigo_comuna": "206",
+    "nombre": "LOS ALAMOS"
+  },
+  {
+    "id": "28342361103473845160",
+    "codigo_region": "08",
+    "codigo_comuna": "207",
+    "nombre": "TIRUA"
+  },
+  {
+    "id": "28342361103473845161",
+    "codigo_region": "08",
+    "codigo_comuna": "301",
+    "nombre": "LOS ANGELES"
+  },
+  {
+    "id": "28342361103473845162",
+    "codigo_region": "08",
+    "codigo_comuna": "302",
+    "nombre": "ANTUCO"
+  },
+  {
+    "id": "28342361103473845163",
+    "codigo_region": "08",
+    "codigo_comuna": "303",
+    "nombre": "CABRERO"
+  },
+  {
+    "id": "28342361103473845164",
+    "codigo_region": "08",
+    "codigo_comuna": "304",
+    "nombre": "LAJA"
+  },
+  {
+    "id": "28342361103473845165",
+    "codigo_region": "08",
+    "codigo_comuna": "305",
+    "nombre": "MULCHEN"
+  },
+  {
+    "id": "28342361103473845166",
+    "codigo_region": "08",
+    "codigo_comuna": "306",
+    "nombre": "NACIMIENTO"
+  },
+  {
+    "id": "28342361103473845167",
+    "codigo_region": "08",
+    "codigo_comuna": "307",
+    "nombre": "NEGRETE"
+  },
+  {
+    "id": "28342361103473845168",
+    "codigo_region": "08",
+    "codigo_comuna": "308",
+    "nombre": "QUILACO"
+  },
+  {
+    "id": "28342361103473845169",
+    "codigo_region": "08",
+    "codigo_comuna": "309",
+    "nombre": "QUILLECO"
+  },
+  {
+    "id": "28342361103473845170",
+    "codigo_region": "08",
+    "codigo_comuna": "310",
+    "nombre": "SAN ROSENDO"
+  },
+  {
+    "id": "28342361103473845171",
+    "codigo_region": "08",
+    "codigo_comuna": "311",
+    "nombre": "SANTA BARBARA"
+  },
+  {
+    "id": "28342361103473845172",
+    "codigo_region": "08",
+    "codigo_comuna": "312",
+    "nombre": "TUCAPEL"
+  },
+  {
+    "id": "28342361103473845173",
+    "codigo_region": "08",
+    "codigo_comuna": "313",
+    "nombre": "YUMBEL"
+  },
+  {
+    "id": "28342361103473845174",
+    "codigo_region": "08",
+    "codigo_comuna": "314",
+    "nombre": "ALTO BIOBIO"
+  },
+  {
+    "id": "28342361103473845175",
+    "codigo_region": "08",
+    "codigo_comuna": "401",
+    "nombre": "CHILLAN"
+  },
+  {
+    "id": "28342361103473845176",
+    "codigo_region": "08",
+    "codigo_comuna": "402",
+    "nombre": "BULNES"
+  },
+  {
+    "id": "28342361103473845177",
+    "codigo_region": "08",
+    "codigo_comuna": "403",
+    "nombre": "COBQUECURA"
+  },
+  {
+    "id": "28342361103473845178",
+    "codigo_region": "08",
+    "codigo_comuna": "404",
+    "nombre": "COELEMU"
+  },
+  {
+    "id": "28342361103473845179",
+    "codigo_region": "08",
+    "codigo_comuna": "405",
+    "nombre": "COIHUECO"
+  },
+  {
+    "id": "28342361103473845180",
+    "codigo_region": "08",
+    "codigo_comuna": "406",
+    "nombre": "CHILLAN VIEJO"
+  },
+  {
+    "id": "28342361103473845181",
+    "codigo_region": "08",
+    "codigo_comuna": "407",
+    "nombre": "EL CARMEN"
+  },
+  {
+    "id": "28342361103473845182",
+    "codigo_region": "08",
+    "codigo_comuna": "408",
+    "nombre": "NINHUE"
+  },
+  {
+    "id": "28342361103473845183",
+    "codigo_region": "08",
+    "codigo_comuna": "409",
+    "nombre": "ÑIQUEN"
+  },
+  {
+    "id": "28342361103473845184",
+    "codigo_region": "08",
+    "codigo_comuna": "410",
+    "nombre": "PEMUCO"
+  },
+  {
+    "id": "28342361103473845185",
+    "codigo_region": "08",
+    "codigo_comuna": "411",
+    "nombre": "PINTO"
+  },
+  {
+    "id": "28342361103473845186",
+    "codigo_region": "08",
+    "codigo_comuna": "412",
+    "nombre": "PORTEZUELO"
+  },
+  {
+    "id": "28342361103473845187",
+    "codigo_region": "08",
+    "codigo_comuna": "413",
+    "nombre": "QUILLON"
+  },
+  {
+    "id": "28342361103473845188",
+    "codigo_region": "08",
+    "codigo_comuna": "414",
+    "nombre": "QUIRIHUE"
+  },
+  {
+    "id": "28342361103473845189",
+    "codigo_region": "08",
+    "codigo_comuna": "415",
+    "nombre": "RANQUIL"
+  },
+  {
+    "id": "28342361103473845190",
+    "codigo_region": "08",
+    "codigo_comuna": "416",
+    "nombre": "SAN CARLOS"
+  },
+  {
+    "id": "28342361103473845191",
+    "codigo_region": "08",
+    "codigo_comuna": "417",
+    "nombre": "SAN FABIAN"
+  },
+  {
+    "id": "28342361103473845192",
+    "codigo_region": "08",
+    "codigo_comuna": "418",
+    "nombre": "SAN IGNACIO"
+  },
+  {
+    "id": "28342361103473845193",
+    "codigo_region": "08",
+    "codigo_comuna": "419",
+    "nombre": "SAN NICOLAS"
+  },
+  {
+    "id": "28342361103473845194",
+    "codigo_region": "08",
+    "codigo_comuna": "420",
+    "nombre": "TREGUACO"
+  },
+  {
+    "id": "28342361103473845195",
+    "codigo_region": "08",
+    "codigo_comuna": "421",
+    "nombre": "YUNGAY"
+  },
+  {
+    "id": "28342361103473845196",
+    "codigo_region": "09",
+    "codigo_comuna": "101",
+    "nombre": "TEMUCO"
+  },
+  {
+    "id": "28342361103473845197",
+    "codigo_region": "09",
+    "codigo_comuna": "102",
+    "nombre": "CARAHUE"
+  },
+  {
+    "id": "28342361103473845198",
+    "codigo_region": "09",
+    "codigo_comuna": "103",
+    "nombre": "CUNCO"
+  },
+  {
+    "id": "28342361103473845199",
+    "codigo_region": "09",
+    "codigo_comuna": "104",
+    "nombre": "CURARREHUE"
+  },
+  {
+    "id": "28342361103473845200",
+    "codigo_region": "09",
+    "codigo_comuna": "105",
+    "nombre": "FREIRE"
+  },
+  {
+    "id": "28342361103473845201",
+    "codigo_region": "09",
+    "codigo_comuna": "106",
+    "nombre": "GALVARINO"
+  },
+  {
+    "id": "28342361103473845202",
+    "codigo_region": "09",
+    "codigo_comuna": "107",
+    "nombre": "GORBEA"
+  },
+  {
+    "id": "28342361103473845203",
+    "codigo_region": "09",
+    "codigo_comuna": "108",
+    "nombre": "LAUTARO"
+  },
+  {
+    "id": "28342361103473845204",
+    "codigo_region": "09",
+    "codigo_comuna": "109",
+    "nombre": "LONCOCHE"
+  },
+  {
+    "id": "28342361103473845205",
+    "codigo_region": "09",
+    "codigo_comuna": "110",
+    "nombre": "MELIPEUCO"
+  },
+  {
+    "id": "28342361103473845206",
+    "codigo_region": "09",
+    "codigo_comuna": "111",
+    "nombre": "NUEVA IMPERIAL"
+  },
+  {
+    "id": "28342361103473845207",
+    "codigo_region": "09",
+    "codigo_comuna": "112",
+    "nombre": "PADRE LAS CASAS"
+  },
+  {
+    "id": "28342361103473845208",
+    "codigo_region": "09",
+    "codigo_comuna": "113",
+    "nombre": "PERQUENCO"
+  },
+  {
+    "id": "28342361103473845209",
+    "codigo_region": "09",
+    "codigo_comuna": "114",
+    "nombre": "PITRUFQUEN"
+  },
+  {
+    "id": "28342361103473845210",
+    "codigo_region": "09",
+    "codigo_comuna": "115",
+    "nombre": "PUCON"
+  },
+  {
+    "id": "28342361103473845211",
+    "codigo_region": "09",
+    "codigo_comuna": "116",
+    "nombre": "SAAVEDRA"
+  },
+  {
+    "id": "28342361103473845212",
+    "codigo_region": "09",
+    "codigo_comuna": "117",
+    "nombre": "TEODORO SCHMIDT"
+  },
+  {
+    "id": "28342361103473845213",
+    "codigo_region": "09",
+    "codigo_comuna": "118",
+    "nombre": "TOLTEN"
+  },
+  {
+    "id": "28342361103473845214",
+    "codigo_region": "09",
+    "codigo_comuna": "119",
+    "nombre": "VILCUN"
+  },
+  {
+    "id": "28342361103473845215",
+    "codigo_region": "09",
+    "codigo_comuna": "120",
+    "nombre": "VILLARRICA"
+  },
+  {
+    "id": "28342361103473845216",
+    "codigo_region": "09",
+    "codigo_comuna": "121",
+    "nombre": "CHOLCHOL"
+  },
+  {
+    "id": "28342361103473845217",
+    "codigo_region": "09",
+    "codigo_comuna": "201",
+    "nombre": "ANGOL"
+  },
+  {
+    "id": "28342361103473845218",
+    "codigo_region": "09",
+    "codigo_comuna": "202",
+    "nombre": "COLLIPULLI"
+  },
+  {
+    "id": "28342361103473845219",
+    "codigo_region": "09",
+    "codigo_comuna": "203",
+    "nombre": "CURACAUTIN"
+  },
+  {
+    "id": "28342361103473845220",
+    "codigo_region": "09",
+    "codigo_comuna": "204",
+    "nombre": "ERCILLA"
+  },
+  {
+    "id": "28342361103473845221",
+    "codigo_region": "09",
+    "codigo_comuna": "205",
+    "nombre": "LONQUIMAY"
+  },
+  {
+    "id": "28342361103473845222",
+    "codigo_region": "09",
+    "codigo_comuna": "206",
+    "nombre": "LOS SAUCES"
+  },
+  {
+    "id": "28342361103473845223",
+    "codigo_region": "09",
+    "codigo_comuna": "207",
+    "nombre": "LUMACO"
+  },
+  {
+    "id": "28342361103473845224",
+    "codigo_region": "09",
+    "codigo_comuna": "208",
+    "nombre": "PUREN"
+  },
+  {
+    "id": "28342361103473845225",
+    "codigo_region": "09",
+    "codigo_comuna": "209",
+    "nombre": "RENAICO"
+  },
+  {
+    "id": "28342361103473845226",
+    "codigo_region": "09",
+    "codigo_comuna": "210",
+    "nombre": "TRAIGUEN"
+  },
+  {
+    "id": "28342361103473845227",
+    "codigo_region": "09",
+    "codigo_comuna": "211",
+    "nombre": "VICTORIA"
+  },
+  {
+    "id": "28342361103473845228",
+    "codigo_region": "10",
+    "codigo_comuna": "101",
+    "nombre": "PUERTO MONTT"
+  },
+  {
+    "id": "28342361103473845229",
+    "codigo_region": "10",
+    "codigo_comuna": "102",
+    "nombre": "CALBUCO"
+  },
+  {
+    "id": "28342361103473845230",
+    "codigo_region": "10",
+    "codigo_comuna": "103",
+    "nombre": "COCHAMO"
+  },
+  {
+    "id": "28342361103473845231",
+    "codigo_region": "10",
+    "codigo_comuna": "104",
+    "nombre": "FRESIA"
+  },
+  {
+    "id": "28342361103473845232",
+    "codigo_region": "10",
+    "codigo_comuna": "105",
+    "nombre": "FRUTILLAR"
+  },
+  {
+    "id": "28342361103473845233",
+    "codigo_region": "10",
+    "codigo_comuna": "106",
+    "nombre": "LOS MUERMOS"
+  },
+  {
+    "id": "28342361103473845234",
+    "codigo_region": "10",
+    "codigo_comuna": "107",
+    "nombre": "LLANQUIHUE"
+  },
+  {
+    "id": "28342361103473845235",
+    "codigo_region": "10",
+    "codigo_comuna": "108",
+    "nombre": "MAULLIN"
+  },
+  {
+    "id": "28342361103473845236",
+    "codigo_region": "10",
+    "codigo_comuna": "109",
+    "nombre": "PUERTO VARAS"
+  },
+  {
+    "id": "28342361103473845237",
+    "codigo_region": "10",
+    "codigo_comuna": "201",
+    "nombre": "CASTRO"
+  },
+  {
+    "id": "28342361103473845238",
+    "codigo_region": "10",
+    "codigo_comuna": "202",
+    "nombre": "ANCUD"
+  },
+  {
+    "id": "28342361103473845239",
+    "codigo_region": "10",
+    "codigo_comuna": "203",
+    "nombre": "CHONCHI"
+  },
+  {
+    "id": "28342361103473845240",
+    "codigo_region": "10",
+    "codigo_comuna": "204",
+    "nombre": "CURACO DE VELEZ"
+  },
+  {
+    "id": "28342361103473845241",
+    "codigo_region": "10",
+    "codigo_comuna": "205",
+    "nombre": "DALCAHUE"
+  },
+  {
+    "id": "28342361103473845242",
+    "codigo_region": "10",
+    "codigo_comuna": "206",
+    "nombre": "PUQUELDON"
+  },
+  {
+    "id": "28342361103473845243",
+    "codigo_region": "10",
+    "codigo_comuna": "207",
+    "nombre": "QUEILEN"
+  },
+  {
+    "id": "28342361103473845244",
+    "codigo_region": "10",
+    "codigo_comuna": "208",
+    "nombre": "QUELLON"
+  },
+  {
+    "id": "28342361103473845245",
+    "codigo_region": "10",
+    "codigo_comuna": "209",
+    "nombre": "QUEMCHI"
+  },
+  {
+    "id": "28342361103473845246",
+    "codigo_region": "10",
+    "codigo_comuna": "210",
+    "nombre": "QUINCHAO"
+  },
+  {
+    "id": "28342361103473845247",
+    "codigo_region": "10",
+    "codigo_comuna": "301",
+    "nombre": "OSORNO"
+  },
+  {
+    "id": "28342361103473845248",
+    "codigo_region": "10",
+    "codigo_comuna": "302",
+    "nombre": "PUERTO OCTAY"
+  },
+  {
+    "id": "28342361103473845249",
+    "codigo_region": "10",
+    "codigo_comuna": "303",
+    "nombre": "PURRANQUE"
+  },
+  {
+    "id": "28342361103473845250",
+    "codigo_region": "10",
+    "codigo_comuna": "304",
+    "nombre": "PUYEHUE"
+  },
+  {
+    "id": "28342361103473845251",
+    "codigo_region": "10",
+    "codigo_comuna": "305",
+    "nombre": "RIO NEGRO"
+  },
+  {
+    "id": "28342361103473845252",
+    "codigo_region": "10",
+    "codigo_comuna": "306",
+    "nombre": "SAN JUAN DE LA COSTA"
+  },
+  {
+    "id": "28342361103473845253",
+    "codigo_region": "10",
+    "codigo_comuna": "307",
+    "nombre": "SAN PABLO"
+  },
+  {
+    "id": "28342361103473845254",
+    "codigo_region": "10",
+    "codigo_comuna": "401",
+    "nombre": "CHAITEN"
+  },
+  {
+    "id": "28342361103473845255",
+    "codigo_region": "10",
+    "codigo_comuna": "402",
+    "nombre": "FUTALEUFU"
+  },
+  {
+    "id": "28342361103473845256",
+    "codigo_region": "10",
+    "codigo_comuna": "403",
+    "nombre": "HUALAIHUE"
+  },
+  {
+    "id": "28342361103473845257",
+    "codigo_region": "10",
+    "codigo_comuna": "404",
+    "nombre": "PALENA"
+  },
+  {
+    "id": "28342361103473845258",
+    "codigo_region": "11",
+    "codigo_comuna": "101",
+    "nombre": "COIHAIQUE"
+  },
+  {
+    "id": "28342361103473845259",
+    "codigo_region": "11",
+    "codigo_comuna": "102",
+    "nombre": "LAGO VERDE"
+  },
+  {
+    "id": "28342361103473845260",
+    "codigo_region": "11",
+    "codigo_comuna": "201",
+    "nombre": "AISEN"
+  },
+  {
+    "id": "28342361103473845261",
+    "codigo_region": "11",
+    "codigo_comuna": "202",
+    "nombre": "CISNES"
+  },
+  {
+    "id": "28342361103473845262",
+    "codigo_region": "11",
+    "codigo_comuna": "203",
+    "nombre": "GUAITECAS"
+  },
+  {
+    "id": "28342361103473845263",
+    "codigo_region": "11",
+    "codigo_comuna": "301",
+    "nombre": "COCHRANE"
+  },
+  {
+    "id": "28342361103473845264",
+    "codigo_region": "11",
+    "codigo_comuna": "302",
+    "nombre": "O'HIGGINS"
+  },
+  {
+    "id": "28342361103473845265",
+    "codigo_region": "11",
+    "codigo_comuna": "303",
+    "nombre": "TORTEL"
+  },
+  {
+    "id": "28342361103473845266",
+    "codigo_region": "11",
+    "codigo_comuna": "401",
+    "nombre": "CHILE CHICO"
+  },
+  {
+    "id": "28342361103473845267",
+    "codigo_region": "11",
+    "codigo_comuna": "402",
+    "nombre": "RIO IBAÑEZ"
+  },
+  {
+    "id": "28342361103473845268",
+    "codigo_region": "12",
+    "codigo_comuna": "101",
+    "nombre": "PUNTA ARENAS"
+  },
+  {
+    "id": "28342361103473845269",
+    "codigo_region": "12",
+    "codigo_comuna": "102",
+    "nombre": "LAGUNA BLANCA"
+  },
+  {
+    "id": "28342361103473845270",
+    "codigo_region": "12",
+    "codigo_comuna": "103",
+    "nombre": "RIO VERDE"
+  },
+  {
+    "id": "28342361103473845271",
+    "codigo_region": "12",
+    "codigo_comuna": "104",
+    "nombre": "SAN GREGORIO"
+  },
+  {
+    "id": "28342361103473845272",
+    "codigo_region": "12",
+    "codigo_comuna": "201",
+    "nombre": "CABO DE HORNOS EX NAVARINO"
+  },
+  {
+    "id": "28342361103473845273",
+    "codigo_region": "12",
+    "codigo_comuna": "202",
+    "nombre": "ANTARTICA"
+  },
+  {
+    "id": "28342361103473845274",
+    "codigo_region": "12",
+    "codigo_comuna": "301",
+    "nombre": "PORVENIR"
+  },
+  {
+    "id": "28342361103473845275",
+    "codigo_region": "12",
+    "codigo_comuna": "302",
+    "nombre": "PRIMAVERA"
+  },
+  {
+    "id": "28342361103473845276",
+    "codigo_region": "12",
+    "codigo_comuna": "303",
+    "nombre": "TIMAUKEL"
+  },
+  {
+    "id": "28342361103473845277",
+    "codigo_region": "12",
+    "codigo_comuna": "401",
+    "nombre": "NATALES"
+  },
+  {
+    "id": "28342361103473845278",
+    "codigo_region": "12",
+    "codigo_comuna": "402",
+    "nombre": "TORRES DEL PAINE"
+  },
+  {
+    "id": "28342361103473845279",
+    "codigo_region": "13",
+    "codigo_comuna": "101",
+    "nombre": "SANTIAGO"
+  },
+  {
+    "id": "28342361103473845280",
+    "codigo_region": "13",
+    "codigo_comuna": "102",
+    "nombre": "CERRILLOS"
+  },
+  {
+    "id": "28342361103473845281",
+    "codigo_region": "13",
+    "codigo_comuna": "103",
+    "nombre": "CERRO NAVIA"
+  },
+  {
+    "id": "28342361103473845282",
+    "codigo_region": "13",
+    "codigo_comuna": "104",
+    "nombre": "CONCHALI"
+  },
+  {
+    "id": "28342361103473845283",
+    "codigo_region": "13",
+    "codigo_comuna": "105",
+    "nombre": "EL BOSQUE"
+  },
+  {
+    "id": "28342361103473845284",
+    "codigo_region": "13",
+    "codigo_comuna": "106",
+    "nombre": "ESTACION CENTRAL"
+  },
+  {
+    "id": "28342361103473845285",
+    "codigo_region": "13",
+    "codigo_comuna": "107",
+    "nombre": "HUECHURABA"
+  },
+  {
+    "id": "28342361103473845286",
+    "codigo_region": "13",
+    "codigo_comuna": "108",
+    "nombre": "INDEPENDENCIA"
+  },
+  {
+    "id": "28342361103473845287",
+    "codigo_region": "13",
+    "codigo_comuna": "109",
+    "nombre": "LA CISTERNA"
+  },
+  {
+    "id": "28342361103473845288",
+    "codigo_region": "13",
+    "codigo_comuna": "110",
+    "nombre": "LA FLORIDA"
+  },
+  {
+    "id": "28342361103473845289",
+    "codigo_region": "13",
+    "codigo_comuna": "111",
+    "nombre": "LA GRANJA"
+  },
+  {
+    "id": "28342361103473845290",
+    "codigo_region": "13",
+    "codigo_comuna": "112",
+    "nombre": "LA PINTANA"
+  },
+  {
+    "id": "28342361103473845291",
+    "codigo_region": "13",
+    "codigo_comuna": "113",
+    "nombre": "LA REINA"
+  },
+  {
+    "id": "28342361103473845292",
+    "codigo_region": "13",
+    "codigo_comuna": "114",
+    "nombre": "LAS CONDES"
+  },
+  {
+    "id": "28342361103473845293",
+    "codigo_region": "13",
+    "codigo_comuna": "115",
+    "nombre": "LO BARNECHEA"
+  },
+  {
+    "id": "28342361103473845294",
+    "codigo_region": "13",
+    "codigo_comuna": "116",
+    "nombre": "LO ESPEJO"
+  },
+  {
+    "id": "28342361103473845295",
+    "codigo_region": "13",
+    "codigo_comuna": "117",
+    "nombre": "LO PRADO"
+  },
+  {
+    "id": "28342361103473845296",
+    "codigo_region": "13",
+    "codigo_comuna": "118",
+    "nombre": "MACUL"
+  },
+  {
+    "id": "28342361103473845297",
+    "codigo_region": "13",
+    "codigo_comuna": "119",
+    "nombre": "MAIPU"
+  },
+  {
+    "id": "28342361103473845298",
+    "codigo_region": "13",
+    "codigo_comuna": "120",
+    "nombre": "ÑUÑOA"
+  },
+  {
+    "id": "28342361103473845299",
+    "codigo_region": "13",
+    "codigo_comuna": "121",
+    "nombre": "PEDRO  AGUIRRE CERDA"
+  },
+  {
+    "id": "28342361103473845300",
+    "codigo_region": "13",
+    "codigo_comuna": "122",
+    "nombre": "PEÑALOLEN"
+  },
+  {
+    "id": "28342361103473845301",
+    "codigo_region": "13",
+    "codigo_comuna": "123",
+    "nombre": "PROVIDENCIA"
+  },
+  {
+    "id": "28342361103473845302",
+    "codigo_region": "13",
+    "codigo_comuna": "124",
+    "nombre": "PUDAHUEL"
+  },
+  {
+    "id": "28342361103473845303",
+    "codigo_region": "13",
+    "codigo_comuna": "125",
+    "nombre": "QUILICURA"
+  },
+  {
+    "id": "28342361103473845304",
+    "codigo_region": "13",
+    "codigo_comuna": "126",
+    "nombre": "QUINTA NORMAL"
+  },
+  {
+    "id": "28342361103473845305",
+    "codigo_region": "13",
+    "codigo_comuna": "127",
+    "nombre": "RECOLETA"
+  },
+  {
+    "id": "28342361103473845306",
+    "codigo_region": "13",
+    "codigo_comuna": "128",
+    "nombre": "RENCA"
+  },
+  {
+    "id": "28342361103473845307",
+    "codigo_region": "13",
+    "codigo_comuna": "129",
+    "nombre": "SAN JOAQUIN"
+  },
+  {
+    "id": "28342361103473845308",
+    "codigo_region": "13",
+    "codigo_comuna": "130",
+    "nombre": "SAN MIGUEL"
+  },
+  {
+    "id": "28342361103473845309",
+    "codigo_region": "13",
+    "codigo_comuna": "131",
+    "nombre": "SAN RAMON"
+  },
+  {
+    "id": "28342361103473845310",
+    "codigo_region": "13",
+    "codigo_comuna": "132",
+    "nombre": "VITACURA"
+  },
+  {
+    "id": "28342361103473845311",
+    "codigo_region": "13",
+    "codigo_comuna": "201",
+    "nombre": "PUENTE ALTO"
+  },
+  {
+    "id": "28342361103473845312",
+    "codigo_region": "13",
+    "codigo_comuna": "202",
+    "nombre": "PIRQUE"
+  },
+  {
+    "id": "28342361103473845313",
+    "codigo_region": "13",
+    "codigo_comuna": "203",
+    "nombre": "SAN JOSE DE MAIPO"
+  },
+  {
+    "id": "28342361103473845314",
+    "codigo_region": "13",
+    "codigo_comuna": "301",
+    "nombre": "COLINA"
+  },
+  {
+    "id": "28342361103473845315",
+    "codigo_region": "13",
+    "codigo_comuna": "302",
+    "nombre": "LAMPA"
+  },
+  {
+    "id": "28342361103473845316",
+    "codigo_region": "13",
+    "codigo_comuna": "303",
+    "nombre": "TILTIL"
+  },
+  {
+    "id": "28342361103473845317",
+    "codigo_region": "13",
+    "codigo_comuna": "401",
+    "nombre": "SAN BERNARDO"
+  },
+  {
+    "id": "28342361103473845318",
+    "codigo_region": "13",
+    "codigo_comuna": "402",
+    "nombre": "BUIN"
+  },
+  {
+    "id": "28342361103473845319",
+    "codigo_region": "13",
+    "codigo_comuna": "403",
+    "nombre": "CALERA DE TANGO"
+  },
+  {
+    "id": "28342361103473845320",
+    "codigo_region": "13",
+    "codigo_comuna": "404",
+    "nombre": "PAINE"
+  },
+  {
+    "id": "28342361103473845321",
+    "codigo_region": "13",
+    "codigo_comuna": "501",
+    "nombre": "MELIPILLA"
+  },
+  {
+    "id": "28342361103473845322",
+    "codigo_region": "13",
+    "codigo_comuna": "502",
+    "nombre": "ALHUE"
+  },
+  {
+    "id": "28342361103473845323",
+    "codigo_region": "13",
+    "codigo_comuna": "503",
+    "nombre": "CURACAVI"
+  },
+  {
+    "id": "28342361103473845324",
+    "codigo_region": "13",
+    "codigo_comuna": "504",
+    "nombre": "MARIA PINTO"
+  },
+  {
+    "id": "28342361103473845325",
+    "codigo_region": "13",
+    "codigo_comuna": "505",
+    "nombre": "SAN PEDRO"
+  },
+  {
+    "id": "28342361103473845326",
+    "codigo_region": "13",
+    "codigo_comuna": "601",
+    "nombre": "TALAGANTE"
+  },
+  {
+    "id": "28342361103473845327",
+    "codigo_region": "13",
+    "codigo_comuna": "602",
+    "nombre": "EL MONTE"
+  },
+  {
+    "id": "28342361103473845328",
+    "codigo_region": "13",
+    "codigo_comuna": "603",
+    "nombre": "ISLA DE MAIPO"
+  },
+  {
+    "id": "28342361103473845329",
+    "codigo_region": "13",
+    "codigo_comuna": "604",
+    "nombre": "PADRE HURTADO"
+  },
+  {
+    "id": "28342361103473845330",
+    "codigo_region": "13",
+    "codigo_comuna": "605",
+    "nombre": "PEÑAFLOR"
+  },
+  {
+    "id": "28342361103473845331",
+    "codigo_region": "14",
+    "codigo_comuna": "101",
+    "nombre": "VALDIVIA"
+  },
+  {
+    "id": "28342361103473845332",
+    "codigo_region": "14",
+    "codigo_comuna": "102",
+    "nombre": "CORRAL"
+  },
+  {
+    "id": "28342361103473845333",
+    "codigo_region": "14",
+    "codigo_comuna": "103",
+    "nombre": "LANCO"
+  },
+  {
+    "id": "28342361103473845334",
+    "codigo_region": "14",
+    "codigo_comuna": "104",
+    "nombre": "LOS LAGOS"
+  },
+  {
+    "id": "28342361103473845335",
+    "codigo_region": "14",
+    "codigo_comuna": "105",
+    "nombre": "MAFIL"
+  },
+  {
+    "id": "28342361103473845336",
+    "codigo_region": "14",
+    "codigo_comuna": "106",
+    "nombre": "MARIQUINA"
+  },
+  {
+    "id": "28342361103473845337",
+    "codigo_region": "14",
+    "codigo_comuna": "107",
+    "nombre": "PAILLACO"
+  },
+  {
+    "id": "28342361103473845338",
+    "codigo_region": "14",
+    "codigo_comuna": "108",
+    "nombre": "PANGUIPULLI"
+  },
+  {
+    "id": "28342361103473845339",
+    "codigo_region": "14",
+    "codigo_comuna": "201",
+    "nombre": "LA UNION"
+  },
+  {
+    "id": "28342361103473845340",
+    "codigo_region": "14",
+    "codigo_comuna": "202",
+    "nombre": "FUTRONO"
+  },
+  {
+    "id": "28342361103473845341",
+    "codigo_region": "14",
+    "codigo_comuna": "203",
+    "nombre": "LAGO RANCO"
+  },
+  {
+    "id": "28342361103473845342",
+    "codigo_region": "14",
+    "codigo_comuna": "204",
+    "nombre": "RIO BUENO"
+  },
+  {
+    "id": "28342361103473845343",
+    "codigo_region": "15",
+    "codigo_comuna": "101",
+    "nombre": "ARICA"
+  },
+  {
+    "id": "28342361103473845344",
+    "codigo_region": "15",
+    "codigo_comuna": "102",
+    "nombre": "CAMARONES"
+  },
+  {
+    "id": "28342361103473845345",
+    "codigo_region": "15",
+    "codigo_comuna": "201",
+    "nombre": "PUTRE"
+  },
+  {
+    "id": "28342361103473845346",
+    "codigo_region": "15",
+    "codigo_comuna": "202",
+    "nombre": "GENERAL LAGOS"
+  },
+  {
+    "id": "28342361103473845347",
+    "codigo_region": "16",
+    "codigo_comuna": "101",
+    "nombre": "CHILLÁN"
+  },
+  {
+    "id": "28342361103473845348",
+    "codigo_region": "16",
+    "codigo_comuna": "102",
+    "nombre": "BULNES"
+  },
+  {
+    "id": "28342361103473845349",
+    "codigo_region": "16",
+    "codigo_comuna": "103",
+    "nombre": "CHILLÁN VIEJO"
+  },
+  {
+    "id": "28342361103473845350",
+    "codigo_region": "16",
+    "codigo_comuna": "104",
+    "nombre": "EL CARMEN"
+  },
+  {
+    "id": "28342361103473845351",
+    "codigo_region": "16",
+    "codigo_comuna": "105",
+    "nombre": "PEMUCO"
+  },
+  {
+    "id": "28342361103473845352",
+    "codigo_region": "16",
+    "codigo_comuna": "106",
+    "nombre": "PINTO"
+  },
+  {
+    "id": "28342361103473845353",
+    "codigo_region": "16",
+    "codigo_comuna": "107",
+    "nombre": "QUILLÓN"
+  },
+  {
+    "id": "28342361103473845354",
+    "codigo_region": "16",
+    "codigo_comuna": "108",
+    "nombre": "SAN IGNACIO"
+  },
+  {
+    "id": "28342361103473845355",
+    "codigo_region": "16",
+    "codigo_comuna": "109",
+    "nombre": "YUNGAY"
+  },
+  {
+    "id": "28342361103473845356",
+    "codigo_region": "16",
+    "codigo_comuna": "201",
+    "nombre": "QUIRIHUE"
+  },
+  {
+    "id": "28342361103473845357",
+    "codigo_region": "16",
+    "codigo_comuna": "202",
+    "nombre": "COBQUECURA"
+  },
+  {
+    "id": "28342361103473845358",
+    "codigo_region": "16",
+    "codigo_comuna": "203",
+    "nombre": "COELEMU"
+  },
+  {
+    "id": "28342361103473845359",
+    "codigo_region": "16",
+    "codigo_comuna": "204",
+    "nombre": "NINHUE"
+  },
+  {
+    "id": "28342361103473845360",
+    "codigo_region": "16",
+    "codigo_comuna": "205",
+    "nombre": "PORTEZUELO"
+  },
+  {
+    "id": "28342361103473845361",
+    "codigo_region": "16",
+    "codigo_comuna": "206",
+    "nombre": "RANQUIL"
+  },
+  {
+    "id": "28342361103473845362",
+    "codigo_region": "16",
+    "codigo_comuna": "207",
+    "nombre": "TREGUACO"
+  },
+  {
+    "id": "28342361103473845363",
+    "codigo_region": "16",
+    "codigo_comuna": "301",
+    "nombre": "SAN CARLOS"
+  },
+  {
+    "id": "28342361103473845364",
+    "codigo_region": "16",
+    "codigo_comuna": "302",
+    "nombre": "COIHUECO"
+  },
+  {
+    "id": "28342361103473845365",
+    "codigo_region": "16",
+    "codigo_comuna": "303",
+    "nombre": "ÑIQUÉN"
+  },
+  {
+    "id": "28342361103473845366",
+    "codigo_region": "16",
+    "codigo_comuna": "304",
+    "nombre": "SAN FABIÁN"
+  },
+  {
+    "id": "28342361103473845367",
+    "codigo_region": "16",
+    "codigo_comuna": "305",
+    "nombre": "SAN NICOLÁS"
+  }
+]
