@@ -15,6 +15,8 @@ route.post("/", async (req, res) => {
       body: { admision_json },
     } = req;
 
+    console.log(body)
+
     //Insertar admision
     const { data: insertaAdmision } = await httpPost(insertarAdmision(), body);
     const { id: admisionID } = insertaAdmision.content[0];
@@ -31,7 +33,10 @@ route.post("/", async (req, res) => {
     let intento = 0;
 
     while (true) {
-      if (intento > 3) return res.status(500);
+
+      if (intento > 3){
+        return res.status(500).json(apiResponseReducer({}, 500, "Ocurrio un error al crear la Admisión"));
+      }
 
       const datos = await httpGetRequest(getAdmisionByID(admisionID));
       const { id_estado: id_estadoAdmision } = datos.content[0];
@@ -64,7 +69,10 @@ route.post("/", async (req, res) => {
     let intento2 = 0;
 
     while (true) {
-      if (intento2 > 3) return res.status(500);
+      
+      if (intento2 > 3){
+        return res.status(500).json(apiResponseReducer({}, 500, "Ocurrio un error al crear la Admisión"));
+      }
 
       const getSiniestroByID = await httpGetRequest(
         getAdmisionByID(siniestroid)

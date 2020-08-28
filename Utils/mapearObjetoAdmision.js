@@ -23,6 +23,7 @@ const mapearAdmisionObjeto = (id, datos) => {
     telefonoParticular,
     direccionParticular,
     emailusuario,
+    usuarioSAP,
   } = datos;
   const actualDateTime = new Date();
   const direccionComuna = direccionParticular.split(",");
@@ -65,7 +66,7 @@ const mapearAdmisionObjeto = (id, datos) => {
         Unidad_Org_medica: "PLAMAPRI",
         Num_Medico_Tratamiento: "",
       },
-      Usuario_Sap: "MPARRAAR",
+      Usuario_Sap: usuarioSAP,
     },
   };
   return datosSAP;
