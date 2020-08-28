@@ -6,9 +6,8 @@ const axios = require("axios");
  */
 const sapHttpPost = async (url, data) => {
   let { status } = await axios.post(url, data, {
-    auth: {
-      username: process.env.SAP_PO_USERNAME,
-      password: process.env.SAP_PO_PASSWORD,
+    headers: {
+      "Ocp-Apim-Subscription-Key": "2b4beff42a5b433cad5bb1bc67b81fc3",
     },
   });
   return status;
