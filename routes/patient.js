@@ -96,6 +96,8 @@ route.get("/getPaciente", async (req, res) => {
                                                   "CUN": s.CodigoUnicoNacionalExerno,"codigoUnicoNacionalExterno": s.CodigoUnicoNacionalExerno,"cesa":s.CeSanitario, "interLComercial" : s.InterlComercial, 
                                                   "tipoLey": s.DescTipoLey, "reposoActivo": s.ReposoActivo, "hora": getHora(s.HoraPresentacion),"paciente":s.NombreDenunciante}})                                         
 
+    console.log("numeroBP",numeroBP)
+
     let citasResponse = await get(getConfigCitasFuturas(numeroBP));
     let cita = {}
     if(Array.isArray(citasResponse) && citasResponse.length > 0){

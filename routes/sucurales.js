@@ -8,7 +8,8 @@ const route = new Router();
 
 route.get('/', async (req, res) => {
     try {
-        const sucursalResponse = await get(getConfigSucursalesVigentes(req.query.rutEmpresa))
+        const rutEmpresaFormateado = req.query.rutEmpresa.replace(/\./g,'')
+        const sucursalResponse = await get(getConfigSucursalesVigentes(rutEmpresaFormateado))
         const sucursalResult = sucursalResponse.map(afp => {return{ "codigo": afp.idSucursal, 
                                                                     "nombre": "",
                                                                     "id_comuna" : afp.comuna.idComuna.toString().substring(9,12),
