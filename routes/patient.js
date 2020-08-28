@@ -33,7 +33,7 @@ const getResultSap = (response) => {
 route.get('/validate', async (req, res) => {
   try {
     let {rutEmpresa, BpSucursal, rutPaciente} = req.query;
-    let Empresa = "NoAfiliada", Sucursal = "NoVigente", CotizacionesPaciente = "false"
+    let Empresa = "NoAfiliada", Sucursal = "NoVigente", CotizacionesPaciente = false
     rutEmpresa = (typeof rutEmpresa === 'string')? rutEmpresa.toUpperCase() : ""
     //validar empresa
     const vigenciaEmpresa = await get(getConfigVigencia(rutEmpresa))
