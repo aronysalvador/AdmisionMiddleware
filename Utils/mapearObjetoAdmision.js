@@ -4,6 +4,7 @@ const {
   extraerNumeroDireccion,
   extraerRegionDireccion,
   formatearHoraSiniestro,
+  mappingCamposUTMUT,
 } = require("./extraccionData");
 
 const mapearAdmisionObjeto = (id, datos) => {
@@ -23,9 +24,12 @@ const mapearAdmisionObjeto = (id, datos) => {
     telefonoParticular,
     direccionParticular,
     emailusuario,
+    centrosForm, //: { centroData }, //Data centros oriana
+    usuarioSAP, //Usuario SAP Aroni
   } = datos;
   const actualDateTime = new Date();
   const direccionComuna = direccionParticular.split(",");
+  const unidadOrganizativa = mappingCamposUTMUT(centrosForm);
   const datosSAP = {
     Admisiones: {
       Id_admision_digital: id,
@@ -61,11 +65,11 @@ const mapearAdmisionObjeto = (id, datos) => {
           minutos: actualDateTime.getMinutes(),
         }),
         Estado_externo: "RC",
-        Unidad_organizativa: "PLATCAPR",
-        Unidad_Org_medica: "PLAMAPRI",
+        Unidad_organizativa: String(unidadOrganizativa.UT).trim(), //"PLATCAPR", // UT  //Campo Short
+        Unidad_Org_medica: String(unidadOrganizativa.UM).trim(), //"PLAMAPRI", //UM //Campo Short
         Num_Medico_Tratamiento: "",
       },
-      Usuario_Sap: "MPARRAAR",
+      Usuario_Sap: String(usuarioSAP).trim(), //"MPARRAAR",
     },
   };
   return datosSAP;

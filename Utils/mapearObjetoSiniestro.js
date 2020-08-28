@@ -36,6 +36,8 @@ const mapearObjetoSiniestro = (id, episodioID, datos) => {
     responsable,
     fechaHoraResponsable,
     lugarReferenciaSiniestro,
+    usuarioSAP,
+    SucursalEmpresaObjeto,
   } = datos;
 
   const direccionSiniestro = extraerDatosDireccion(terms);
@@ -44,7 +46,7 @@ const mapearObjetoSiniestro = (id, episodioID, datos) => {
   const finJornadaLaboralArr = finJornadaLaboral.split(":");
   return {
     Id_siniestro_digital: id, //ID database
-    Usuario_Sap: "MPARRAAR",
+    Usuario_Sap: String(usuarioSAP).trim(), //"MPARRAAR",
     Datos_Generales_Siniestro: {
       id_episodio: episodioID, //Servicio admision
       cun_interno: "",
@@ -98,11 +100,20 @@ const mapearObjetoSiniestro = (id, episodioID, datos) => {
       acciente_en_control_medico: "",
       no_registra_alerta: "X",
     },
+    Alerta_Cal_trabajo: {
+      posible_causa_nolaboral: "X",
+      dir_sindical_cometido_gremial: "",
+      trabajo_distancia: "",
+      fuerza_mayor_extrana: "",
+      acc_control_medico: "",
+      no_registra_alerta: "",
+      motivo: "01",
+    },
     cabecera_sin: {
-      codigo: "2000462553",
+      codigo: SucursalEmpresaObjeto.codigo, // BP Empresa"2000462553",
       razon_social: razonSocialForm, //"empresa",
       numero_sucursal_achs: "124",
-      direccion_sucursal_achs: "calle ramon carnicer",
+      direccion_sucursal_achs: SucursalEmpresaObjeto.direccion, //"calle ramon carnicer",
       rubro: "",
       CIUU: "",
     },
