@@ -38,6 +38,7 @@ const mapearObjetoSiniestro = (id, episodioID, datos) => {
     lugarReferenciaSiniestro,
     usuarioSAP,
     SucursalEmpresaObjeto,
+    razonAlertaForm,
   } = datos;
 
   const direccionSiniestro = extraerDatosDireccion(terms);
@@ -101,13 +102,24 @@ const mapearObjetoSiniestro = (id, episodioID, datos) => {
       no_registra_alerta: "X",
     },
     Alerta_Cal_trabajo: {
-      posible_causa_nolaboral: "X",
-      dir_sindical_cometido_gremial: "",
-      trabajo_distancia: "",
-      fuerza_mayor_extrana: "",
-      acc_control_medico: "",
-      no_registra_alerta: "",
-      motivo: "01",
+      posible_causa_nolaboral:
+        razonAlertaForm.glosa === "Posible causa no laboral".trim() ? "X" : "", //"X",
+      dir_sindical_cometido_gremial:
+        razonAlertaForm.glosa ===
+        "Dirigente sindical en cometido gremial".trim()
+          ? "X"
+          : "",
+      trabajo_distancia:
+        razonAlertaForm.glosa === "Trabajo a distancia".trim() ? "X" : "",
+      fuerza_mayor_extrana:
+        razonAlertaForm.glosa === "Fuerza mayor extraña".trim() ? "X" : "",
+      acc_control_medico:
+        razonAlertaForm.glosa === "Accidente en control médico".trim()
+          ? "X"
+          : "",
+      no_registra_alerta:
+        razonAlertaForm.glosa === "No registra alerta".trim() ? "X" : "",
+      motivo: !razonAlertaForm.causaID ? "" : razonAlertaForm.causaID,
     },
     cabecera_sin: {
       codigo: SucursalEmpresaObjeto.codigo, // BP Empresa"2000462553",
