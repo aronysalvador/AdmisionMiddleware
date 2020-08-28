@@ -47,7 +47,7 @@ const mapearAdmisionObjeto = (id, datos) => {
         ciuidad: direccionComuna[1],
         region: extraerRegionDireccion(direccionComuna[1]),
         telefono: formatearTelefono(telefonoParticular),
-        email: emailusuario,
+        email: emailusuario || "",
       },
       Admision: {
         Fecha_inicio_episodio: formatearFecha(new Date().toISOString()), //Fecha actual

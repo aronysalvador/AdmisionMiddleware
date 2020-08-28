@@ -6,6 +6,7 @@ const {
   formatearTelefono,
   formatearFecha,
   concatenarRelatoToSAP,
+  mapearCategoriaOcupacional,
 } = require("../Utils/extraccionData");
 
 const mapearObjetoSiniestro = (id, episodioID, datos) => {
@@ -121,7 +122,7 @@ const mapearObjetoSiniestro = (id, episodioID, datos) => {
       puesto_trabajo: "TRABAJADOR", //En blaco,
       fecha_ingreso_trab: formatearFecha(ingresoTrabajoActual), //"01.01.1998",
       duracion_contrato: String(tipoDeContrato.id), //"3",
-      categoria_ocup: String(categoriaOcupacionalForm.id), //"2",
+      categoria_ocup: mapearCategoriaOcupacional(categoriaOcupacionalForm), //String(categoriaOcupacionalForm.id), //"2",
       dependencia: "1",
       remuneracion: String(tipoRemuneracion.id), //"1",
       prevision_salud: String(isapreSeleccionado.id), //"1000002260",
