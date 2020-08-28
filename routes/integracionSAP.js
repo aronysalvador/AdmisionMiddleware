@@ -79,7 +79,7 @@ route.post("/", async (req, res) => {
     const numeroSiniestro = await httpGetRequest(getAdmisionByID(siniestroid));
     const { descripcion: siniestroID } = numeroSiniestro.content[0];
     return res.send(
-      apiResponseReducer([{ siniestroID }], 200, "Operación Exitosa")
+      apiResponseReducer({ siniestroID }, 200, "Operación Exitosa")
     );
   } catch (error) {
     return res
