@@ -119,7 +119,7 @@ const mapearObjetoSiniestro = (id, episodioID, datos) => {
           : "",
       no_registra_alerta:
         razonAlertaForm.glosa === "No registra alerta".trim() ? "X" : "",
-      motivo: !razonAlertaForm.causaID ? "" : razonAlertaForm.causaID,
+      motivo: !razonAlertaForm.causasID ? "" : `0${razonAlertaForm.causasID}`,
     },
     cabecera_sin: {
       codigo: SucursalEmpresaObjeto.codigo, // BP Empresa"2000462553",
