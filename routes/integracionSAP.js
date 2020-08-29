@@ -15,8 +15,6 @@ route.post("/", async (req, res) => {
       body: { admision_json },
     } = req;
 
-    console.log(body)
-
     //Insertar admision
     const { data: insertaAdmision } = await httpPost(insertarAdmision(), body);
     const { id: admisionID } = insertaAdmision.content[0];

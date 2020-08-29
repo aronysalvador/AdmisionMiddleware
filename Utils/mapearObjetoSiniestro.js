@@ -35,7 +35,6 @@ const mapearObjetoSiniestro = (id, episodioID, datos) => {
     responsable,
     fechaHoraResponsable,
     lugarReferenciaSiniestro,
-    usuarioSAP
   } = datos;
 
   const direccionSiniestro = extraerDatosDireccion(terms);
@@ -44,7 +43,7 @@ const mapearObjetoSiniestro = (id, episodioID, datos) => {
   const finJornadaLaboralArr = finJornadaLaboral.split(":");
   return {
     Id_siniestro_digital: id, //ID database
-    Usuario_Sap: usuarioSAP,
+    Usuario_Sap: "MPARRAAR",
     Datos_Generales_Siniestro: {
       id_episodio: episodioID, //Servicio admision
       cun_interno: "",

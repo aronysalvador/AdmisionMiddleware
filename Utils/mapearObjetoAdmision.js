@@ -66,7 +66,7 @@ const mapearAdmisionObjeto = (id, datos) => {
         Unidad_Org_medica: "PLAMAPRI",
         Num_Medico_Tratamiento: "",
       },
-      Usuario_Sap: usuarioSAP,
+      Usuario_Sap: "sadiazg",
     },
   };
   return datosSAP;
