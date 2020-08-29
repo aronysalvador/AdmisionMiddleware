@@ -20,7 +20,11 @@ route.post("/", async (req, res) => {
     const { id: admisionID } = insertaAdmision.content[0];
 
     //Mapear objeto admision
-    const admisionToSAP = mapearAdmisionObjeto(admisionID, admision_json);
+    let admisionToSAP = mapearAdmisionObjeto(admisionID, admision_json);
+
+    console.log("***************** admisionToSAP  *********************")
+    console.log(admisionToSAP)
+    
 
     //Enviar admision a SAP
     const resultAdmision = await sapHttpPost(
@@ -31,10 +35,15 @@ route.post("/", async (req, res) => {
     let intento = 0;
 
     while (true) {
+      console.log(`intento ${intento}`)
       await sleep(3000); //segundo y medio
+      
       if (intento > 3){
-        return res.status(500).json(apiResponseReducer({}, 500, "Ocurrio un error al crear la Admisión"));
+        return res
+        .status(500)
+        .json(apiResponseReducer({}, 500, "Error api admisión"));
       }
+
       const datos = await httpGetRequest(getAdmisionByID(admisionID));
       const { id_estado: id_estadoAdmision } = datos.content[0];
       if (id_estadoAdmision === 3) break;
@@ -56,6 +65,10 @@ route.post("/", async (req, res) => {
       EpisodioID,
       admision_json
     );
+
+    console.log("***************** siniestroToSAP  *********************")
+    console.log(siniestroToSAP)
+
 
     const siniestroSAPResponse = await sapHttpPost(
       process.env.URL_SAP_SINIESTRO,
@@ -84,6 +97,7 @@ route.post("/", async (req, res) => {
       apiResponseReducer({ siniestroID }, 200, "Operación Exitosa")
     );
   } catch (error) {
+    console.log(error)
     return res
       .status(500)
       .json(apiResponseReducer([error], 500, "Operación Exitosa"));

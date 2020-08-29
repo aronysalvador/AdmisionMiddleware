@@ -15,6 +15,7 @@ const mapearObjetoSiniestro = (id, episodioID, datos) => {
     sucursalEmpresaSiniestro: { terms },
     lugarAccidente,
     descripcionAccidente,
+    razonSocial,
     desarrollarTrabajoHabitual,
     datosAdicionalesSAP: { apellidoMaterno, apellidoPaterno, nombre },
     rut,
@@ -41,13 +42,27 @@ const mapearObjetoSiniestro = (id, episodioID, datos) => {
     razonAlertaForm,
   } = datos;
 
+
   const direccionSiniestro = extraerDatosDireccion(terms);
   const actualDateTime = new Date();
   const inicioJornadaLaboralArr = inicioJornadaLaboral.split(":");
   const finJornadaLaboralArr = finJornadaLaboral.split(":");
+
+  console.log("***************************************")
+  console.log(SucursalEmpresaObjeto.codigo)
+  console.log("***************************************")
+
+
+  let motivo = ""
+  if(typeof razonAlertaForm != 'undefined' && razonAlertaForm.hasOwnProperty('causasID')){
+    motivo = !razonAlertaForm.causasID ? "" : `0${razonAlertaForm.causasID}`
+  }
+
+  let comuna = (typeof direccionSiniestro.comuna !== 'undefined') ? direccionSiniestro.comuna : ""
+
   return {
     Id_siniestro_digital: id, //ID database
-    Usuario_Sap: String(usuarioSAP).trim(), //"MPARRAAR",
+    Usuario_Sap: "MPARRAAR",//String(usuarioSAP).trim(), //"MPARRAAR",
     Datos_Generales_Siniestro: {
       id_episodio: episodioID, //Servicio admision
       cun_interno: "",
@@ -65,10 +80,10 @@ const mapearObjetoSiniestro = (id, episodioID, datos) => {
       hora_accidente: formatearHoraSiniestro(fechaHoraSiniestro), //"12:00:00",
       calle: direccionSiniestro.calle,
       numero: direccionSiniestro.numero,
-      comuna: direccionSiniestro.comuna,
+      comuna: comuna,
       pais: "CL",
-      localidad: direccionSiniestro.comuna,
-      region: extraerRegionDireccion(direccionSiniestro.comuna),
+      localidad: comuna,
+      region: extraerRegionDireccion(comuna),
       lugar_accidente: "9", //No especificado, //"9",
       sitio_especifico_accidente: String(lugarReferenciaSiniestro), //"calle", DUDA
       que_hacia_trabajador: lugarAccidente, //"caminando a visitar cliente", DUDA
@@ -103,27 +118,27 @@ const mapearObjetoSiniestro = (id, episodioID, datos) => {
     },
     Alerta_Cal_trabajo: {
       posible_causa_nolaboral:
-        razonAlertaForm.glosa === "Posible causa no laboral".trim() ? "X" : "", //"X",
+      typeof razonAlertaForm !== 'undefined' && razonAlertaForm.glosa === "Posible causa no laboral".trim() ? "X" : "", //"X",
       dir_sindical_cometido_gremial:
-        razonAlertaForm.glosa ===
+      typeof razonAlertaForm !== 'undefined' && razonAlertaForm.glosa ===
         "Dirigente sindical en cometido gremial".trim()
           ? "X"
           : "",
       trabajo_distancia:
-        razonAlertaForm.glosa === "Trabajo a distancia".trim() ? "X" : "",
+      typeof razonAlertaForm !== 'undefined' && razonAlertaForm.glosa === "Trabajo a distancia".trim() ? "X" : "",
       fuerza_mayor_extrana:
-        razonAlertaForm.glosa === "Fuerza mayor extraña".trim() ? "X" : "",
+      typeof razonAlertaForm !== 'undefined' && razonAlertaForm.glosa === "Fuerza mayor extraña".trim() ? "X" : "",
       acc_control_medico:
-        razonAlertaForm.glosa === "Accidente en control médico".trim()
+      typeof razonAlertaForm !== 'undefined' && razonAlertaForm.glosa === "Accidente en control médico".trim()
           ? "X"
           : "",
       no_registra_alerta:
-        razonAlertaForm.glosa === "No registra alerta".trim() ? "X" : "",
-      motivo: !razonAlertaForm.causasID ? "" : `0${razonAlertaForm.causasID}`,
+      typeof razonAlertaForm !== 'undefined' && razonAlertaForm.glosa === "No registra alerta".trim() ? "X" : "",
+      motivo: motivo,
     },
     cabecera_sin: {
       codigo: SucursalEmpresaObjeto.codigo, // BP Empresa"2000462553",
-      razon_social: razonSocialForm, //"empresa",
+      razon_social: razonSocial.name, //"empresa",
       numero_sucursal_achs: "124",
       direccion_sucursal_achs: SucursalEmpresaObjeto.direccion, //"calle ramon carnicer",
       rubro: "",

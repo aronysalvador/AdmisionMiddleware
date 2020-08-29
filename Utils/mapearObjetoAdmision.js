@@ -41,7 +41,7 @@ const mapearAdmisionObjeto = (id, datos) => {
         Sexo: masculino ? "1" : "" || femenino ? "2" : "",
         titulo: "1", //En duro
         Nacionalidad: nacionalidad,
-        Pais_nacimiento: lugarNacimiento,
+        Pais_nacimiento: "CL", //lugarNacimiento, parcheeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
         Estado_civil: estadoCivil,
         religion: "CR",
         tipo_documento: "RU",
@@ -65,12 +65,12 @@ const mapearAdmisionObjeto = (id, datos) => {
           minutos: actualDateTime.getMinutes(),
         }),
         Estado_externo: "RC",
-        Unidad_organizativa: String(unidadOrganizativa.UT).trim(), //"PLATCAPR", // UT  //Campo Short
-        Unidad_Org_medica: String(unidadOrganizativa.UM).trim(), //"PLAMAPRI", //UM //Campo Short
+        Unidad_organizativa: "PLATCAPR",//, //"PLATCAPR", // UT  //Campo Short // *****************parche
+        Unidad_Org_medica: "PLAMAPRI",//String(unidadOrganizativa.UM).trim(), //"PLAMAPRI", //UM //Campo Short // *****************parche
         Num_Medico_Tratamiento: "",
       },
 
-      Usuario_Sap: String(usuarioSAP).trim(), //"MPARRAAR",
+      Usuario_Sap: "MPARRAAR",//String(usuarioSAP).trim(), //"MPARRAAR",
     },
   };
   return datosSAP;
