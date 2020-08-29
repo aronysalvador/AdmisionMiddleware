@@ -33,16 +33,13 @@ route.post("/", async (req, res) => {
     let intento = 0;
 
     while (true) {
-
+      await sleep(2000); //segundo y medio
       if (intento > 3){
         return res.status(500).json(apiResponseReducer({}, 500, "Ocurrio un error al crear la Admisión"));
       }
-
       const datos = await httpGetRequest(getAdmisionByID(admisionID));
       const { id_estado: id_estadoAdmision } = datos.content[0];
       if (id_estadoAdmision === 3) break;
-
-      await sleep(1500); //segundo y medio
       ++intento;
     }
 
@@ -69,7 +66,7 @@ route.post("/", async (req, res) => {
     let intento2 = 0;
 
     while (true) {
-      
+      await sleep(2000); //segundo y medio
       if (intento2 > 3){
         return res.status(500).json(apiResponseReducer({}, 500, "Ocurrio un error al crear la Admisión"));
       }
@@ -80,7 +77,6 @@ route.post("/", async (req, res) => {
       const { id_estado: id_estadoSiniestro } = getSiniestroByID.content[0];
       if (id_estadoSiniestro === 3) break;
 
-      await sleep(1500); //segundo y medio
       ++intento2;
     }
 
