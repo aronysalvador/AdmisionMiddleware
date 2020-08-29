@@ -119,6 +119,19 @@ function concatenarRelatoToSAP(
   const relatoCompleto = `${relato}, ${datosTestigo}, ${datosResponsable}`;
   return relatoCompleto;
 }
+
+//Mapear el parametro dependencia en SAP
+function mapearCategoriaOcupacional({ id }) {
+  return (id === 2) | (id === 4) | (id === 5) ? "1" : "2";
+}
+
+//Obtener nombre las UM y UT, campos Unidad_organizativa y Unidad_Org_medica
+function mappingCamposUTMUT({ CentroData }) {
+  const UT = CentroData.find((x) => x.OBJCAT === "UT");
+  const UM = CentroData.find((x) => x.OBJCAT === "UM");
+  return { UT: UT.SHORT, UM: UM.SHORT };
+}
+
 module.exports = {
   extraerNumeroDireccion,
   extraerRegionDireccion,
@@ -129,4 +142,6 @@ module.exports = {
   extraerDatosDireccion,
   sleep,
   concatenarRelatoToSAP,
+  mapearCategoriaOcupacional,
+  mappingCamposUTMUT,
 };
