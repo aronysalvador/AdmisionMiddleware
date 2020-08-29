@@ -22,9 +22,9 @@ route.post("/", async (req, res) => {
     //Mapear objeto admision
     let admisionToSAP = mapearAdmisionObjeto(admisionID, admision_json);
 
-    console.log("***************** admisionToSAP  *********************")
+    console.log("********** admisionToSAP *********")
     console.log(admisionToSAP)
-    
+    console.log("********** admisionToSAP *********")
 
     //Enviar admision a SAP
     const resultAdmision = await sapHttpPost(
@@ -66,8 +66,9 @@ route.post("/", async (req, res) => {
       admision_json
     );
 
-    console.log("***************** siniestroToSAP  *********************")
+    console.log("********** siniestroToSAP *********")
     console.log(siniestroToSAP)
+    console.log("********** siniestroToSAP *********")
 
 
     const siniestroSAPResponse = await sapHttpPost(
@@ -77,9 +78,13 @@ route.post("/", async (req, res) => {
     let intento2 = 0;
 
     while (true) {
+      console.log(`intento ${intento2}`)
       await sleep(3000); //segundo y medio
+
       if (intento2 > 3){
-        return res.status(500).json(apiResponseReducer({}, 500, "Ocurrio un error al crear la Admisión"));
+        return res
+        .status(500)
+        .json(apiResponseReducer({}, 500, "Error api siniestro"));
       }
 
       const getSiniestroByID = await httpGetRequest(

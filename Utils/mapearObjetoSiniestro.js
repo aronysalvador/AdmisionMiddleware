@@ -137,7 +137,7 @@ const mapearObjetoSiniestro = (id, episodioID, datos) => {
       motivo: motivo,
     },
     cabecera_sin: {
-      codigo: SucursalEmpresaObjeto.codigo, // BP Empresa"2000462553",
+      codigo: String(SucursalEmpresaObjeto.codigo), // BP Empresa"2000462553",
       razon_social: razonSocial.name, //"empresa",
       numero_sucursal_achs: "124",
       direccion_sucursal_achs: SucursalEmpresaObjeto.direccion, //"calle ramon carnicer",

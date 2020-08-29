@@ -23,11 +23,15 @@ function extraerDatosDireccion(direccion) {
 }
 
 function extraerRegionDireccion(comuna) {
+
+  console.log("input",comuna)
+
+  //console.log("",)
+
   if (comuna) {
     const { codigo_region } = comunas.find(
       (x) => x.nombre === comuna.trim().toUpperCase()
     );
-    console.log({ codigo_region });
     return codigo_region;
   }
 }
@@ -109,12 +113,12 @@ function concatenarRelatoToSAP(
 
   //Sí tiene testigos
   if (Object.keys(testigo))
-    datosTestigo = `Tiene testigos de su accidente, el nombre y el cargo es ${testigo.nombre} ${testigo.cargo}`;
+    datosTestigo = `Tiene testigos de su accidente, el nombre y el cargo es ${String(testigo.nombre)} ${String(testigo.cargo)}`;
   else datosTestigo = "No tiene testigos de su accidente";
 
   //Sí tiene responsables
   if (Object.keys(responsable))
-    datosResponsable = `Avisó a la empresa, el nombre y cargo (relación) de la persona es ${responsable.nombre}, ${responsable.cargo}, fecha y hora en que aviso a su empresa sobre el accidente: ${fechaResponsable} a las ${horaResponsable}`;
+    datosResponsable = `Avisó a la empresa, el nombre y cargo (relación) de la persona es ${String(responsable.nombre)}, ${String(responsable.cargo)}, fecha y hora en que aviso a su empresa sobre el accidente: ${String(fechaResponsable)} a las ${String(horaResponsable)}`;
   else datosResponsable = "No avisó a su empresa";
 
   const relatoCompleto = `${relato}, ${datosTestigo}, ${datosResponsable}`;

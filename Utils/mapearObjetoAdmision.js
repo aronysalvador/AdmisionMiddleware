@@ -65,8 +65,8 @@ const mapearAdmisionObjeto = (id, datos) => {
           minutos: actualDateTime.getMinutes(),
         }),
         Estado_externo: "RC",
-        Unidad_organizativa: "PLATCAPR",//, //"PLATCAPR", // UT  //Campo Short // *****************parche
-        Unidad_Org_medica: "PLAMAPRI",//String(unidadOrganizativa.UM).trim(), //"PLAMAPRI", //UM //Campo Short // *****************parche
+        Unidad_organizativa: String(unidadOrganizativa.UM).trim(),//, //"PLATCAPR", // UT  //Campo Short // *****************parche
+        Unidad_Org_medica: String(unidadOrganizativa.UT).trim(), //"PLAMAPRI", //UM //Campo Short // *****************parche
         Num_Medico_Tratamiento: "",
       },
 
