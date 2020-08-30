@@ -26,6 +26,9 @@ route.post("/", async (req, res) => {
     console.log(admisionToSAP)
     console.log("********** admisionToSAP *********")
 
+    console.log(process.env.URL_SAP_ADMISION)
+
+
     //Enviar admision a SAP
     const resultAdmision = await sapHttpPost(
       process.env.URL_SAP_ADMISION,

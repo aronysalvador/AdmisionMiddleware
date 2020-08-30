@@ -137,9 +137,9 @@ const mapearObjetoSiniestro = (id, episodioID, datos) => {
       motivo: motivo,
     },
     cabecera_sin: {
-      codigo: String(SucursalEmpresaObjeto.codigo), // BP Empresa"2000462553",
+      codigo: String(fomrat(SucursalEmpresaObjeto.codigo,10)), // BP Empresa"2000462553",
       razon_social: razonSocial.name, //"empresa",
-      numero_sucursal_achs: "124",
+      numero_sucursal_achs: "",
       direccion_sucursal_achs: SucursalEmpresaObjeto.direccion, //"calle ramon carnicer",
       rubro: "",
       CIUU: "",
@@ -169,5 +169,26 @@ const mapearObjetoSiniestro = (id, episodioID, datos) => {
     },
   };
 };
+
+//Se utiliza para formatear el siniestro
+function fomrat(number, width) {
+  var numberOutput = Math.abs(number); /* Valor absoluto del número */
+  var length = number.toString().length; /* Largo del número */ 
+  var zero = "0"; /* String de cero */  
+  
+  if (width <= length) {
+      if (number < 0) {
+           return ("-" + numberOutput.toString()); 
+      } else {
+           return numberOutput.toString(); 
+      }
+  } else {
+      if (number < 0) {
+          return ("-" + (zero.repeat(width - length)) + numberOutput.toString()); 
+      } else {
+          return ((zero.repeat(width - length)) + numberOutput.toString()); 
+      }
+  }
+}
 
 module.exports = mapearObjetoSiniestro;
