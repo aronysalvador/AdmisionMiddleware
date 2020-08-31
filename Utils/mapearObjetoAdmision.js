@@ -29,7 +29,7 @@ const mapearAdmisionObjeto = (id, datos) => {
   } = datos;
   const actualDateTime = new Date();
   const direccionComuna = direccionParticular.split(",");
-  const unidadOrganizativa = mappingCamposUTMUT(centrosForm);
+  //const unidadOrganizativa = mappingCamposUTMUT(centrosForm);
   const datosSAP = {
     Admisiones: {
       Id_admision_digital: id,
