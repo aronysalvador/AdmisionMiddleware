@@ -111,15 +111,30 @@ function concatenarRelatoToSAP(
   );
 
   //Sí tiene testigos
-  if (Object.keys(testigo).length > 0)
+  //if (Object.values(testigo).length > 0 )
+  if (testigo.nombre !== "" && testigo.cargo !== "")
     datosTestigo = `Tiene testigos de su accidente, el nombre y el cargo es ${String(
       testigo.nombre
     )} ${String(testigo.cargo)}`;
   else datosTestigo = "No tiene testigos de su accidente";
 
   //Sí tiene responsables
-  if (Object.keys(responsable).length > 0)
-    datosResponsable = `Avisó a la empresa, el nombre y cargo (relación) de la persona es ${String(
+  //if (Object.values(responsable).length > 0)
+
+  console.log(
+    "************************************************************************"
+  );
+  console.log("npmbre", typeof responsable.nombre);
+  console.log("cargo", typeof responsable.cargo);
+  console.log(
+    "************************************************************************"
+  );
+
+  if (
+    typeof responsable.nombre !== "undefined" &&
+    typeof responsable.cargo !== "undefined"
+  )
+    datosResponsable = `Avisó a la empresa, el nombre y cargo  de la persona es ${String(
       responsable.nombre
     )}, ${String(
       responsable.cargo
