@@ -7,9 +7,10 @@ const {
   formatearFecha,
   concatenarRelatoToSAP,
   mapearCategoriaOcupacional,
+  alertaPorDefecto,
 } = require("../Utils/extraccionData");
 
-const normalizar = require('./ApiUtil/String')
+const normalizar = require("./ApiUtil/String");
 
 const mapearObjetoSiniestro = (id, episodioID, datos) => {
   const {
@@ -44,23 +45,27 @@ const mapearObjetoSiniestro = (id, episodioID, datos) => {
     razonAlertaForm,
   } = datos;
 
-
   const direccionSiniestro = extraerDatosDireccion(terms);
   const actualDateTime = new Date();
   const inicioJornadaLaboralArr = inicioJornadaLaboral.split(":");
   const finJornadaLaboralArr = finJornadaLaboral.split(":");
 
-  console.log("***************************************")
-  console.log(SucursalEmpresaObjeto.codigo)
-  console.log("***************************************")
+  console.log("***************************************");
+  console.log(SucursalEmpresaObjeto.codigo);
+  console.log("***************************************");
 
-
-  let motivo = ""
-  if(typeof razonAlertaForm != 'undefined' && razonAlertaForm.hasOwnProperty('causasID')){
-    motivo = !razonAlertaForm.causasID ? "" : `0${razonAlertaForm.causasID}`
+  let motivo = "";
+  if (
+    typeof razonAlertaForm != "undefined" &&
+    razonAlertaForm.hasOwnProperty("causasID")
+  ) {
+    motivo = !razonAlertaForm.causasID ? "" : `0${razonAlertaForm.causasID}`;
   }
 
-  let comuna = (typeof direccionSiniestro.comuna !== 'undefined') ? direccionSiniestro.comuna : ""
+  let comuna =
+    typeof direccionSiniestro.comuna !== "undefined"
+      ? direccionSiniestro.comuna
+      : "";
 
   return {
     Id_siniestro_digital: id, //ID database
@@ -108,7 +113,9 @@ const mapearObjetoSiniestro = (id, episodioID, datos) => {
     Denunciante: {
       clasificacion: "2",
       rut: rut, //"17151821-0",
-      nombre_completo: normalizar(`${nombre} ${apellidoPaterno} ${apellidoMaterno}`), //"BRIAN ISRAEL BRIONES SANTIBAÑEZ",
+      nombre_completo: normalizar(
+        `${nombre} ${apellidoPaterno} ${apellidoMaterno}`
+      ), //"BRIAN ISRAEL BRIONES SANTIBAÑEZ",
       telefono: formatearTelefono(telefonoParticular), //"976765456",
     },
     Alerta_Clasif_trayecto: {
@@ -120,26 +127,40 @@ const mapearObjetoSiniestro = (id, episodioID, datos) => {
     },
     Alerta_Cal_trabajo: {
       posible_causa_nolaboral:
-      typeof razonAlertaForm !== 'undefined' && razonAlertaForm.glosa === "Posible causa no laboral".trim() ? "X" : "", //"X",
+        razonAlertaForm &&
+        razonAlertaForm.glosa === "Posible causa no laboral".trim()
+          ? "X"
+          : "", //"X",
       dir_sindical_cometido_gremial:
-      typeof razonAlertaForm !== 'undefined' && razonAlertaForm.glosa ===
-        "Dirigente sindical en cometido gremial".trim()
+        razonAlertaForm &&
+        razonAlertaForm.glosa ===
+          "Dirigente sindical en cometido gremial".trim()
           ? "X"
           : "",
       trabajo_distancia:
-      typeof razonAlertaForm !== 'undefined' && razonAlertaForm.glosa === "Trabajo a distancia".trim() ? "X" : "",
-      fuerza_mayor_extrana:
-      typeof razonAlertaForm !== 'undefined' && razonAlertaForm.glosa === "Fuerza mayor extraña".trim() ? "X" : "",
-      acc_control_medico:
-      typeof razonAlertaForm !== 'undefined' && razonAlertaForm.glosa === "Accidente en control médico".trim()
+        razonAlertaForm &&
+        razonAlertaForm.glosa === "Trabajo a distancia".trim()
           ? "X"
           : "",
-      no_registra_alerta:
-      typeof razonAlertaForm !== 'undefined' && razonAlertaForm.glosa === "No registra alerta".trim() ? "X" : "",
+      fuerza_mayor_extrana:
+        razonAlertaForm &&
+        razonAlertaForm.glosa === "Fuerza mayor extraña".trim()
+          ? "X"
+          : "",
+      acc_control_medico:
+        razonAlertaForm &&
+        razonAlertaForm.glosa === "Accidente en control médico".trim()
+          ? "X"
+          : "",
+      no_registra_alerta: alertaPorDefecto(razonAlertaForm),
+      // typeof razonAlertaForm !== "undefined" &&
+      // razonAlertaForm.glosa === "No registra alerta".trim()
+      //   ? "X"
+      //   : "",
       motivo: motivo,
     },
     cabecera_sin: {
-      codigo: String(fomrat(SucursalEmpresaObjeto.codigo,10)), // BP Empresa"2000462553",
+      codigo: String(fomrat(SucursalEmpresaObjeto.codigo, 10)), // BP Empresa"2000462553",
       razon_social: normalizar(razonSocial.name), //"empresa",
       numero_sucursal_achs: "",
       direccion_sucursal_achs: normalizar(SucursalEmpresaObjeto.direccion), //"calle ramon carnicer",
@@ -162,8 +183,8 @@ const mapearObjetoSiniestro = (id, episodioID, datos) => {
       puesto_trabajo: "TRABAJADOR", //En blaco,
       fecha_ingreso_trab: formatearFecha(ingresoTrabajoActual), //"01.01.1998",
       duracion_contrato: String(tipoDeContrato.id), //"3",
-      categoria_ocup: mapearCategoriaOcupacional(categoriaOcupacionalForm), //String(categoriaOcupacionalForm.id), //"2",
-      dependencia: "1",
+      categoria_ocup: String(categoriaOcupacionalForm.id), //mapearCategoriaOcupacional(categoriaOcupacionalForm), //String(categoriaOcupacionalForm.id), //"2",
+      dependencia: mapearCategoriaOcupacional(categoriaOcupacionalForm), //"1", //Mapear el parametro depedencia
       remuneracion: String(tipoRemuneracion.id), //"1",
       prevision_salud: String(isapreSeleccionado.id), //"1000002260",
       afp: String(afpForm.codigo), //"42",
@@ -175,21 +196,21 @@ const mapearObjetoSiniestro = (id, episodioID, datos) => {
 //Se utiliza para formatear el siniestro
 function fomrat(number, width) {
   var numberOutput = Math.abs(number); /* Valor absoluto del número */
-  var length = number.toString().length; /* Largo del número */ 
-  var zero = "0"; /* String de cero */  
-  
+  var length = number.toString().length; /* Largo del número */
+  var zero = "0"; /* String de cero */
+
   if (width <= length) {
-      if (number < 0) {
-           return ("-" + numberOutput.toString()); 
-      } else {
-           return numberOutput.toString(); 
-      }
+    if (number < 0) {
+      return "-" + numberOutput.toString();
+    } else {
+      return numberOutput.toString();
+    }
   } else {
-      if (number < 0) {
-          return ("-" + (zero.repeat(width - length)) + numberOutput.toString()); 
-      } else {
-          return ((zero.repeat(width - length)) + numberOutput.toString()); 
-      }
+    if (number < 0) {
+      return "-" + zero.repeat(width - length) + numberOutput.toString();
+    } else {
+      return zero.repeat(width - length) + numberOutput.toString();
+    }
   }
 }
 

@@ -23,8 +23,7 @@ function extraerDatosDireccion(direccion) {
 }
 
 function extraerRegionDireccion(comuna) {
-
-  console.log("input",comuna)
+  console.log("input", comuna);
 
   //console.log("",)
 
@@ -106,28 +105,32 @@ function concatenarRelatoToSAP(
   //"Resumen relato" + la información de testigo  + la información de responsable
   let datosTestigo = "";
   let datosResponsable = "";
- 
+
   const { fechaResponsable, horaResponsable } = formatearFechaHoraResponsable(
     fechaHoraResponsable
   );
- 
+
   //Sí tiene testigos
   //if (Object.values(testigo).length > 0 )
-  if (testigo.nombre !== "" && testigo.cargo !== "")
+  if (testigo.nombre && testigo.cargo)
     datosTestigo = `Tiene testigos de su accidente, el nombre y el cargo es ${String(
       testigo.nombre
     )} ${String(testigo.cargo)}`;
   else datosTestigo = "No tiene testigos de su accidente";
- 
+
   //Sí tiene responsables
   //if (Object.values(responsable).length > 0)
 
-  console.log("************************************************************************")
-  console.log("npmbre",typeof responsable.nombre)
-  console.log("cargo",typeof responsable.cargo)
-  console.log("************************************************************************")
+  console.log(
+    "************************************************************************"
+  );
+  console.log("npmbre", typeof responsable.nombre);
+  console.log("cargo", typeof responsable.cargo);
+  console.log(
+    "************************************************************************"
+  );
 
-  if (typeof responsable.nombre !== "undefined" && typeof responsable.cargo !== "undefined")
+  if (responsable.nombre && responsable.cargo)
     datosResponsable = `Avisó a la empresa, el nombre y cargo  de la persona es ${String(
       responsable.nombre
     )}, ${String(
@@ -136,7 +139,7 @@ function concatenarRelatoToSAP(
       fechaResponsable
     )} a las ${String(horaResponsable)}`;
   else datosResponsable = "No avisó a su empresa";
- 
+
   const relatoCompleto = `${relato}, ${datosTestigo}, ${datosResponsable}`;
   return relatoCompleto;
 }
@@ -153,6 +156,11 @@ function mappingCamposUTMUT({ CentroData }) {
   return { UT: UT.SHORT, UM: UM.SHORT };
 }
 
+//Alertas calificacion, no tiene alerta por defecto
+function alertaPorDefecto(razonAlertaForm) {
+  const result = !razonAlertaForm ? "X" : "";
+  return result;
+}
 module.exports = {
   extraerNumeroDireccion,
   extraerRegionDireccion,
@@ -165,4 +173,5 @@ module.exports = {
   concatenarRelatoToSAP,
   mapearCategoriaOcupacional,
   mappingCamposUTMUT,
+  alertaPorDefecto,
 };
