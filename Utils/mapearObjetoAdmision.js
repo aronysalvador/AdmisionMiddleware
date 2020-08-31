@@ -7,6 +7,8 @@ const {
   mappingCamposUTMUT,
 } = require("./extraccionData");
 
+const normalizar = require('./ApiUtil/String')
+
 const mapearAdmisionObjeto = (id, datos) => {
   const {
     datosAdicionalesSAP: {
@@ -34,23 +36,23 @@ const mapearAdmisionObjeto = (id, datos) => {
     Admisiones: {
       Id_admision_digital: id,
       Paciente: {
-        Nombres: nombre,
-        Apellido_pat: apellidoPaterno,
-        Apellido_mat: apellidoMaterno,
+        Nombres: normalizar(nombre),
+        Apellido_pat: normalizar(apellidoPaterno),
+        Apellido_mat: normalizar(apellidoMaterno),
         Fecha_nacimiento: formatearFecha(fechaNacimiento),
         Sexo: masculino ? "1" : "" || femenino ? "2" : "",
         titulo: "1", //En duro
-        Nacionalidad: nacionalidad,
+        Nacionalidad: normalizar(nacionalidad),
         Pais_nacimiento: "CL", //lugarNacimiento, parcheeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
-        Estado_civil: estadoCivil,
+        Estado_civil: normalizar(estadoCivil),
         religion: "CR",
         tipo_documento: "RU",
         num_documento: rut,
-        calle_dom: direccionComuna[0],
-        numero_dom: extraerNumeroDireccion(direccionParticular),
-        ciuidad: direccionComuna[1],
-        region: extraerRegionDireccion(direccionComuna[1]),
-        telefono: formatearTelefono(telefonoParticular),
+        calle_dom: normalizar(direccionComuna[0]),
+        numero_dom: normalizar(extraerNumeroDireccion(direccionParticular)),
+        ciuidad: normalizar(direccionComuna[1]),
+        region: normalizar(extraerRegionDireccion(direccionComuna[1])),
+        telefono: normalizar(formatearTelefono(telefonoParticular)),
         email: emailusuario || "",
       },
       Admision: {
@@ -65,12 +67,12 @@ const mapearAdmisionObjeto = (id, datos) => {
           minutos: actualDateTime.getMinutes(),
         }),
         Estado_externo: "RC",
-        Unidad_organizativa: "PLATCAPR", //String(unidadOrganizativa.UM).trim(),//, //"PLATCAPR", // UT  //Campo Short // *****************parche
-        Unidad_Org_medica: "PLAMAPRI", //String(unidadOrganizativa.UT).trim(), //"PLAMAPRI", //UM //Campo Short // *****************parche
+        Unidad_organizativa: String(centrosForm.UO_Tratamiento).trim(),
+        Unidad_Org_medica: String(centrosForm.UO_Medica).trim(),
         Num_Medico_Tratamiento: "",
       },
 
-      Usuario_Sap: "MPARRAAR",//String(usuarioSAP).trim(), //"MPARRAAR",
+      Usuario_Sap: String(usuarioSAP).toUpperCase().trim(), //"MPARRAAR",
     },
   };
   return datosSAP;

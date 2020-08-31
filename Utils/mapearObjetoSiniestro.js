@@ -9,6 +9,8 @@ const {
   mapearCategoriaOcupacional,
 } = require("../Utils/extraccionData");
 
+const normalizar = require('./ApiUtil/String')
+
 const mapearObjetoSiniestro = (id, episodioID, datos) => {
   const {
     fechaHoraSiniestro,
@@ -62,7 +64,7 @@ const mapearObjetoSiniestro = (id, episodioID, datos) => {
 
   return {
     Id_siniestro_digital: id, //ID database
-    Usuario_Sap: "MPARRAAR",//String(usuarioSAP).trim(), //"MPARRAAR",
+    Usuario_Sap: String(usuarioSAP).trim(), //"MPARRAAR",
     Datos_Generales_Siniestro: {
       id_episodio: episodioID, //Servicio admision
       cun_interno: "",
@@ -78,24 +80,24 @@ const mapearObjetoSiniestro = (id, episodioID, datos) => {
     Siniestro: {
       fecha_accidente: formatearFechaSiniestro(fechaHoraSiniestro), //"13.08.2020",
       hora_accidente: formatearHoraSiniestro(fechaHoraSiniestro), //"12:00:00",
-      calle: direccionSiniestro.calle,
-      numero: direccionSiniestro.numero,
-      comuna: comuna,
+      calle: normalizar(direccionSiniestro.calle),
+      numero: normalizar(direccionSiniestro.numero),
+      comuna: normalizar(comuna),
       pais: "CL",
-      localidad: comuna,
-      region: extraerRegionDireccion(comuna),
+      localidad: normalizar(comuna),
+      region: normalizar(extraerRegionDireccion(comuna)),
       lugar_accidente: "9", //No especificado, //"9",
-      sitio_especifico_accidente: String(lugarReferenciaSiniestro), //"calle", DUDA
-      que_hacia_trabajador: lugarAccidente, //"caminando a visitar cliente", DUDA
+      sitio_especifico_accidente: normalizar(String(lugarReferenciaSiniestro)), //"calle", DUDA
+      que_hacia_trabajador: normalizar(lugarAccidente), //"caminando a visitar cliente", DUDA
       mecanismo_accidente: "92",
       que_paso_accidente: concatenarRelatoToSAP(
-        relatoAccidente,
-        testigos,
-        responsable,
-        fechaHoraResponsable
+        normalizar(relatoAccidente),
+        normalizar(testigos),
+        normalizar(responsable),
+        normalizar(fechaHoraResponsable)
       ), //DUDA
       agente_accidente: "700",
-      desarrollaba_trabajo_habitual: String(
+      desarrollaba_trabajo_habitual: normalizar(
         desarrollarTrabajoHabitual
       ).toUpperCase(), //"SI",
       criterio_gravedad: "1",
@@ -106,7 +108,7 @@ const mapearObjetoSiniestro = (id, episodioID, datos) => {
     Denunciante: {
       clasificacion: "2",
       rut: rut, //"17151821-0",
-      nombre_completo: `${nombre} ${apellidoPaterno} ${apellidoMaterno}`, //"BRIAN ISRAEL BRIONES SANTIBAÑEZ",
+      nombre_completo: normalizar(`${nombre} ${apellidoPaterno} ${apellidoMaterno}`), //"BRIAN ISRAEL BRIONES SANTIBAÑEZ",
       telefono: formatearTelefono(telefonoParticular), //"976765456",
     },
     Alerta_Clasif_trayecto: {
@@ -114,7 +116,7 @@ const mapearObjetoSiniestro = (id, episodioID, datos) => {
       trabajador_a_distancia: "",
       fuerza_mayor_extrana: "",
       acciente_en_control_medico: "",
-      no_registra_alerta: "X",
+      no_registra_alerta: "",
     },
     Alerta_Cal_trabajo: {
       posible_causa_nolaboral:
@@ -138,9 +140,9 @@ const mapearObjetoSiniestro = (id, episodioID, datos) => {
     },
     cabecera_sin: {
       codigo: String(fomrat(SucursalEmpresaObjeto.codigo,10)), // BP Empresa"2000462553",
-      razon_social: razonSocial.name, //"empresa",
+      razon_social: normalizar(razonSocial.name), //"empresa",
       numero_sucursal_achs: "",
-      direccion_sucursal_achs: SucursalEmpresaObjeto.direccion, //"calle ramon carnicer",
+      direccion_sucursal_achs: normalizar(SucursalEmpresaObjeto.direccion), //"calle ramon carnicer",
       rubro: "",
       CIUU: "",
     },

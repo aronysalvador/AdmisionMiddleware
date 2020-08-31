@@ -106,21 +106,37 @@ function concatenarRelatoToSAP(
   //"Resumen relato" + la información de testigo  + la información de responsable
   let datosTestigo = "";
   let datosResponsable = "";
-
+ 
   const { fechaResponsable, horaResponsable } = formatearFechaHoraResponsable(
     fechaHoraResponsable
   );
-
+ 
   //Sí tiene testigos
-  if (Object.keys(testigo))
-    datosTestigo = `Tiene testigos de su accidente, el nombre y el cargo es ${String(testigo.nombre)} ${String(testigo.cargo)}`;
+  //if (Object.values(testigo).length > 0 )
+  if (testigo.nombre !== "" && testigo.cargo !== "")
+    datosTestigo = `Tiene testigos de su accidente, el nombre y el cargo es ${String(
+      testigo.nombre
+    )} ${String(testigo.cargo)}`;
   else datosTestigo = "No tiene testigos de su accidente";
-
+ 
   //Sí tiene responsables
-  if (Object.keys(responsable))
-    datosResponsable = `Avisó a la empresa, el nombre y cargo (relación) de la persona es ${String(responsable.nombre)}, ${String(responsable.cargo)}, fecha y hora en que aviso a su empresa sobre el accidente: ${String(fechaResponsable)} a las ${String(horaResponsable)}`;
-  else datosResponsable = "No avisó a su empresa";
+  //if (Object.values(responsable).length > 0)
 
+  console.log("************************************************************************")
+  console.log("npmbre",typeof responsable.nombre)
+  console.log("cargo",typeof responsable.cargo)
+  console.log("************************************************************************")
+
+  if (typeof responsable.nombre !== "undefined" && typeof responsable.cargo !== "undefined")
+    datosResponsable = `Avisó a la empresa, el nombre y cargo  de la persona es ${String(
+      responsable.nombre
+    )}, ${String(
+      responsable.cargo
+    )}, fecha y hora en que aviso a su empresa sobre el accidente: ${String(
+      fechaResponsable
+    )} a las ${String(horaResponsable)}`;
+  else datosResponsable = "No avisó a su empresa";
+ 
   const relatoCompleto = `${relato}, ${datosTestigo}, ${datosResponsable}`;
   return relatoCompleto;
 }
