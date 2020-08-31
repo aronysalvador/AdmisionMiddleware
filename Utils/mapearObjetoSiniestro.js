@@ -7,6 +7,7 @@ const {
   formatearFecha,
   concatenarRelatoToSAP,
   mapearCategoriaOcupacional,
+  alertaPorDefecto,
 } = require("../Utils/extraccionData");
 
 const normalizar = require("./ApiUtil/String");
@@ -126,36 +127,36 @@ const mapearObjetoSiniestro = (id, episodioID, datos) => {
     },
     Alerta_Cal_trabajo: {
       posible_causa_nolaboral:
-        typeof razonAlertaForm !== "undefined" &&
+        razonAlertaForm &&
         razonAlertaForm.glosa === "Posible causa no laboral".trim()
           ? "X"
           : "", //"X",
       dir_sindical_cometido_gremial:
-        typeof razonAlertaForm !== "undefined" &&
+        razonAlertaForm &&
         razonAlertaForm.glosa ===
           "Dirigente sindical en cometido gremial".trim()
           ? "X"
           : "",
       trabajo_distancia:
-        typeof razonAlertaForm !== "undefined" &&
+        razonAlertaForm &&
         razonAlertaForm.glosa === "Trabajo a distancia".trim()
           ? "X"
           : "",
       fuerza_mayor_extrana:
-        typeof razonAlertaForm !== "undefined" &&
+        razonAlertaForm &&
         razonAlertaForm.glosa === "Fuerza mayor extraña".trim()
           ? "X"
           : "",
       acc_control_medico:
-        typeof razonAlertaForm !== "undefined" &&
+        razonAlertaForm &&
         razonAlertaForm.glosa === "Accidente en control médico".trim()
           ? "X"
           : "",
-      no_registra_alerta:
-        typeof razonAlertaForm !== "undefined" &&
-        razonAlertaForm.glosa === "No registra alerta".trim()
-          ? "X"
-          : "",
+      no_registra_alerta: alertaPorDefecto(razonAlertaForm),
+      // typeof razonAlertaForm !== "undefined" &&
+      // razonAlertaForm.glosa === "No registra alerta".trim()
+      //   ? "X"
+      //   : "",
       motivo: motivo,
     },
     cabecera_sin: {

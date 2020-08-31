@@ -22,13 +22,6 @@ route.post("/", async (req, res) => {
     //Mapear objeto admision
     let admisionToSAP = mapearAdmisionObjeto(admisionID, admision_json);
 
-    console.log("********** admisionToSAP *********")
-    console.log(admisionToSAP)
-    console.log("********** admisionToSAP *********")
-
-    console.log(process.env.URL_SAP_ADMISION)
-
-
     //Enviar admision a SAP
     const resultAdmision = await sapHttpPost(
       process.env.URL_SAP_ADMISION,
@@ -38,13 +31,13 @@ route.post("/", async (req, res) => {
     let intento = 0;
 
     while (true) {
-      console.log(`intento ${intento}`)
+      console.log(`intento ${intento}`);
       await sleep(3000); //segundo y medio
-      
-      if (intento > 3){
+
+      if (intento > 3) {
         return res
-        .status(500)
-        .json(apiResponseReducer({}, 500, "Error api admisión"));
+          .status(500)
+          .json(apiResponseReducer({}, 500, "Error api admisión"));
       }
 
       const datos = await httpGetRequest(getAdmisionByID(admisionID));
@@ -69,10 +62,9 @@ route.post("/", async (req, res) => {
       admision_json
     );
 
-    console.log("********** siniestroToSAP *********")
-    console.log(siniestroToSAP)
-    console.log("********** siniestroToSAP *********")
-
+    console.log("********** siniestroToSAP *********");
+    console.log(siniestroToSAP);
+    console.log("********** siniestroToSAP *********");
 
     const siniestroSAPResponse = await sapHttpPost(
       process.env.URL_SAP_SINIESTRO,
@@ -81,13 +73,13 @@ route.post("/", async (req, res) => {
     let intento2 = 0;
 
     while (true) {
-      console.log(`intento ${intento2}`)
+      console.log(`intento ${intento2}`);
       await sleep(3000); //segundo y medio
 
-      if (intento2 > 3){
+      if (intento2 > 3) {
         return res
-        .status(500)
-        .json(apiResponseReducer({}, 500, "Error api siniestro"));
+          .status(500)
+          .json(apiResponseReducer({}, 500, "Error api siniestro"));
       }
 
       const getSiniestroByID = await httpGetRequest(
@@ -105,7 +97,7 @@ route.post("/", async (req, res) => {
       apiResponseReducer({ siniestroID }, 200, "Operación Exitosa")
     );
   } catch (error) {
-    console.log(error)
+    console.log(error);
     return res
       .status(500)
       .json(apiResponseReducer([error], 500, "Operación Exitosa"));

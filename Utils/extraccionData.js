@@ -112,7 +112,7 @@ function concatenarRelatoToSAP(
 
   //Sí tiene testigos
   //if (Object.values(testigo).length > 0 )
-  if (testigo.nombre !== "" && testigo.cargo !== "")
+  if (testigo.nombre && testigo.cargo)
     datosTestigo = `Tiene testigos de su accidente, el nombre y el cargo es ${String(
       testigo.nombre
     )} ${String(testigo.cargo)}`;
@@ -130,10 +130,7 @@ function concatenarRelatoToSAP(
     "************************************************************************"
   );
 
-  if (
-    typeof responsable.nombre !== "undefined" &&
-    typeof responsable.cargo !== "undefined"
-  )
+  if (responsable.nombre && responsable.cargo)
     datosResponsable = `Avisó a la empresa, el nombre y cargo  de la persona es ${String(
       responsable.nombre
     )}, ${String(
@@ -159,6 +156,11 @@ function mappingCamposUTMUT({ CentroData }) {
   return { UT: UT.SHORT, UM: UM.SHORT };
 }
 
+//Alertas calificacion, no tiene alerta por defecto
+function alertaPorDefecto(razonAlertaForm) {
+  const result = !razonAlertaForm ? "X" : "";
+  return result;
+}
 module.exports = {
   extraerNumeroDireccion,
   extraerRegionDireccion,
@@ -171,4 +173,5 @@ module.exports = {
   concatenarRelatoToSAP,
   mapearCategoriaOcupacional,
   mappingCamposUTMUT,
+  alertaPorDefecto,
 };
