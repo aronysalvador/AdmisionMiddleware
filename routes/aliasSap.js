@@ -31,7 +31,7 @@ route.get('/', async (req, res) => {
             case "grmsve@achs.cl" : 
                 alias = "svillegas" 
                 break;
-            case "jvalenzuela" :
+            case "jvalenzuela@achs.cl" :
                 alias="jvalenzuel"
                 break;
         }
