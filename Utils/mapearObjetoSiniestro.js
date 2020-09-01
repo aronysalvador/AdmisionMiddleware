@@ -69,7 +69,7 @@ const mapearObjetoSiniestro = (id, episodioID, datos) => {
 
   return {
     Id_siniestro_digital: id, //ID database
-    Usuario_Sap: String(usuarioSAP).trim(), //"MPARRAAR",
+    Usuario_Sap: String(usuarioSAP).toUpperCase().trim(), //"MPARRAAR",
     Datos_Generales_Siniestro: {
       id_episodio: episodioID, //Servicio admision
       cun_interno: "",
