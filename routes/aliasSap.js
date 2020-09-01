@@ -30,7 +30,10 @@ route.get('/', async (req, res) => {
                 break;   
             case "grmsve@achs.cl" : 
                 alias = "svillegas" 
-                break;                                                                               
+                break;
+            case "jvalenzuela" :
+                alias="jvalenzuel"
+                break;
         }
 
             const response = apiResponse(alias.toUpperCase().trim(), res.statusCode, "Operacion exitosa")
