@@ -14,7 +14,13 @@ route.get('/', async (req, res) => {
         if(!Array.isArray(Aliases)){
             res.send(apiResponse([], 501, "No se encontró alias SAP"))
         }else{
-            const response = apiResponse(Aliases[0].toString().toUpperCase(), res.statusCode, "Operacion exitosa")
+            let alias = ""
+            if(Aliases.length > 1){
+                alias = Aliases[1].toString().toUpperCase()
+            }else{
+                alias = Aliases[0].toString().toUpperCase()
+            }
+            const response = apiResponse(alias, res.statusCode, "Operacion exitosa")
             res.send(response)
         }
     } catch (error) {
