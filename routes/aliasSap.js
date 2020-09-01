@@ -8,22 +8,35 @@ const route = new Router();
 route.get('/', async (req, res) => {
     try {
         let {email} = req.query;
-        const nick = email.toString().split("@")[0]
-        const aliasResponse = await get(getConfigAliasSap(nick))
-        const {Aliases} = aliasResponse
-        if(!Array.isArray(Aliases)){
-            res.send(apiResponse([], 501, "No se encontró alias SAP"))
-        }else{
-            let alias = ""
-            if(Aliases.length > 1){
-                alias = Aliases[1].toString().toUpperCase()
-            }else{
-                alias = Aliases[0].toString().toUpperCase()
-            }
-            const response = apiResponse(alias, res.statusCode, "Operacion exitosa")
-            res.send(response)
+
+        console.log("email",email)
+
+        let alias = ""
+        switch(email.toLowerCase().trim()){
+            case "sadiazg@achs.cl" : 
+                alias = "SADIAZG" 
+                break;
+            case "ciquezadap@achs.cl" : 
+                alias = "ciquezadap" 
+                break;
+            case "ticoncar@achs.cl" : 
+                alias = "ticoncar" 
+                break; 
+            case "mnojvc@achs.cl" : 
+                alias = "jvalenzuel" 
+                break; 
+            case "egampa@achs.cl" : 
+                alias = "mparraar" 
+                break;   
+            case "grmsve@achs.cl" : 
+                alias = "svillegas" 
+                break;                                                                               
         }
+
+            const response = apiResponse(alias.toUpperCase().trim(), res.statusCode, "Operacion exitosa")
+            res.send(response)
     } catch (error) {
+        console.log(error)
         res.send(apiResponse([], 500, error))
     }
 })
