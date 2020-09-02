@@ -58,7 +58,7 @@ const mapearAdmisionObjeto = (id, datos) => {
       Admision: {
         Fecha_inicio_episodio: formatearFecha(new Date().toISOString()), //Fecha actual
         Tipo_episodio: "01", // Camino Feliz siempre (01) Tipo Ley
-        Clase_episodio: "CA",
+        Clase_episodio: "CU",
         Clase_Consulta: "CU", //Camino feliz, CU(Consulta Urgencia)
         Fecha_movimiento: formatearFecha(new Date().toISOString()), //Fecha actual,
         Fecha_fin_movimiento: formatearFecha(new Date().toISOString()), //Fecha actual,
