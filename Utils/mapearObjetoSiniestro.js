@@ -121,13 +121,6 @@ const mapearObjetoSiniestro = (id, episodioID, datos) => {
       ), //"BRIAN ISRAEL BRIONES SANTIBAÑEZ",
       telefono: formatearTelefono(telefonoParticular), //"976765456",
     },
-    /*Alerta_Clasif_trayecto: {
-      trabajador_dirigente_sindical: "",
-      trabajador_a_distancia: "",
-      fuerza_mayor_extrana: "",
-      acciente_en_control_medico: "",
-      no_registra_alerta: "",
-    },*/
     Alerta_Cal_trabajo: {
       posible_causa_nolaboral:
         razonAlertaForm &&
