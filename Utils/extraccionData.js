@@ -13,11 +13,11 @@ function extraerNumeroDireccion(direccionParticular) {
 function extraerDatosDireccion(direccion) {
   if (direccion) {
     const direccionSiniestro = direccion.map((x) => x.value);
-
+    const numero2 = extraerNumeroDireccion(direccionSiniestro[0]);
     return {
-      calle: direccionSiniestro[0],
-      numero: direccionSiniestro[1],
-      comuna: direccionSiniestro[2],
+      calle: String(direccionSiniestro[0]).trim(),
+      numero: String(numero2).trim(),
+      comuna: String(direccionSiniestro[1]).trim(),
     };
   }
   return "";
@@ -29,10 +29,11 @@ function extraerRegionDireccion(comuna) {
   //console.log("",)
 
   if (comuna) {
-    const { codigo_region } = comunas.find(
-      (x) => x.nombre === comuna.trim().toUpperCase()
+    const codigo_region = comunas.find(
+      (x) => x.nombre === String(comuna).trim().toUpperCase()
     );
-    return codigo_region;
+    const result = !codigo_region ? "" : codigo_region;
+    return result;
   }
 }
 
