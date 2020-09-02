@@ -1,4 +1,5 @@
 const comunas = require("./comunas.json");
+const normalizar = require("./ApiUtil/String");
 
 function extraerNumeroDireccion(direccionParticular) {
   if (direccionParticular) {
@@ -113,9 +114,9 @@ function concatenarRelatoToSAP(
   //Sí tiene testigos
   //if (Object.values(testigo).length > 0 )
   if (testigo.nombre && testigo.cargo)
-    datosTestigo = `Tiene testigos de su accidente, el nombre y el cargo es ${String(
-      testigo.nombre
-    )} ${String(testigo.cargo)}`;
+    datosTestigo = `Tiene testigos de su accidente, el nombre y el cargo es ${normalizar(
+      String(testigo.nombre)
+    )} ${normalizar(String(testigo.cargo))}`;
   else datosTestigo = "No tiene testigos de su accidente";
 
   //Sí tiene responsables
@@ -131,10 +132,10 @@ function concatenarRelatoToSAP(
   );
 
   if (responsable.nombre && responsable.cargo)
-    datosResponsable = `Avisó a la empresa, el nombre y cargo  de la persona es ${String(
-      responsable.nombre
-    )}, ${String(
-      responsable.cargo
+    datosResponsable = `Avisó a la empresa, el nombre y cargo  de la persona es ${normalizar(
+      String(responsable.nombre)
+    )}, ${normalizar(
+      String(responsable.cargo)
     )}, fecha y hora en que aviso a su empresa sobre el accidente: ${String(
       fechaResponsable
     )} a las ${String(horaResponsable)}`;

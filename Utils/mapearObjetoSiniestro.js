@@ -97,9 +97,9 @@ const mapearObjetoSiniestro = (id, episodioID, datos) => {
       mecanismo_accidente: "92",
       que_paso_accidente: concatenarRelatoToSAP(
         normalizar(relatoAccidente),
-        normalizar(testigos),
-        normalizar(responsable),
-        normalizar(fechaHoraResponsable)
+        testigos, //normalizar(testigos),
+        responsable, //normalizar(responsable),
+        fechaHoraResponsable //normalizar(fechaHoraResponsable)
       ), //DUDA
       agente_accidente: "700",
       desarrollaba_trabajo_habitual: normalizar(
