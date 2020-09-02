@@ -71,7 +71,6 @@ route.get("/getPaciente", async (req, res) => {
     const { year, month } = getLastDate();
     const cotizacion = await get(getConfigCotizacion(rut, `${year}${month}`));
 
-
     let RUT_Pagador = "",
       Nombre_Empresa = "",
       direccionParticular = "",
@@ -82,25 +81,13 @@ route.get("/getPaciente", async (req, res) => {
       comunaEmpresa = "",
       BpCreado = false;
 
-    // const {
-    //   direcciones,telefonos,numeroBP,apellidoMaterno,apellidoPaterno,nombre,fechaNacimiento,masculino,femenino,nacionalidad,lugarNacimiento,estadoCivil,direcciones: { direccionParticular2 },
-    // } = await get(getConfigPaciente(rut));
-
-    // const {
-    //   DIRECCION,TELEFONO,BP,APELLIDO_MATERNO,APELLIDO_PATERNO,NOMBRES,FECHA_NACIMIENTO,GENERO
-    // } = await get(getConfigPaciente(rut));
-
     const respuesta = await get(getConfigPaciente(rut));
 
     const {
-      DIRECCION,TELEFONO,BP,APELLIDO_MATERNO,APELLIDO_PATERNO,NOMBRES,FECHA_NACIMIENTO,GENERO
+      DIRECCION,TELEFONO,BP,APELLIDO_MATERNO,APELLIDO_PATERNO,NOMBRES,FECHA_NACIMIENTO,GENERO, COMUNA, PAIS, NACIONALIDAD, ESTADO_CIVIL
     } = respuesta[0]
 
     BpCreado = typeof BP != "undefined";
-
-
-    console.log(respuesta[0])
-
 
     if (isOk(getResultSap(cotizacion))) {
       RUT_Pagador = getResultSap(cotizacion)[0].RUT_Pagador;
@@ -112,31 +99,15 @@ route.get("/getPaciente", async (req, res) => {
                                                   "CUN": s.CodigoUnicoNacionalExerno,"codigoUnicoNacionalExterno": s.CodigoUnicoNacionalExerno,"cesa":s.CeSanitario, "interLComercial" : s.InterlComercial, 
                                                   "tipoLey": s.DescTipoLey, "reposoActivo": s.ReposoActivo, "hora": getHora(s.HoraPresentacion),"paciente":s.NombreDenunciante}})                                         
 
-    console.log("numeroBP",BP)
-
     let citasResponse = await get(getConfigCitasFuturas(BP));
     let cita = {}
     if(Array.isArray(citasResponse) && citasResponse.length > 0){
       let {FECHA_CITA,HORA_CITA,LUGAR_CONSULTA,TIPO_ATENCION} = citasResponse[citasResponse.length - 1]
       cita = {"fecha": FECHA_CITA,"hora": HORA_CITA,"lugar": LUGAR_CONSULTA,"unidad": TIPO_ATENCION}
     } 
-    
-    // const isDireccion = Array.isArray(direcciones) && direcciones.length > 0;
 
-    // if (isOk(direcciones)) {
-    //   const { calle, numero, comuna } = direcciones[0];
-    //   direccionParticular = isDireccion
-    //     ? `${calle} ${numero}, ${comuna}`
-    //     : null;
-    // }
+    direccionParticular = `${DIRECCION}, ${COMUNA}`
 
-
-    direccionParticular = DIRECCION;
-
-    // const isTelefono = Array.isArray(telefonos) && telefonos.length > 0;
-    // telefonoParticular = isTelefono
-    //   ? telefonos[telefonos.length - 1].numeroTelefonico
-    //   : "";
     if(!TELEFONO){
       telefonoParticular = ""
     }else{
@@ -155,6 +126,11 @@ route.get("/getPaciente", async (req, res) => {
       masculino="";
       femenino="X"
     }
+
+    nacionalidad = NACIONALIDAD;
+    lugarNacimiento = PAIS;
+    estadoCivil = ESTADO_CIVIL
+
     json = getCotizacionModel(
       RUT_Pagador,
       Nombre_Empresa,
@@ -172,7 +148,10 @@ route.get("/getPaciente", async (req, res) => {
       NOMBRES,
       FECHA_NACIMIENTO,
       masculino,
-      femenino
+      femenino,
+      nacionalidad,
+      lugarNacimiento,
+      estadoCivil
     );
     const response = apiResponse(json, res.statusCode, "Operacion exitosa");
     res.send(response);
