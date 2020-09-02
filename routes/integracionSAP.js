@@ -21,7 +21,9 @@ route.post("/", async (req, res) => {
 
     //Mapear objeto admision
     let admisionToSAP = mapearAdmisionObjeto(admisionID, admision_json);
-
+    console.log("********** admisionToSAP *********");
+    console.log(admisionToSAP);
+    console.log("********** admisionToSAP *********");
     //Enviar admision a SAP
     const resultAdmision = await sapHttpPost(
       process.env.URL_SAP_ADMISION,

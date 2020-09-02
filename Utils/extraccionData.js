@@ -1,4 +1,5 @@
 const comunas = require("./comunas.json");
+const normalizar = require("./ApiUtil/String");
 
 function extraerNumeroDireccion(direccionParticular) {
   if (direccionParticular) {
@@ -11,12 +12,13 @@ function extraerNumeroDireccion(direccionParticular) {
 
 function extraerDatosDireccion(direccion) {
   if (direccion) {
-    const direccionSiniestro = direccion.map((x) => x.value);
-
+    const direccionSiniestro = String(direccion).split(",");
+    // const direccionSiniestro = direccion.map((x) => x.value);
+    const numero2 = extraerNumeroDireccion(direccionSiniestro[0]);
     return {
-      calle: direccionSiniestro[0],
-      numero: direccionSiniestro[1],
-      comuna: direccionSiniestro[2],
+      calle: String(direccionSiniestro[0]).trim(), //Calle
+      numero: String(numero2).trim(),
+      comuna: String(direccionSiniestro[1]).trim(),
     };
   }
   return "";
@@ -28,10 +30,11 @@ function extraerRegionDireccion(comuna) {
   //console.log("",)
 
   if (comuna) {
-    const { codigo_region } = comunas.find(
-      (x) => x.nombre === comuna.trim().toUpperCase()
+    const codigo_region = comunas.find(
+      (x) => x.nombre === String(comuna).trim().toUpperCase()
     );
-    return codigo_region;
+    const result = !codigo_region ? "" : codigo_region.codigo_region;
+    return result;
   }
 }
 
@@ -113,9 +116,9 @@ function concatenarRelatoToSAP(
   //Sí tiene testigos
   //if (Object.values(testigo).length > 0 )
   if (testigo.nombre && testigo.cargo)
-    datosTestigo = `Tiene testigos de su accidente, el nombre y el cargo es ${String(
-      testigo.nombre
-    )} ${String(testigo.cargo)}`;
+    datosTestigo = `Tiene testigos de su accidente, el nombre y el cargo es ${normalizar(
+      String(testigo.nombre)
+    )} ${normalizar(String(testigo.cargo))}`;
   else datosTestigo = "No tiene testigos de su accidente";
 
   //Sí tiene responsables
@@ -131,10 +134,10 @@ function concatenarRelatoToSAP(
   );
 
   if (responsable.nombre && responsable.cargo)
-    datosResponsable = `Avisó a la empresa, el nombre y cargo  de la persona es ${String(
-      responsable.nombre
-    )}, ${String(
-      responsable.cargo
+    datosResponsable = `Avisó a la empresa, el nombre y cargo  de la persona es ${normalizar(
+      String(responsable.nombre)
+    )}, ${normalizar(
+      String(responsable.cargo)
     )}, fecha y hora en que aviso a su empresa sobre el accidente: ${String(
       fechaResponsable
     )} a las ${String(horaResponsable)}`;
