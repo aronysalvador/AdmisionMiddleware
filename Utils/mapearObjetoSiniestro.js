@@ -15,7 +15,7 @@ const normalizar = require("./ApiUtil/String");
 const mapearObjetoSiniestro = (id, episodioID, datos) => {
   const {
     fechaHoraSiniestro,
-    sucursalEmpresaSiniestro: { terms },
+    sucursalEmpresaSiniestro: { terms, description },
     lugarAccidente,
     descripcionAccidente,
     razonSocial,
@@ -45,7 +45,7 @@ const mapearObjetoSiniestro = (id, episodioID, datos) => {
     razonAlertaForm,
   } = datos;
 
-  const direccionSiniestro = extraerDatosDireccion(terms);
+  const direccionSiniestro = extraerDatosDireccion(description);
   const actualDateTime = new Date();
   const inicioJornadaLaboralArr = inicioJornadaLaboral.split(":");
   const finJornadaLaboralArr = finJornadaLaboral.split(":");

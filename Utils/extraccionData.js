@@ -12,10 +12,11 @@ function extraerNumeroDireccion(direccionParticular) {
 
 function extraerDatosDireccion(direccion) {
   if (direccion) {
-    const direccionSiniestro = direccion.map((x) => x.value);
+    const direccionSiniestro = String(direccion).split(",");
+    // const direccionSiniestro = direccion.map((x) => x.value);
     const numero2 = extraerNumeroDireccion(direccionSiniestro[0]);
     return {
-      calle: String(direccionSiniestro[0]).trim(),
+      calle: String(direccionSiniestro[0]).trim(), //Calle
       numero: String(numero2).trim(),
       comuna: String(direccionSiniestro[1]).trim(),
     };
