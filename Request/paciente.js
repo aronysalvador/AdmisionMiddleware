@@ -1,12 +1,13 @@
 const getConfigPaciente = (rut) => {
     return {
-        hostname: `http://sfc-prod-middleware.eastus.cloudapp.azure.com:8080`,
-        path : `/api/BP/ObtenerDatosPersonaPorRUT?rut=${rut}`,
-        headers: { 
+        hostname: "https://ams-qa-midleware.azure-api.net",
+        path : `/AdmisionDigital/api/BP/ObtenerBPDatosGenerales?RutPer=${rut}`,
+        headers: {
             headers: {
-                'Content-Type': 'application/json'
-            }
-        }
+              "Ocp-Apim-Subscription-Key": "2b4beff42a5b433cad5bb1bc67b81fc3",
+              "Ocp-Apim-Trace": "true",
+            },
+          },
     }
   }
   module.exports = getConfigPaciente
