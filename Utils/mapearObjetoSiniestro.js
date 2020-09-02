@@ -43,6 +43,7 @@ const mapearObjetoSiniestro = (id, episodioID, datos) => {
     usuarioSAP,
     SucursalEmpresaObjeto,
     razonAlertaForm,
+    AccidenteEnSucursal,
   } = datos;
 
   const direccionSiniestro = extraerDatosDireccion(description);
@@ -108,7 +109,9 @@ const mapearObjetoSiniestro = (id, episodioID, datos) => {
       criterio_gravedad: "1",
       tipo_accidente_trayecto: "",
       parte_cuerpo_afectada: "900",
-      accidente_ocurrio_en_sucursal: "NO",
+      accidente_ocurrio_en_sucursal: String(AccidenteEnSucursal)
+        .trim()
+        .toUpperCase(),
     },
     Denunciante: {
       clasificacion: "2",
