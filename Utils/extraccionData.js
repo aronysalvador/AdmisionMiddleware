@@ -32,7 +32,7 @@ function extraerRegionDireccion(comuna) {
     const codigo_region = comunas.find(
       (x) => x.nombre === String(comuna).trim().toUpperCase()
     );
-    const result = !codigo_region ? "" : codigo_region;
+    const result = !codigo_region ? "" : codigo_region.codigo_region;
     return result;
   }
 }
