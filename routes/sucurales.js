@@ -23,10 +23,10 @@ route.get("/", async (req, res) => {
         direccion: afp.nombreCalle + afp.numero,
       };
     });
-    res.send(sucursalResult);
+    return res.send(sucursalResult);
   } catch (error) {
     console.log(error);
-    res.send(apiResponse([], 500, error));
+    return res.send(apiResponse([], 500, error));
   }
 });
 module.exports = route;
