@@ -44,6 +44,7 @@ const mapearObjetoSiniestro = (id, episodioID, datos) => {
     SucursalEmpresaObjeto,
     razonAlertaForm,
     AccidenteEnSucursal,
+    sucursalCargo,
   } = datos;
 
   const direccionSiniestro = extraerDatosDireccion(description);
@@ -158,7 +159,7 @@ const mapearObjetoSiniestro = (id, episodioID, datos) => {
     cabecera_sin: {
       codigo: String(fomrat(SucursalEmpresaObjeto.codigo, 10)), // BP Empresa"2000462553",
       razon_social: normalizar(razonSocial.name), //"empresa",
-      numero_sucursal_achs: "",
+      numero_sucursal_achs: String(sucursalCargo).trim(),
       direccion_sucursal_achs: normalizar(SucursalEmpresaObjeto.direccion), //"calle ramon carnicer",
       rubro: "",
       CIUU: "",
