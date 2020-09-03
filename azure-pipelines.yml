@@ -24,11 +24,11 @@ stages:
         steps:
         - script: |
             displayName: Verificacion
-            echo "datos :" $(DockerRepository)
-            echo "datos :" $(ContainerRegistryName)
-            echo "datos :" $(ImageTag)
-            echo "datos :" $(Build.BuildId)
-            echo "datos :" $(VmImageName)
+            # echo "datos :" $(DockerRepository)
+            # echo "datos :" $(ContainerRegistryName)
+            # echo "datos :" $(ImageTag)
+            # echo "datos :" $(Build.BuildId)
+            # echo "datos :" $(VmImageName)
             # pwd
             # ls -lha
         - task: Docker@2
