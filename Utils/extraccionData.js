@@ -10,13 +10,25 @@ function extraerNumeroDireccion(direccionParticular) {
   return "";
 }
 
+function extraerCalleDireccion(direccionParticular) {
+  if (direccionParticular) {
+    let numberPattern = /\d+/g;
+    const result = String(direccionParticular)
+      .replace(numberPattern, "")
+      .trim();
+    return result ? result : "";
+  }
+  return "";
+}
+
 function extraerDatosDireccion(direccion) {
   if (direccion) {
     const direccionSiniestro = String(direccion).split(",");
     // const direccionSiniestro = direccion.map((x) => x.value);
     const numero2 = extraerNumeroDireccion(direccionSiniestro[0]);
+    const calle = extraerCalleDireccion(direccionSiniestro[0]);
     return {
-      calle: String(direccionSiniestro[0]).trim(), //Calle
+      calle: String(calle).trim(), //Calle
       numero: String(numero2).trim(),
       comuna: String(direccionSiniestro[1]).trim(),
     };
