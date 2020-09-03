@@ -29,8 +29,8 @@ stages:
             # echo "datos :" $(ImageTag)
             # echo "datos :" $(Build.BuildId)
             # echo "datos :" $(VmImageName)
-            # pwd
-            # ls -lha
+            pwd
+            ls -lha
         - task: Docker@2
           displayName: Build and Push Docker Image
           inputs:
