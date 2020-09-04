@@ -43,14 +43,15 @@ const mapearAdmisionObjeto = (id, datos) => {
         Sexo: masculino ? "1" : "" || femenino ? "2" : "",
         titulo: "1", //En duro
         Nacionalidad: normalizar(nacionalidad),
-        Pais_nacimiento: "CL", //lugarNacimiento, parcheeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+        Pais_nacimiento: normalizar(nacionalidad), //lugarNacimiento, parcheeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
         Estado_civil: normalizar(estadoCivil),
         religion: "CR",
         tipo_documento: "RU",
         num_documento: rut,
         calle_dom: normalizar(direccionComuna[0]),
         numero_dom: normalizar(extraerNumeroDireccion(direccionParticular)),
-        ciuidad: normalizar(direccionComuna[1]),
+        //ciuidad: normalizar(direccionComuna[1]),
+        ciuidad: normalizar("000000002201"),
         region: normalizar(extraerRegionDireccion(direccionComuna[1])),
         telefono: normalizar(formatearTelefono(telefonoParticular)),
         email: emailusuario || "",
