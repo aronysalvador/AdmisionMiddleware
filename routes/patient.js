@@ -33,14 +33,23 @@ const getResultSap = (response) => {
 route.get('/validate', async (req, res) => {
   try {
     let {rutEmpresa, BpSucursal, rutPaciente} = req.query;
+    rutPaciente = rutPaciente.replace(/\./g,'')
+    
     let Empresa = "NoAfiliada", Sucursal = "NoVigente", CotizacionesPaciente = false
     rutEmpresa = (typeof rutEmpresa === 'string')? rutEmpresa.toUpperCase() : ""
+    rutEmpresa = rutEmpresa.replace(/\./g,'')
+
     //validar empresa
     const vigenciaEmpresa = await get(getConfigVigencia(rutEmpresa))
     const vigenciaEmpresaFormateada = getResultSap(vigenciaEmpresa)
-    const {ESTATUS_EMPRESA} = vigenciaEmpresaFormateada[0]
-    if(ESTATUS_EMPRESA === 'VIGENTE')
+    
+    
+    //----------------------OJO-----------------------//
+    //La Linea 46-47 se debe descomentar para entrar a PRODUCION
+    //const {ESTATUS_EMPRESA} = vigenciaEmpresaFormateada[0]
+    //if(ESTATUS_EMPRESA === 'VIGENTE')
       Empresa = "Afiliada" 
+    //-------------------------------------------------//
     //Obtener sucursales vigentes
     const sucursalesVigentes = await get(getConfigSucursalesVigentes(rutEmpresa))
     const sucursalVigente = sucursalesVigentes.find(({idSucursal}) => idSucursal == BpSucursal);
