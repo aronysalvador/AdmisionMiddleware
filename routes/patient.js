@@ -84,7 +84,7 @@ route.get("/getPaciente", async (req, res) => {
     const respuesta = await get(getConfigPaciente(rut));
 
     const {
-      DIRECCION,TELEFONO,BP,APELLIDO_MATERNO,APELLIDO_PATERNO,NOMBRES,FECHA_NACIMIENTO,GENERO, COMUNA, PAIS, NACIONALIDAD, ESTADO_CIVIL
+      DIRECCION,TELEFONO,BP,APELLIDO_MATERNO,APELLIDO_PATERNO,NOMBRES,FECHA_NACIMIENTO,GENERO, COMUNA, PAIS, CODIGO_NACIONALIDAD, ESTADO_CIVIL, CODIGO_COMUNA
     } = respuesta[0]
 
     BpCreado = typeof BP != "undefined";
@@ -127,9 +127,10 @@ route.get("/getPaciente", async (req, res) => {
       femenino="X"
     }
 
-    nacionalidad = NACIONALIDAD;
+    nacionalidad = CODIGO_NACIONALIDAD;
     lugarNacimiento = PAIS;
-    estadoCivil = ESTADO_CIVIL
+    estadoCivil = ESTADO_CIVIL;
+    codigoComuna = CODIGO_COMUNA;
 
     json = getCotizacionModel(
       RUT_Pagador,
@@ -151,7 +152,8 @@ route.get("/getPaciente", async (req, res) => {
       femenino,
       nacionalidad,
       lugarNacimiento,
-      estadoCivil
+      estadoCivil,
+      codigoComuna
     );
     const response = apiResponse(json, res.statusCode, "Operacion exitosa");
     res.send(response);

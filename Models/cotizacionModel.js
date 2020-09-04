@@ -27,7 +27,7 @@ const getCotizacionModel = (
   nacionalidad,
   lugarNacimiento,
   estadoCivil,
-  direccionParticular2
+  codigoComuna
 ) => {
   return {
     BpCreado,
@@ -50,7 +50,7 @@ const getCotizacionModel = (
     nacionalidad,
     lugarNacimiento,
     estadoCivil,
-    direccionParticular2,
+    codigoComuna,
   };
 };
 
