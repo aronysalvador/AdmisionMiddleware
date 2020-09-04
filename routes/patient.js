@@ -33,9 +33,12 @@ const getResultSap = (response) => {
 route.get('/validate', async (req, res) => {
   try {
     let {rutEmpresa, BpSucursal, rutPaciente} = req.query;
-    rutPaciente = rutPaciente.replace(/\./g,' ')
+    rutPaciente = rutPaciente.replace(/\./g,'')
+    
     let Empresa = "NoAfiliada", Sucursal = "NoVigente", CotizacionesPaciente = false
     rutEmpresa = (typeof rutEmpresa === 'string')? rutEmpresa.toUpperCase() : ""
+    rutEmpresa = rutEmpresa.replace(/\./g,'')
+
     //validar empresa
     const vigenciaEmpresa = await get(getConfigVigencia(rutEmpresa))
     const vigenciaEmpresaFormateada = getResultSap(vigenciaEmpresa)
