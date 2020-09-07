@@ -42,17 +42,17 @@ route.get('/validate', async (req, res) => {
     //validar empresa
     const vigenciaEmpresa = await get(getConfigVigencia(rutEmpresa))
     const vigenciaEmpresaFormateada = getResultSap(vigenciaEmpresa)
-    
-    
-    //----------------------OJO-----------------------//
-    //La Linea 46-47 se debe descomentar para entrar a PRODUCION
-    //const {ESTATUS_EMPRESA} = vigenciaEmpresaFormateada[0]
-    //if(ESTATUS_EMPRESA === 'VIGENTE')
+ 
+    const {ESTATUS_EMPRESA} = vigenciaEmpresaFormateada[0]
+    console.log(ESTATUS_EMPRESA)
+    console.log(Empresa)
+    if(ESTATUS_EMPRESA === 'VIGENTE')
       Empresa = "Afiliada" 
-    //-------------------------------------------------//
+    
     //Obtener sucursales vigentes
     const sucursalesVigentes = await get(getConfigSucursalesVigentes(rutEmpresa))
     const sucursalVigente = sucursalesVigentes.find(({idSucursal}) => idSucursal == BpSucursal);
+    console.log(Empresa)
     if(typeof sucursalVigente === 'object')
       Sucursal = "Vigente"
     //Validar las cotizaciones
