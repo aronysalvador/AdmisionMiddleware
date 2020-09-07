@@ -44,15 +44,12 @@ route.get('/validate', async (req, res) => {
     const vigenciaEmpresaFormateada = getResultSap(vigenciaEmpresa)
  
     const {ESTATUS_EMPRESA} = vigenciaEmpresaFormateada[0]
-    console.log(ESTATUS_EMPRESA)
-    console.log(Empresa)
     if(ESTATUS_EMPRESA === 'VIGENTE')
       Empresa = "Afiliada" 
     
     //Obtener sucursales vigentes
     const sucursalesVigentes = await get(getConfigSucursalesVigentes(rutEmpresa))
     const sucursalVigente = sucursalesVigentes.find(({idSucursal}) => idSucursal == BpSucursal);
-    console.log(Empresa)
     if(typeof sucursalVigente === 'object')
       Sucursal = "Vigente"
     //Validar las cotizaciones
