@@ -50,7 +50,7 @@ const mapearAdmisionObjeto = (id, datos) => {
         num_documento: rut,
         calle_dom: normalizar(direccionComuna[0]),
         numero_dom: normalizar(extraerNumeroDireccion(direccionParticular)),
-        ciuidad: normalizar(direccionComuna[1]),
+        ciuidad: normalizar(direccionComuna[1].trim()),
         region: normalizar(extraerRegionDireccion(direccionComuna[1])),
         telefono: normalizar(formatearTelefono(telefonoParticular)),
         email: emailusuario || "",
