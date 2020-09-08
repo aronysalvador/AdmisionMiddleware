@@ -43,12 +43,6 @@ route.post("/", async (req, res) => {
         return res.send(
           apiResponseReducer({ mensajeError }, 500, mensajeError)
         );
-
-        // return res
-        //   .status(500)
-        //   .json(
-        //     apiResponseReducer({ mensajeError }, 500, "Error api admisión")
-        //   );
       }
 
       const datos = await httpGetRequest(getAdmisionByID(admisionID));
@@ -88,9 +82,12 @@ route.post("/", async (req, res) => {
       await sleep(3000); //segundo y medio
 
       if (intento2 > 3) {
-        return res
-          .status(500)
-          .json(apiResponseReducer({}, 500, "Error api siniestro"));
+        const datos = await httpGetRequest(getAdmisionByID(admisionID));
+        const { descripcion: mensajeError } = datos.content[0];
+
+        return res.send(
+          apiResponseReducer({ mensajeError }, 500, mensajeError)
+        );
       }
 
       const getSiniestroByID = await httpGetRequest(
