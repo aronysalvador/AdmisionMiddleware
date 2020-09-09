@@ -1,7 +1,6 @@
-
 const getNivel1 = () => {
   return {
-    hostname: "https://ams-qa-midleware.azure-api.net",
+    hostname: process.env.BASE_URL_MIDDLEWARE_API,
     path: "/AdmisionDigital/api/Dominios/ObtenerAlertadeCalificacionNivel1",
     headers: {
       headers: {
@@ -13,7 +12,7 @@ const getNivel1 = () => {
 
 const getNivel2 = () => {
   return {
-    hostname: "https://ams-qa-midleware.azure-api.net",
+    hostname: process.env.BASE_URL_MIDDLEWARE_API,
     path: "/AdmisionDigital/api/Dominios/ObtenerAlertadeCalificacionNivel2",
     headers: {
       headers: {
@@ -25,7 +24,7 @@ const getNivel2 = () => {
 
 const getNivel3 = () => {
   return {
-    hostname: "https://ams-qa-midleware.azure-api.net",
+    hostname: process.env.BASE_URL_MIDDLEWARE_API,
     path: "/AdmisionDigital/api/Dominios/ObtenerAlertadeCalificacionNivel3",
     headers: {
       headers: {
@@ -35,4 +34,4 @@ const getNivel3 = () => {
   };
 };
 
-module.exports = {getNivel1,getNivel2,getNivel3};
+module.exports = { getNivel1, getNivel2, getNivel3 };

@@ -52,5 +52,7 @@ app.use("/api/getAliasSapByEmail", aliasSap);
 
 const port = 80;
 app.listen(port, () => {
+  console.log(process.env.URL_SAP_ADMISION);
+  console.log(process.env.URL_BASE_MICROSERVICE_DATABASE);
   console.log(`Listen on port ${port}`);
 });
