@@ -46,17 +46,8 @@ stages:
         displayName: "Info"
         steps:
           - script: |
-              echo "Hola"
               echo "TargetBranch" $(System.PullRequest.TargetBranch)
               echo "sourceBranch " $(System.pullRequest.sourceBranch)
-
-              echo "sourceBranchDeployToDESA "$(sourceBranchDeployToDESA)
-              echo "targetBranchDeployToDESA "$(targetBranchDeployToDESA)
-
-              echo "sourceBranchDeployToQA "$(sourceBranchDeployToQA)
-              echo "targetBranchDeployToQA "$(targetBranchDeployToQA)
-
-              echo "BuildReason " $(Build.Reason)
   # STAGE
   - stage: Deploy_DESA
     displayName: "Building Desploy DESA"
