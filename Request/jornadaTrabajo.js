@@ -1,6 +1,6 @@
 const getConfigJornadaTrabajo = () => {
   return {
-    hostname: "https://ams-qa-midleware.azure-api.net",
+    hostname: process.env.BASE_URL_MIDDLEWARE_API,
     path: "/DatosGenerales/v1/JornadaTrabajo",
     headers: {
       headers: {

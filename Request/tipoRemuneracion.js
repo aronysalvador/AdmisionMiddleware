@@ -1,6 +1,6 @@
 const getConfigTipoRemuneracion = () => {
   return {
-    hostname: "https://ams-qa-midleware.azure-api.net",
+    hostname: process.env.BASE_URL_MIDDLEWARE_API,
     path: "/AdmisionDigital/api/Dominios/ObtenerListadoTiposRemuneracion",
     headers: {
       headers: {

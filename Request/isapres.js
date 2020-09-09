@@ -1,6 +1,6 @@
 const getIsapres = () => {
   return {
-    hostname: "https://ams-qa-midleware.azure-api.net",
+    hostname: process.env.BASE_URL_MIDDLEWARE_API,
     path: `/DominioGeneral/api/Dominios/ObtenerListadoIsapres`,
     headers: {
       headers: {
