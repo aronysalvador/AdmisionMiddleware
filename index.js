@@ -5,7 +5,7 @@
 
 require("custom-env").env(true);
 // const appInsights = require("applicationinsights");
-// appInsights.setup("your_instrmentation_key").start();
+// appInsights.setup("your_instrmentation_key").start(); comentario
 const express = require("express");
 const morgan = require("morgan");
 const patient = require("./routes/patient");
