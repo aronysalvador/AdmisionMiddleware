@@ -46,6 +46,7 @@ stages:
         displayName: "Info"
         steps:
           - script: |
+              echo "Hola"
               echo "TargetBranch" $(System.PullRequest.TargetBranch)
               echo "sourceBranch " $(System.pullRequest.sourceBranch)
 
