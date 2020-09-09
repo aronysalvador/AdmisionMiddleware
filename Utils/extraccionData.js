@@ -179,6 +179,7 @@ function alertaPorDefecto(razonAlertaForm) {
 module.exports = {
   extraerNumeroDireccion,
   extraerRegionDireccion,
+  extraerCalleDireccion,
   formatearFecha,
   formatearTelefono,
   formatearFechaSiniestro,

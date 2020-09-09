@@ -4,6 +4,7 @@ const {
   extraerNumeroDireccion,
   extraerRegionDireccion,
   formatearHoraSiniestro,
+  extraerCalleDireccion,
   mappingCamposUTMUT,
 } = require("./extraccionData");
 
@@ -48,7 +49,7 @@ const mapearAdmisionObjeto = (id, datos) => {
         religion: "CR",
         tipo_documento: "RU",
         num_documento: rut,
-        calle_dom: normalizar(direccionComuna[0]),
+        calle_dom: normalizar(extraerCalleDireccion(direccionComuna[0])),
         numero_dom: normalizar(extraerNumeroDireccion(direccionParticular)),
         ciuidad: normalizar(String(direccionComuna[1].trim()).toUpperCase()),
         region: normalizar(extraerRegionDireccion(direccionComuna[1])),
