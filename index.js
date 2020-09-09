@@ -2,8 +2,10 @@
  * Carga del SDK Azure Application Insights para NodeJS, por seguridad la instrumentation key
  * debe estar guardada en una variable de entorno en el servidor
  */
-const appInsights = require("applicationinsights");
-appInsights.setup("your_instrmentation_key").start();
+
+require("custom-env").env(true);
+// const appInsights = require("applicationinsights");
+// appInsights.setup("your_instrmentation_key").start();
 const express = require("express");
 const morgan = require("morgan");
 const patient = require("./routes/patient");

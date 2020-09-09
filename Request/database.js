@@ -1,13 +1,13 @@
 const insertarAdmision = () => {
   return {
-    hostname: `https://wa-desa-bd.azurewebsites.net`,
+    hostname: process.env.URL_BASE_MICROSERVICE_DATABASE,
     path: `/api/admisiondigital `,
   };
 };
 
 const getAdmisionByID = (id) => {
   return {
-    hostname: `https://wa-desa-bd.azurewebsites.net`,
+    hostname: process.env.URL_BASE_MICROSERVICE_DATABASE,
     path: `/api/admisiondigital/${id}`,
   };
 };
