@@ -41,7 +41,7 @@ const mapearAdmisionObjeto = (id, datos) => {
         Apellido_mat: normalizar(apellidoMaterno),
         Fecha_nacimiento: formatearFecha(fechaNacimiento),
         Sexo: masculino ? "1" : "" || femenino ? "2" : "",
-        titulo: masculino ? "0001" : "" || femenino ? "0002" : "", //En duro
+        titulo: masculino ? "1" : "" || femenino ? "2" : "", //En duro
         Nacionalidad: normalizar(nacionalidad),
         Pais_nacimiento: normalizar(nacionalidad), //lugarNacimiento, parcheeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
         Estado_civil: normalizar(estadoCivil),
