@@ -8,6 +8,7 @@ function extraerNumeroDireccion(direccionParticular) {
     return result ? result[0] : "";
   }
   return "";
+  
 }
 
 function extraerCalleDireccion(direccionParticular) {
