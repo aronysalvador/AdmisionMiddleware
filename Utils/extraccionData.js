@@ -81,10 +81,10 @@ function formatearFechaSiniestro(fechaHoraSiniestro) {
 
 function formatearHoraSiniestro(fechaHoraSiniestro) {
   const { horas, minutos } = fechaHoraSiniestro;
-  const horaSiniestro = `${horas < 10 ? `0${String(horas)}` : String(horas)}:${
+  const horaSiniestro = `${horas < 10 && horas != '00' ? `0${String(horas)}` : String(horas)}:${
     minutos === 0
       ? "00".trim()
-      : minutos < 10
+      : minutos < 10 && minutos != '00'
       ? ("0" + String(minutos)).trim()
       : String(minutos).trim()
   }:00`;
