@@ -45,6 +45,7 @@ const mapearObjetoSiniestro = (id, episodioID, datos) => {
     razonAlertaForm,
     AccidenteEnSucursal,
     sucursalCargo,
+    comunaSiniestro
   } = datos;
 
   const direccionSiniestro = extraerDatosDireccion(description);
@@ -89,7 +90,8 @@ const mapearObjetoSiniestro = (id, episodioID, datos) => {
       hora_accidente: formatearHoraSiniestro(fechaHoraSiniestro), //"12:00:00",
       calle: normalizar(direccionSiniestro.calle),
       numero: normalizar(direccionSiniestro.numero),
-      comuna: normalizar(comuna),
+      //comuna: normalizar(comuna),
+      comuna: normalizar(comunaSiniestro),
       pais: "CL",
       localidad: normalizar(comuna),
       region: normalizar(extraerRegionDireccion(comuna)),
