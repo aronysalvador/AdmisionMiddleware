@@ -8,7 +8,6 @@ function extraerNumeroDireccion(direccionParticular) {
     return result ? result[0] : "";
   }
   return "";
-  
 }
 
 function extraerCalleDireccion(direccionParticular) {
@@ -66,12 +65,12 @@ function formatearFecha(fecha) {
 function formatearTelefono(telefono) {
   if (telefono) {
     const telefonoNoSpace = telefono.trim().replace(/\s/g, "");
-    const telefonoSAP = telefonoNoSpace.substring(telefonoNoSpace.length, 3);
-    return telefonoSAP;
+    if (String(telefonoNoSpace).length > 10)
+      return telefonoNoSpace.substring(telefonoNoSpace.length, 3);
+    else return telefonoNoSpace;
   }
   return "";
 }
-
 function formatearFechaSiniestro(fechaHoraSiniestro) {
   const { days, month, year } = fechaHoraSiniestro;
   const fechaHora = `${days}.${
@@ -82,10 +81,12 @@ function formatearFechaSiniestro(fechaHoraSiniestro) {
 
 function formatearHoraSiniestro(fechaHoraSiniestro) {
   const { horas, minutos } = fechaHoraSiniestro;
-  const horaSiniestro = `${horas < 10 && horas != '00' ? `0${String(horas)}` : String(horas)}:${
+  const horaSiniestro = `${
+    horas < 10 && horas != "00" ? `0${String(horas)}` : String(horas)
+  }:${
     minutos === 0
       ? "00".trim()
-      : minutos < 10 && minutos != '00'
+      : minutos < 10 && minutos != "00"
       ? ("0" + String(minutos)).trim()
       : String(minutos).trim()
   }:00`;
