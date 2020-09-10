@@ -118,7 +118,7 @@ const mapearObjetoSiniestro = (id, episodioID, datos) => {
     },
     Denunciante: {
       clasificacion: "2",
-      rut: rut, //"17151821-0",
+      rut: rut.toUpperCase(), //"17151821-0",
       nombre_completo: normalizar(
         `${nombre} ${apellidoPaterno} ${apellidoMaterno}`
       ), //"BRIAN ISRAEL BRIONES SANTIBAÑEZ",
