@@ -29,6 +29,7 @@ const mapearAdmisionObjeto = (id, datos) => {
     emailusuario,
     centrosForm, //: { centroData }, //Data centros oriana
     usuarioSAP, //Usuario SAP Aroni
+    comuna
   } = datos;
   const actualDateTime = new Date();
   const direccionComuna = direccionParticular.split(",");
@@ -51,7 +52,7 @@ const mapearAdmisionObjeto = (id, datos) => {
         num_documento: rut,
         calle_dom: normalizar(extraerCalleDireccion(direccionComuna[0])),
         numero_dom: normalizar(extraerNumeroDireccion(direccionParticular)),
-        ciuidad: normalizar(String(direccionComuna[1].trim()).toUpperCase()),
+        ciuidad: String(comuna.trim()).toUpperCase(),
         region: normalizar(extraerRegionDireccion(direccionComuna[1])),
         telefono: normalizar(formatearTelefono(telefonoParticular)),
         email: emailusuario || "",
