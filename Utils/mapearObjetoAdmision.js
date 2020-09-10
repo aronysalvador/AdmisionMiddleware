@@ -49,7 +49,7 @@ const mapearAdmisionObjeto = (id, datos) => {
         Estado_civil: normalizar(estadoCivil),
         religion: "CR",
         tipo_documento: "RU",
-        num_documento: rut,
+        num_documento: rut.toUpperCase(),
         calle_dom: normalizar(extraerCalleDireccion(direccionComuna[0])),
         numero_dom: normalizar(extraerNumeroDireccion(direccionParticular)),
         ciuidad: String(comunaDireccionParticular.trim()).toUpperCase(),
