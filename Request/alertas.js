@@ -4,7 +4,8 @@ const getNivel1 = () => {
     path: "/AdmisionDigital/api/Dominios/ObtenerAlertadeCalificacionNivel1",
     headers: {
       headers: {
-        "Ocp-Apim-Subscription-Key": "2b4beff42a5b433cad5bb1bc67b81fc3",
+        "Ocp-Apim-Subscription-Key": process.env.SUBSCRIPTION_KEY,
+        "Ocp-Apim-Trace": "true",
       },
     },
   };
@@ -16,7 +17,8 @@ const getNivel2 = () => {
     path: "/AdmisionDigital/api/Dominios/ObtenerAlertadeCalificacionNivel2",
     headers: {
       headers: {
-        "Ocp-Apim-Subscription-Key": "2b4beff42a5b433cad5bb1bc67b81fc3",
+        "Ocp-Apim-Subscription-Key": process.env.SUBSCRIPTION_KEY,
+        "Ocp-Apim-Trace": "true",
       },
     },
   };
@@ -28,7 +30,8 @@ const getNivel3 = () => {
     path: "/AdmisionDigital/api/Dominios/ObtenerAlertadeCalificacionNivel3",
     headers: {
       headers: {
-        "Ocp-Apim-Subscription-Key": "2b4beff42a5b433cad5bb1bc67b81fc3",
+        "Ocp-Apim-Subscription-Key": process.env.SUBSCRIPTION_KEY,
+        "Ocp-Apim-Trace": "true",
       },
     },
   };

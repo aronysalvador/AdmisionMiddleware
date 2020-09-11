@@ -4,7 +4,7 @@ const getConfigEmpresa = (bp) => {
     path: `/api/BP/ObtenerDatosEmpresa?numeroEmpresa=${bp}`,
     headers: {
       headers: {
-        "Ocp-Apim-Subscription-Key": "2b4beff42a5b433cad5bb1bc67b81fc3",
+        "Ocp-Apim-Subscription-Key": process.env.SUBSCRIPTION_KEY,
       },
     },
   };
@@ -16,7 +16,8 @@ const getConfigVigencia = (rut) => {
     path: `/AdmisionDigital/VigenciaEmpresa?rutEmpresa=${rut}`,
     headers: {
       headers: {
-        "Ocp-Apim-Subscription-Key": "2b4beff42a5b433cad5bb1bc67b81fc3",
+        "Ocp-Apim-Subscription-Key": process.env.SUBSCRIPTION_KEY,
+        "Ocp-Apim-Trace": "true",
       },
     },
   };
@@ -28,7 +29,8 @@ const getConfigSucursalesVigentes = (rut) => {
     path: `/AdmisionDigital/api/BP/ObtenerSucursalesVigentesEmpresaPorRUT?rut=${rut}`,
     headers: {
       headers: {
-        "Ocp-Apim-Subscription-Key": "2b4beff42a5b433cad5bb1bc67b81fc3",
+        "Ocp-Apim-Subscription-Key": process.env.SUBSCRIPTION_KEY,
+        "Ocp-Apim-Trace": "true",
       },
     },
   };
