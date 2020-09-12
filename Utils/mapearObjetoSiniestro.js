@@ -177,7 +177,7 @@ const mapearObjetoSiniestro = (id, episodioID, datos) => {
         horas: finJornadaLaboralArr[0],
         minutos: finJornadaLaboralArr[1],
       }), //String(finJornadaLaboral), //"18:00:00",
-      ocupacion: cargoForm, //"SIN INFORMACION",
+      ocupacion: normalizar(cargoForm), //"SIN INFORMACION",
       profesion_CIOU: String(profesionForm.codigo), //"9629",
       puesto_trabajo: "TRABAJADOR", //En blaco,
       fecha_ingreso_trab: formatearFecha(ingresoTrabajoActual), //"01.01.1998",
