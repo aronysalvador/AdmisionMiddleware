@@ -4,7 +4,6 @@ const getLastDate = require("../Utils/DateTimeUtil/DateTime")
 const getConfigCotizacion = require("../Request/cotizacion")
 const getConfigPaciente = require("../Request/paciente")
 const {
-  getConfigEmpresa,
   getConfigVigencia,
   getConfigSucursalesVigentes,
 } = require("../Request/empresa")
