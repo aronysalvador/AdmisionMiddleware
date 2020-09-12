@@ -72,6 +72,8 @@ route.get('/validate', async (req, res) => {
 route.get("/getPaciente", async (req, res) => {
   try {
 
+    console.log("*******************")
+
     const rut = req.query.rut.toUpperCase();
     const { year, month } = getLastDate();
     const cotizacion = await get(getConfigCotizacion(rut, `${year}${month}`));
@@ -92,17 +94,25 @@ route.get("/getPaciente", async (req, res) => {
       DIRECCION,TELEFONO,BP,APELLIDO_MATERNO,APELLIDO_PATERNO,NOMBRES,FECHA_NACIMIENTO,GENERO, COMUNA, PAIS, CODIGO_NACIONALIDAD, ESTADO_CIVIL, CODIGO_COMUNA
     } = respuesta[0]
 
+    console.log("********2***********")
+
     BpCreado = typeof BP != "undefined";
+
+    getResultSap(cotizacion)
 
     if (isOk(getResultSap(cotizacion))) {
       RUT_Pagador = getResultSap(cotizacion)[0].RUT_Pagador;
     }
+
+    console.log("**********3*********")
 
     let siniestrosResponse = await get(getConfigSinietsro(BP));
 
     const siniestros = siniestrosResponse.map(s => {return{"id": s.Id_Siniestro, "descripcion": s.DescSiniestro, "fecha": getDate(s.FechaPresentacion), "fecha_date" : getDateObj(s.FechaPresentacion),
                                                   "CUN": s.CodigoUnicoNacionalExerno,"codigoUnicoNacionalExterno": s.CodigoUnicoNacionalExerno,"cesa":s.CeSanitario, "interLComercial" : s.InterlComercial, 
                                                   "tipoLey": s.DescTipoLey, "reposoActivo": s.ReposoActivo, "hora": getHora(s.HoraPresentacion),"paciente":s.NombreDenunciante}})                                         
+
+                                                  console.log("***********4********")                                              
 
     let citasResponse = await get(getConfigCitasFuturas(BP));
     let cita = {}
