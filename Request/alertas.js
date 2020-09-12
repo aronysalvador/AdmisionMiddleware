@@ -1,7 +1,7 @@
 const getNivel1 = () => {
   return {
     hostname: process.env.BASE_URL_MIDDLEWARE_API,
-    path: "/AdmisionDigital/api/Dominios/ObtenerAlertadeCalificacionNivel1",
+    path: `${process.env.RUTA_URL_MIDDLEWARE_API_2}api/Dominios/ObtenerAlertadeCalificacionNivel1`,
     headers: {
       headers: {
         "Ocp-Apim-Subscription-Key": process.env.SUBSCRIPTION_KEY,
@@ -14,7 +14,7 @@ const getNivel1 = () => {
 const getNivel2 = () => {
   return {
     hostname: process.env.BASE_URL_MIDDLEWARE_API,
-    path: "/AdmisionDigital/api/Dominios/ObtenerAlertadeCalificacionNivel2",
+    path: `${process.env.RUTA_URL_MIDDLEWARE_API_2}api/Dominios/ObtenerAlertadeCalificacionNivel2`,
     headers: {
       headers: {
         "Ocp-Apim-Subscription-Key": process.env.SUBSCRIPTION_KEY,
@@ -27,7 +27,7 @@ const getNivel2 = () => {
 const getNivel3 = () => {
   return {
     hostname: process.env.BASE_URL_MIDDLEWARE_API,
-    path: "/AdmisionDigital/api/Dominios/ObtenerAlertadeCalificacionNivel3",
+    path: `${process.env.RUTA_URL_MIDDLEWARE_API_2}api/Dominios/ObtenerAlertadeCalificacionNivel3`,
     headers: {
       headers: {
         "Ocp-Apim-Subscription-Key": process.env.SUBSCRIPTION_KEY,
