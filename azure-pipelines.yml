@@ -33,25 +33,6 @@ stages:
           - script: |
               echo "TargetBranch" $(System.PullRequest.TargetBranch)
               echo "sourceBranch " $(System.pullRequest.sourceBranch)
-
-              echo "appNameDESA: " $(appNameDESAMiddle)
-              echo "appNameQA: " $(appNameQAMiddle)
-              echo "appNameSTG: " $(appNameSTGMiddle)
-              echo "appNameProd: " $(appNameProdMiddle)
-              echo "azureAdDesarrollo: " $(azureAdDesarrollo)
-              echo "azureAdQa: " $(azureAdQa)
-              echo "azureAdStg: " $(azureAdStg)
-              echo "azureAdProd: " $(azureAdProd)
-              echo "azureSubcritionDESA: " $(azureSubcritionDESA)
-              echo "azureSubcritionQA: " $(azureSubcritionQA)
-              echo "azureSubcritionSTG: " $(azureSubcritionSTG)
-              echo "azureSubcritionProd: " $(azureSubcritionProd)
-              echo "ContainerRegistryName: " $(ContainerRegistryName)
-              echo "vmImageName: " $(vmImageName)
-              echo "sourceBranchDesa: " $(sourceBranchDesa)
-              echo "sourceBranchQa: " $(sourceBranchQa)
-              echo "sourceBranchStg: " $(sourceBranchStg)
-              echo "sourceBranchProd: " $(sourceBranchProd)
   # STAGE
   - stage: Deploy_DESA
     displayName: "Building Desploy DESA"
