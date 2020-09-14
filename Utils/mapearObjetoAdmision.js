@@ -52,7 +52,7 @@ const mapearAdmisionObjeto = (id, datos) => {
         num_documento: rut.toUpperCase(),
         calle_dom: normalizar(extraerCalleDireccion(direccionComuna[0])),
         numero_dom: normalizar(extraerNumeroDireccion(direccionParticular)),
-        ciuidad: String(comunaDireccionParticular.trim()).toUpperCase(),
+        ciuidad: normalizar(String(comunaDireccionParticular.trim()).toUpperCase()),
         region: normalizar(extraerRegionDireccion(direccionComuna[1])),
         telefono: normalizar(formatearTelefono(telefonoParticular)),
         email: emailusuario || "",
