@@ -12,7 +12,7 @@ trigger:
 variables:
   - group: VARIABLE-ENTORNO-ADMISIONDIGITAL
 
-  - name: DockerRepository
+  - name: Repository
     value: "admision_digital/achs-ms-middleware-sap"
 
   - name: DockerRepositoryDesa
