@@ -40,16 +40,7 @@ stages:
         steps:
           - script: |
               echo "TargetBranch" $(System.PullRequest.TargetBranch)
-              echo "sourceBranch " $(System.pullRequest.sourceBranch)
-
-              echo "appNameDESAMiddle: " $(appNameDESAMiddle)
-              echo "appNameSTGMiddle: " $(appNameSTGMiddle)
-              echo "appNameQAMiddle: " $(appNameQAMiddle)
-              echo "appNameProdMiddle: " $(appNameProdMiddle)
-
-              echo "DockerRepositoryDesa: " $(DockerRepositoryDesa)
-              echo "DockerRepositoryQA: " $(DockerRepositoryQA)
-              echo "DockerRepositoryProd: " $(DockerRepositoryProd)   
+              echo "sourceBranch " $(System.pullRequest.sourceBranch)  
   # STAGE
   - stage: Deploy_DESA
     displayName: "Building Desploy DESA"
